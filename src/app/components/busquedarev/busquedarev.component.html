@@ -1,0 +1,102 @@
+<!-- Inicia Header  -->
+<app-header></app-header>
+<!--  termina Header    -->
+
+
+
+<div style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 40px; ;"> Búsqueda General
+    <input #palabra (keyup.enter)="buscar(palabra.value)" style="width: 30%; background-image: url(assets/img/buscador.png);  " type="text" placeholder="Introducir criterio de búsqueda">
+    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" />
+</div>
+
+<div *ngIf="total.palabra" class="grid-containerh2">
+    <div class="item11">
+        <div class="filtros"><img src="assets/img/filtro.png" style="margin: 10px;">Filtros de Búsqueda</div>
+        <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
+        <div class="cursor alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
+        <div class="alimodo">Modo de visualizar resultados </div>
+        <div class="cursor" [routerLink]="['/revistas-table',total.palabra]" style="cursor:pointer"><img src="assets/img/lista.png" style="margin: 10px;">Tabla </div>
+        <div class="seleccionado"><img src="assets/img/tarjetas-act.png" style="margin: 10px;">Lista </div>
+    </div>
+</div>
+
+
+<div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
+
+    <img   src="assets/img/giphy.gif" alt="">
+    <p>Cargando contenido...</p>
+
+</div>
+
+
+
+<!--  Filtros menu  -->
+<div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
+    
+    <div *ngIf="total.total >= 1" class="item2">
+        <app-filtros-revista></app-filtros-revista>      
+    </div>
+
+
+
+        <!-- Termina Filtros menu   -->
+    <div  class="item3">
+       
+        <div  *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>     
+ 
+        <div  *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div>   
+        
+      
+            <app-globitos-revista></app-globitos-revista>
+        
+
+ 
+
+        <div id="contenedor-fichas" class="contenedor-fichas" *ngIf="totalResultados >= 1">
+            <div *ngFor="let revistas of revistas" class="card">
+                <div class="titulo-card" style=" font-weight: bold; font-size: 12px; padding: 10px;">
+                    <img style="height: 60px;" src="https://www.redalyc.org/redalyc/media/inc/img/revista/movil/revista/rva{{revistas.cveRevista}}.png">
+                </div>
+                <div class="cuerpo-card" style="height: 70px; font-size: 12px; padding: 0px 10px; ">
+                    <div style="font-weight: bold;"> {{revistas.nombreRevista}}</div>
+                    <div *ngIf=" revistas.issn && revistas.issnelec "> Issn: {{revistas.issn}} | e-Issn: {{revistas.issnelec}}</div>
+                    <div *ngIf=" revistas.issn && !revistas.issnelec"> Issn: {{revistas.issn}} </div>
+                    <div *ngIf=" !revistas.issn && revistas.issnelec "> e-Issn: {{revistas.issnelec}}</div>
+                    <div>{{revistas.nombreArea}}</div>
+                    <div>{{revistas.nombreInstitucion}}</div>
+                    <div>{{revistas.nombrePais}}</div>
+                </div>
+                <div class="footer-card" style="width: 100%; height: 35px; text-align: right; border-radius: 0px 0px 10px 10px; ; background-color: #ff660c; position: absolute; bottom: 0;">
+                    <a  href="http://www.facebook.com/sharer.php?u=https://www.redalyc.org/revista.oa?id={{revistas.cveRevista}}" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"> <img  target="_blank" class="img-footer" src="assets/img/tar-face.png" alt=""></a>
+                    <a  href="https://twitter.com/intent/tweet?original_referer=https://www.redalyc.org/revista.oa?id={{revistas.cveRevista}} &amp;text={{revistas.nombreRevista}} https://www.redalyc.org/revista.oa?id={{revistas.cveRevista}} vía @Ameli_CA" class="twitter" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"><img target="_blank" class="img-footer" src="assets/img/tar-twit.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    
+
+        <app-paginador></app-paginador>
+
+    </div>
+
+</div>
+   
+    <div class="nothing" *ngIf="totalResultados <= 0 && total.palabra " >
+        <p >No se han encontrado resultados para: {{total.palabra}} </p>
+        <p >Realice una nueva busqueda.</p>
+        <br>       
+    </div>     
+    <div class="nothing" *ngIf="!total.palabra" >       
+        <p ></p>
+        <br>       
+    </div>  
+
+
+    <app-footer></app-footer>

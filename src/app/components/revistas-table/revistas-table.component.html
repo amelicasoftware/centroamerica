@@ -1,0 +1,124 @@
+<!-- Inicia Header  -->
+<app-header></app-header>
+<!--  termina Header    -->
+
+
+
+<!--<div style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 40px; ;"> Búsqueda General
+    <input #palabra (keyup.enter)="buscar(palabra.value)" style="width: 30%; background-image: url(assets/img/buscador.png);  " type="text" placeholder="Introducir criterio de búsqueda">
+    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" />
+</div>-->
+
+<div class="buscador flex"><img src="assets/img/buscador-institucionmdpi.png"> Búsqueda General
+    <input class="busqueda" #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Introducir criterio de búsqueda">
+    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" />
+</div>
+
+<div  *ngIf="total.palabra" class="grid-containerh2">
+    <div class="item11">
+        <div class="filtros"><img src="assets/img/filtro.png" style="margin: 10px;">Filtros de Búsqueda</div>
+        <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
+        <div class="cursor alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
+        <div class="alimodo">Modo de visualizar resultados </div>
+        <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
+        <div class="cursor" [routerLink]="['/busquedarev',total.palabra]"><img src="assets/img/tarjetas.png" style="margin: 10px;">Lista </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="!loading">
+
+    <img class="loading" src="assets/img/giphy.gif" alt="">
+    <p class="loadingtxt">Cargando contenido...</p>
+
+</div>
+
+
+
+<!--  Filtros menu  -->
+<div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
+
+    <div *ngIf="total.total >= 1" class="item2">
+        <app-filtros-revista></app-filtros-revista>
+    </div>
+
+
+
+    <!-- Termina Filtros menu   -->
+    <div class="item3">
+
+        <div *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} </p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <div *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} </p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div>
+
+
+
+        <app-globitos-revista></app-globitos-revista>
+
+
+
+        <div class="flex-containercont">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ISSN</th>
+                        <th scope="col">e-ISSN</th>
+                        <th scope="col">Revista<img (click)="reversa('nombreRevista',true)" [src]="imagenNR" align="right" /></th>
+                        <th scope="col">Institución Editora<img (click)="reversa('nombreInstitucion',true)" [src]="imagenMI" align="right" /></th>
+                        <th scope="col">País</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let revista of revistas">
+                        <td>{{ revista.issn }}</td>
+                        <td>{{ revista.issnelec }}</td>
+                        <td>{{ revista.nombreRevista }}</td>
+                        <td>{{ revista.nombreInstitucion }}</td>
+                        <td>{{ revista.nombrePais }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+        <app-paginador></app-paginador>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="nothing" *ngIf="totalResultados <= 0 && total.palabra " >
+
+    <p >No se han encontrado resultados para: {{total.palabra}} </p>
+    <p >Realice una nueva busqueda.</p>
+    <br>
+   
+</div>  
+
+
+
+<div class="nothing" *ngIf="!total.palabra" >
+
+    
+    <p ></p>
+    <br>
+   
+</div>  
+
+
+
+
+
+<app-footer></app-footer>

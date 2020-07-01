@@ -1,0 +1,83 @@
+<div class="titulo-seccion-listado" >Listado de publicaciones recientes</div>
+<div style="width: 100%; margin: auto;">
+    <div style="width: 80%; margin: auto; border-bottom: solid 1px #fd9322; display: flex; justify-content: space-between;">
+        <div style="color: #fd9322; font-size: 15pt;">
+            Revistas +
+        </div>
+        <div style="display: flex;">
+            <div id="atras-r" class="boton-scroll"> 
+                <i class="fas fa-angle-left" style="color: #fd9322;"></i>
+            </div>
+            <div id="adelante-r" class="boton-scroll">
+                <i class="fas fa-angle-right" style="color: #fd9322;"></i>
+            </div>
+            
+        </div>
+    </div>
+    <div id="contenedor-fichas-r" class="contenedor-fichas">
+        <div *ngFor="let articulo of revistas;let indexOfelement=index;" class="card">
+            <a href="https://www.redalyc.org/revista.oa?id={{articulo.claveRevista}}" target="_blank" style="text-decoration: none;">
+            <div class="titulo-card" style="height: 60px; font-weight: bold; font-size: 12px; padding: 10px;">
+                <img style="height: 60px;" src="https://www.redalyc.org/redalyc/media/inc/img/revista/movil/revista/rva{{articulo.cveRevista}}.png">
+            </div>
+            <div class="cuerpo-card" style="height: 180px; font-size: 12px; padding: 0px 10px; font-family: 'Barlow-Regular'; color: black;">
+                <div style="font-weight: bold;"> {{articulo.nombreRevista}}</div>
+                <div> Issn: {{articulo.ISSN}} | e-Issn: {{articulo.ISSNElec}}</div>
+                <div>{{articulo.nombreArea}}</div>
+                <div>{{articulo.nombreInstitucion}}</div>
+                <div><img style="height: 20px; vertical-align: middle; padding: 2px;" src="https://www.redalyc.org/redalyc/media/img/banderas/nac{{articulo.cvePais}}.png">{{articulo.pais}}</div>
+            </div>
+            </a>
+            <div class="footer-card" style="width: 100%; height: 35px; text-align: right; border-radius: 0px 0px 10px 10px; background-color: #fd9322; position: absolute; bottom: 0;">
+                <a  href="http://www.facebook.com/sharer.php?u=https://www.redalyc.org/revista.oa?id={{articulo.claveRevista}}" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"> <img  target="_blank" class="img-footer" src="assets/img/tar-face.png" alt=""></a>
+                <a  href="https://twitter.com/intent/tweet?original_referer=https://www.redalyc.org/revista.oa?id={{articulo.claveRevista}} &amp;text={{articulo.nombreRevista}} https://www.redalyc.org/revista.oa?id={{articulo.claveRevista}} vía @Ameli_CA" class="twitter" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"><img target="_blank" class="img-footer" src="assets/img/tar-twit.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-boton-mas">
+        <div class="boton-ver-mas" [routerLink]="['/busquedarev/allRev']" >Ver más revistas</div>
+    </div>
+</div>
+<div style="width: 100%; margin: auto;">
+    <div style="width: 80%; margin: auto; border-bottom: solid 1px #ff660c; display: flex; justify-content: space-between;">
+        <div style="color: #ff660c; font-size: 15pt;">
+            Articulos de revista +
+        </div>
+        <div style="display: flex;">
+            <div id="atras" class="boton-scroll"> 
+                <i class="fas fa-angle-left" style="color: #ff660c;"></i>
+            </div>
+            <div id="adelante" class="boton-scroll">
+                <i class="fas fa-angle-right" style="color: #ff660c;"></i>
+            </div>
+            
+        </div>
+    </div>
+    <div id="contenedor-fichas" class="contenedor-fichas">
+        <div *ngFor="let articulo of articulos;let indexOfelement=index;" class="card">
+            <a href="https://redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank" style="text-decoration: none; color: black;">
+                <div class="info-card" style="padding: 10px; display: flex; flex-direction: column;">
+                    <div class="titulo-card" style="height: 100px; font-weight: bold; font-size: 12px;">
+                        <p > {{articulo.tituloArt | tituloArticulo}}</p>
+                    </div>
+                    <div class="cuerpo-card" style="font-size: 12px;">
+                        <div>{{articulo.autores | autoresArticulo}}</div>
+                    </div>
+                    <div style="height: auto; font-size: 12px;">
+                        <div>{{articulo.nombreRevista}}, {{articulo.anio}}, {{articulo.volumne}}({{articulo.numero}}) </div>
+                    </div>
+                    <div style="height: auto; font-size: 12px;">
+                       <a href="https://redalyc.org/articulo.oa?id={{articulo.claveArt}}" style="text-decoration: none;"> <div style="color: #ff660c;">Texto completo</div></a>
+                    </div>
+                </div>
+            </a>
+            <div class="footer-card" style="width: 100%; height: 35px; text-align: right; border-radius: 0px 0px 10px 10px; ; background-color: #ff660c; position: absolute; bottom: 0;">
+                <a  href="http://www.facebook.com/sharer.php?u=https://redalyc.org/articulo.oa?id={{articulo.claveArt}}" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"> <img  target="_blank" class="img-footer" src="assets/img/tar-face.png" alt=""></a>
+                <a  href="https://twitter.com/intent/tweet?original_referer=https://redalyc.org/articulo.oa?id={{articulo.claveArt}} &amp;text={{articulo.tituloArt | tituloArticulo}} https://redalyc.org/articulo.oa?id={{articulo.claveArt}} vía @Ameli_CA" class="twitter" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"><img target="_blank" class="img-footer" src="assets/img/tar-twit.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-boton-mas">
+        <div class="boton-ver-mas" [routerLink]="['/busquedaGeneral/allArt']">Ver más artículos</div>
+    </div>
+</div>

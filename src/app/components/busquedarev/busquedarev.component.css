@@ -1,0 +1,337 @@
+.articulo {
+    width: 25%;
+    height: 25%;
+    font-size: 10pt;
+    margin-bottom: 0px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container>div {
+    background-color: white;
+    width: 100px;
+    margin: 10px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 10px;
+}
+.nothing{
+    text-align: center;
+    margin: 16px;
+    padding: 16px; 
+    padding-top: 10%;
+    align-self: center; 
+    font-family: Barlow-Regular;
+    align-items: center; 
+    width: 100%; 
+    height: 50%;
+}
+.flex-containerhz {
+    display: flex;
+    background-color: #f1f1f1;
+}
+
+.flex-containerhz>div {
+    background-color: #f1f1f1;
+    margin: 0px;
+    padding: 13px;
+    font-size: 10pt;
+    font-family: 'Barlow-Regular';
+}
+
+.filtro {
+    background-color: #4762b2;
+    font-size: 10px;
+    color: white;
+}
+
+.filtro>div {
+    background-color: #4762b2;
+    font-size: 10px;
+    color: white;
+}
+
+.flex-containercont {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 250px;
+}
+
+.flex-containercont>div {
+    background-color: #f1f1f1;
+    width: 15%;
+    height: 220px;
+    margin: 36px;
+    text-align: center;
+    line-height: 10px;
+    font-size: 7pt;
+    text-align: start;
+    border-bottom: 30px solid #ff660c;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+}
+
+#example1 {
+    padding: 10px;
+    box-shadow: 0px 1px 2px 1px #bfbfbf;
+}
+
+.button1 {
+    background-color: white;
+    color: #4762b2;
+    font-family: Barlow-Regular;
+    margin: 3px;
+}
+
+.button1 {
+    background-color: white;
+    color: #4762b2;
+    font-family: Barlow-Regular;
+    margin: 3px;
+}
+
+.button2 {
+    background-color: #4762b2;
+    /* Green */
+    border: none;
+    font-family: Barlow-Regular;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+}
+
+.button2:hover {
+    background-color: #4762b2;
+    color: black;
+}
+
+@font-face {
+    font-family: Barlow-Bold;
+    src: url('../../../assets/fonts/Barlow-Bold.ttf');
+    /* src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular.woff') format('woff'),
+         url('fonts/OpenSans-Regular.ttf') format('truetype');*/
+}
+
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('../../../assets/fonts/Barlow-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlow-Light;
+    src: url('../../../assets/fonts/Barlow-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../../../assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../../../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('../../../assets/fonts/Roboto-Black.ttf');
+}
+
+.item1 {
+    grid-area: header;
+    background-color: #090a35;
+    color: white;
+}
+
+.item1>div {
+    font-family: Barlow-regular;
+    font-size: 11pt;
+    /* padding: 20px; */
+}
+
+.item2 {
+    font-family: Barlow-regular;
+    grid-area: menu;
+    border-right: 1px solid #a7a7a7;
+    width: 20vw;
+}
+
+.item2>div {
+    font-family: Barlow-regular;
+    font-size: 10pt;
+    padding: 2px;
+    text-align: start;
+    padding-left: 10%;
+}
+
+.item3 {
+    grid-area: main;
+}
+
+.item4 {
+    grid-area: footer;
+    width: 100%;
+    background-color: #090a35;
+    color: white;
+    background-image: url(/src/assets/img/maiz-footer.png);
+}
+
+.item4>div {
+    font-family: Barlow-regular;
+    font-size: 10px;
+    padding: 2px;
+    text-align: start;
+    padding-left: 10%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header header header header header header' 'menu main main main main main' 'footer footer footer footer footer footer';
+    /* grid-gap: 10px; */
+}
+
+.grid-containerh>div {
+    display: flex;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 12pt;
+}
+
+.grid-container>div {
+    /* text-align: center; */
+    padding: 20px 12px;
+    font-size: 12pt;
+}
+
+.filtros {
+    background-color: #4762b2;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
+    width: 20vw;
+    color: white;
+    text-align: center;
+}
+
+.grid-containerh2>div {
+    display: flex;
+    text-align: center;
+    position: relative;
+    font-size: 30px;
+}
+
+.item11 {
+    grid-area: header;
+    background-color: #f1f1f1;
+    color: black;
+    position: relative;
+}
+
+.item11>div {
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    font-size: 10pt;
+    font-family: 'Barlow-Regular';
+}
+
+.card {
+    width: 260px;
+    height: 275px;
+    background-color: #f1f1f1;
+    margin: 20px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+}
+
+.cuerpo-card div {
+    margin-bottom: 5px;
+}
+
+.contenedor-fichas {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+}
+
+.contenedor-fichas>div {
+    width: 260px;
+    height: 275px;
+    font-family: 'Barlow-Regular';
+    margin: 10px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 10pt;
+    margin-left: 3%;
+}
+
+#contenedor-fichas::-webkit-scrollbar {
+    display: none;
+}
+
+#contenedor-fichas-r::-webkit-scrollbar {
+    display: none;
+}
+
+input[type=text] {
+    width: 60%;
+    margin-left: 20%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(/src/assets/img/buscador.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 2px 20px 7px 0px;
+    transition: width 0.4s ease-in-out;
+    font-family: Barlow-Regular;
+}
+
+input[type=text]:focus {
+    width: 40%;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.seleccionado {
+    color: #4762b2;
+    cursor: default;
+}
+
+.alimodo {
+    margin-left: 15%;
+    text-align: center;
+    width: 15vw;
+}
+
+.alinear {
+    text-align: center;
+    width: 15vw;
+}
+
+.no-resultados{
+    margin: 50px;
+}

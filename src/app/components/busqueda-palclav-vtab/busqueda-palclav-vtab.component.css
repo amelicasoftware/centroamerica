@@ -1,0 +1,273 @@
+@font-face {
+    font-family: Barlow-Bold;
+    src: url('../../../assets/fonts/Barlow-Bold.ttf');
+    /* src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular.woff') format('woff'),
+         url('fonts/OpenSans-Regular.ttf') format('truetype');*/
+}
+
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('../../../assets/fonts/Barlow-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlow-Light;
+    src: url('../../../assets/fonts/Barlow-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../../../assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../../../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('../../../assets/fonts/Roboto-Black.ttf');
+}
+
+.item11 {
+    grid-area: header;
+    background-color: #f1f1f1;
+    color: black;
+    position: relative;
+}
+
+.item11>div {
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    font-size: 10pt;
+    font-family: 'Barlow-Regular';
+}
+
+.item11 img {
+    margin: 10px;
+}
+
+.item2 {
+    grid-area: menu;
+    border-right: 1px solid #f1f1f1;
+    width: 20vw;
+}
+
+.item3 {
+    grid-area: main;
+}
+
+.item3>div {
+    align-self: center;
+    font-family: Barlow-Regular;
+    display: flex;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header header header header header header' 'menu menu main main main main' 'footer footer footer footer footer footer';
+    grid-gap: 0px;
+}
+
+.grid-containerh2>div {
+    display: flex;
+    text-align: center;
+    position: relative;
+    font-size: 30px;
+}
+
+.grid-container>div {
+    /*  / text-align: center; /*/
+    padding: 20px 13px;
+    font-size: 12pt;
+}
+
+.filtros {
+    background-color: #4762b2;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
+    width: 20vw;
+    color: white;
+    text-align: center;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.seleccionado {
+    color: #4762b2;
+    cursor: default;
+}
+
+.alimodo {
+    margin-left: 24%;
+    text-align: center;
+    width: 15vw;
+}
+
+.alinear {
+    text-align: center;
+    width: 15vw;
+}
+
+.flex-containercont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-containercont>div {
+    width: 90%;
+    height: auto;
+    font-family: 'Barlow-Regular';
+    margin: 10px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 10pt;
+    /* margin-left: 185px; */
+}
+
+.flex {
+    display: flex;
+}
+
+.buscador {
+    align-self: center;
+    font-family: Barlow-Regular;
+    align-items: center;
+}
+
+.buscador img {
+    margin: 40px;
+}
+
+input[type=text] {
+    width: 30%;
+    margin-left: 16%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(/src/assets/img/buscador.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 2px 20px 7px 0px;
+    transition: width 0.4s ease-in-out;
+    font-family: Barlow-Regular;
+}
+
+input[type=text]:focus {
+    width: 35%;
+}
+
+.cargando {
+    width: 12%;
+    margin-left: 50%;
+    margin-top: 10%;
+}
+
+.texto-formato {
+    text-align: start;
+    font-family: Barlow-Regular;
+    font-size: 10pt;
+}
+
+.tamaño-resul-pal {
+    margin-left: 21px;
+    margin-bottom: 15px;
+}
+
+.tamaño-resul-busqueda {
+    margin-left: 60%;
+    margin-bottom: 15px;
+}
+
+.resultados {
+    align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.resultados>p {
+    margin-left: 10px;
+}
+
+tbody tr td {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+thead tr th {
+    color: #4762B2;
+}
+
+table {
+    border: #e5e5e5 2px solid;
+    font: 400 calc(14px * 0.83)/20px Roboto, "Helvetica Neue", sans-serif;
+    width: 96%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td,
+th {
+    text-align: center;
+    width: 20%;
+    height: 35px;
+    margin: 15px;
+    padding: 15px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid #e5e5e5;
+    border-left: 0px;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr:hover td {
+    background-color: transparent;
+}
+
+img {
+    width: 17px;
+    height: 17px;
+}
+
+
+
+.loading{
+    width: 12%; 
+    height: 17%;
+    margin-left: 50%; 
+    margin-top: 10%;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.resumen {
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font: 400 calc(14px * 0.83)/20px Roboto, "Helvetica Neue", sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #e5e5e5;
+}
+
+.no-resultados {
+    margin: 50px;
+}

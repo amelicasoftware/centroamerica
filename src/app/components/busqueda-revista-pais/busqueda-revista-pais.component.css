@@ -1,0 +1,273 @@
+@font-face {
+    font-family: Barlow-Bold;
+    src: url('../../../assets/fonts/Barlow-Bold.ttf');
+    /* src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+     url('fonts/OpenSans-Regular.woff') format('woff'),
+     url('fonts/OpenSans-Regular.ttf') format('truetype');*/
+}
+
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('../../../assets/fonts/Barlow-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlow-Light;
+    src: url('../../../assets/fonts/Barlow-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../../../assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../../../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('../../../assets/fonts/Roboto-Black.ttf');
+}
+
+.item11 {
+    grid-area: header;
+    background-color: #f1f1f1;
+    color: black;
+    position: relative;
+}
+
+.item11>div {
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    font-size: 10pt;
+    font-family: 'Barlow-Regular';
+}
+
+.item11 img {
+    margin: 10px;
+}
+
+.item2 {
+    grid-area: menu;
+    border-right: 1px solid #f1f1f1;
+    width: 20vw;
+}
+
+.item3 {
+    grid-area: main;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'header header header header header header' 'menu menu main main main main' 'footer footer footer footer footer footer';
+    grid-gap: 0px;
+}
+
+.grid-containerh2>div {
+    display: flex;
+    text-align: center;
+    position: relative;
+    font-size: 30px;
+}
+
+.grid-container>div {
+    /* text-align: center; */
+    padding: 20px 13px;
+    font-size: 12pt;
+}
+
+.filtros {
+    background-color: #4762b2;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
+    width: 20vw;
+    color: white;
+    text-align: center;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.seleccionado {
+    color: #4762b2;
+    cursor: default;
+}
+
+.alimodo {
+    margin-left: 15%;
+    text-align: center;
+    width: 15vw;
+}
+
+.alinear {
+    text-align: center;
+    width: 15vw;
+}
+
+.flex-containercont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-containercont>div {
+    width: 90%;
+    height: auto;
+    font-family: 'Barlow-Regular';
+    margin: 10px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 10pt;
+    /* margin-left: 185px; */
+}
+
+.button1 {
+    background-color: white;
+    color: #4762b2;
+    font-family: Barlow-Regular;
+    margin: 3px;
+    margin-left: 10px;
+    padding: 3px 20px;
+}
+
+.articulo {
+    border: 1px;
+    padding: 10px;
+    box-shadow: 0px 1px 2px 1px #bfbfbf;
+}
+
+.tipoFormato {
+    text-decoration: none;
+}
+
+.titulo {
+    font-size: 10pt;
+    color: #4762b2;
+    font-family: Barlow-Bold;
+}
+
+.texto-completo {
+    font-size: 10pt;
+    color: #4762b2;
+    padding-top: 9px;
+}
+
+.resultados-paises {
+    margin-bottom: 11px;
+}
+
+input[type=text] {
+    width: 30%;
+    margin-left: 16%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(/src/assets/img/buscador.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 2px 20px 7px 0px;
+    transition: width 0.4s ease-in-out;
+    font-family: Barlow-Regular;
+}
+
+input[type=text]:focus {
+    width: 35%;
+}
+
+.cargando {
+    width: 12%;
+    margin-left: 50%;
+    margin-top: 10%;
+}
+
+.texto-formato {
+    text-align: start;
+    font-family: Barlow-Regular;
+    font-size: 10pt;
+}
+
+.tamaño-resul-pal {
+    margin-left: 21px;
+    display: inline;
+}
+
+.tamaño-resul-busqueda {
+    margin-left: 51%;
+    display: inline;
+}
+
+.redes-pdf {
+    margin-left: 75%;
+}
+
+.redes-xml {
+    margin-left: 41%;
+}
+
+.resultados {
+    align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.resultados>p {
+    margin-left: 10px;
+}
+
+.titulo {
+    font-size: 10pt;
+    color: #4762b2;
+    font-family: Barlow-Bold;
+    text-decoration: none;
+}
+
+#lista-paises {
+    width: 30%;
+    margin: auto auto auto 5px;
+    height: 30px;
+    background: #090a35;
+    color: white;
+    border-radius: 5px;
+}
+
+.activado {
+    color: #4762b2;
+}
+
+.flex {
+    display: flex;
+}
+
+.buscador {
+    align-self: center;
+    font-family: Barlow-Regular;
+    align-items: center;
+    font-size: 18pt;
+}
+
+.buscador img {
+    margin: 40px;
+}
+
+.no-resultados {
+    margin: 50px;
+}
+
+.sel-pais {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12pt;
+    font-family: 'Barlow-Regular';
+}
+
+.img-pais {
+    display: flex;
+    align-items: center;
+    width: 32%;
+}

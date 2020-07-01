@@ -1,0 +1,34 @@
+<div class="item3">
+    <div style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+        <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} </p>
+        <br>
+        <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> Resultados de la Búsqueda: {{ total.total}} </p>
+    </div>
+
+    <div>
+        <app-globitos-revista></app-globitos-revista>
+    </div>
+
+    <div class="flex-containercont">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ISSN</th>
+                    <th scope="col">e-ISSN</th>
+                    <th scope="col">Revista<img (click)="reversa('nombreRevista',true)" [src]="imagenNR" align="right" /></th>
+                    <th scope="col">Institución Editora<img (click)="reversa('nombreInstitucion',true)" [src]="imagenMI" align="right" /></th>
+                    <th scope="col">País</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let revista of revistas">
+                    <td>{{ revista.issn }}</td>
+                    <td>{{ revista.issnelec }}</td>
+                    <td>{{ revista.nombreRevista }}</td>
+                    <td>{{ revista.nombreInstitucion }}</td>
+                    <td>{{ revista.nombrePais }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

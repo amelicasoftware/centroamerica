@@ -1,0 +1,110 @@
+@font-face {
+    font-family: Barlow-Bold;
+    src: url('../../../../assets/fonts/Barlow-Bold.ttf');
+    /* src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular.woff') format('woff'),
+         url('fonts/OpenSans-Regular.ttf') format('truetype');*/
+}
+
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('../../../../assets/fonts/Barlow-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlow-Light;
+    src: url('../../../../assets/fonts/Barlow-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../../../../assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../../../../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('../../../../assets/fonts/Roboto-Black.ttf');
+}
+
+.flex-containercont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-containercont>div {
+    width: 90%;
+    height: auto;
+    font-family: 'Barlow-Regular';
+    margin: 10px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 10pt;
+    /* margin-left: 185px; */
+}
+
+tbody tr td {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+thead tr th {
+    color: #4762B2;
+}
+
+table {
+    border: #e5e5e5 2px solid;
+    font: 400 calc(14px * 0.83)/20px Roboto, "Helvetica Neue", sans-serif;
+    width: 96%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td,
+th {
+    text-align: center;
+    width: 20%;
+    height: 35px;
+    margin: 15px;
+    padding: 15px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid #e5e5e5;
+    border-left: 0px;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr:hover td {
+    background-color: transparent;
+}
+
+img {
+    width: 17px;
+    height: 17px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.resumen {
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font: 400 calc(14px * 0.83)/20px Roboto, "Helvetica Neue", sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #e5e5e5;
+}

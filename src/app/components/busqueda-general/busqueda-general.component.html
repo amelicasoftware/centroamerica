@@ -1,0 +1,88 @@
+<!-- Inicia Header  -->
+<app-header></app-header>
+<!--  termina Header    -->
+
+<div class="buscador flex"><img src="assets/img/buscador-institucionmdpi.png">Búsqueda General
+    <input class="busqueda" #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Introducir criterio de búsqueda" required />
+    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" required />
+</div>
+
+<div *ngIf="total.palabra && total.palabra != 'allArt' " class="grid-containerh2">
+    <div class="item11">
+        <div class="filtros"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
+        <div class="cursor" [routerLink]="['/busquedarev',total.palabra]" (click)="limpiarDatos()"><img src="assets/img/revista.png">Revistas</div>
+        <div class="seleccionado alinear" (click)="limpiarDatos()"><img src="assets/img/articulos-act.png">Articulos de revista</div>
+        <div class="alimodo">Modo de visualizar resultados </div>
+        <div class="cursor" [routerLink]="['/vista-art-tab',total.palabra]"><img src="assets/img/lista.png">Tabla</div>
+        <div class="seleccionado"><img src="assets/img/tarjetas-act.png">Lista</div>
+    </div>
+</div>
+
+<!--  loading   -->
+
+<div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
+
+    <img src="assets/img/giphy.gif" alt="">
+    <p>Cargando contenido...</p>
+
+</div>
+
+
+
+
+
+<!--  Filtros menu  -->
+<div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
+
+    <div *ngIf="total.total >= 1" class="item2">
+        <app-filtros></app-filtros>
+    </div>
+
+
+
+    <!-- Termina Filtros menu   -->
+    <div class="item3">
+
+        <div *ngIf=" pagAct != pagFinal" class="texto-resultados">
+            <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} </p>
+            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <div *ngIf="pagAct == pagFinal" class="texto-resultados">
+            <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} </p>
+            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <app-globitos></app-globitos>
+
+        <div *ngIf="totalResultados < 1" class="no-resultados">
+            no hay resultados.
+        </div>
+
+        <div *ngIf="totalResultados >= 1">
+            <app-tarjeta-articulos></app-tarjeta-articulos>
+
+
+            <app-paginador-articulos></app-paginador-articulos>
+        </div>
+
+    </div>
+
+</div>
+
+<div *ngIf="total.total <= 0 && total.palabra && total.palabra != 'allArt' " class="resultados">
+    <p >No se han encontrado resultados </p>
+    <p>Realice una nueva busqueda.</p>
+</div>
+
+<div *ngIf="!total.palabra && total.total <= 0" class="resultados">
+    
+    <p></p>
+</div>
+
+<div *ngIf="total.palabra == 'allArt'" class="resultados">
+    
+    <p></p>
+</div>
+
+<app-footer></app-footer>

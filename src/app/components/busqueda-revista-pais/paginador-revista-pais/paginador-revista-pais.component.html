@@ -1,0 +1,24 @@
+<!-- <div style="margin-left: 40%; font-family: Barlow-Regular; font-size: 10pt;" >Pag. Actual: {{posicion()}} n</div> -->
+
+
+<div class="paginador">
+
+    <button *ngIf="getCount() > 1 " (click)="primerPagina()" class="button2"><< </button>
+
+    <button *ngIf="getCount() > 1 " (click)="incDCount()" class="button2"><</button>
+
+    <button *ngIf="posicion() > 2" (click)="numerosPag(posicion()-2, total.final)" class="button2">{{posicion()-2}}</button>
+
+    <button *ngIf="posicion() > 1" (click)="numerosPag(posicion()-1, total.final)" class="button2">{{posicion()-1}}</button>
+
+    <button *ngIf="getFin() > 1" class="button2" style="border: solid #4762b2 1px; background-color: rgb(71, 98, 178, 0.3);"><span>{{posicion()}}</span></button>
+
+    <button *ngIf="posicion() <= getFin()-1 " (click)="numerosPag(posicion()+1, total.final)" class="button2">{{posicion()+1}}</button>
+
+    <button *ngIf="posicion() <= getFin()-2" (click)="numerosPag(posicion()+2, total.final)" class="button2">{{posicion()+2}}</button>
+
+    <button *ngIf="posicion() < getFin() && posicion() >= 1 " (click)="incCount()" class="button2">></button>
+
+    <button *ngIf="posicion() < getFin() && posicion() >= 1 " (click)="ultimapagina(total.final)" class="button2">>></button>
+
+</div>

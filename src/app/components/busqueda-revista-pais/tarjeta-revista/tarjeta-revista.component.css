@@ -1,0 +1,76 @@
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('../../../../assets/fonts/Barlow-Regular.ttf');
+}
+
+.contenedor-fichas::-webkit-scrollbar {
+    display: none;
+}
+
+.contenedor-fichas-r::-webkit-scrollbar {
+    display: none;
+}
+
+.contenedor-fichas {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    width: 1028px;
+}
+
+.contenedor-fichas>div {
+    width: 260px;
+    height: 275px;
+    font-family: 'Barlow-Regular';
+    margin: 10px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 10pt;
+    margin-left: 3%;
+}
+
+.card {
+    width: 260px;
+    height: 275px;
+    background-color: #f1f1f1;
+    margin: 20px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+}
+
+.titulo-card {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.titulo-card>img {
+    height: 60px;
+}
+
+.cuerpo-card {
+    height: 70px;
+    font-size: 12px;
+    padding: 0px 10px;
+}
+
+.cuerpo-card>div {
+    font-weight: bold;
+}
+
+.cuerpo-card div {
+    margin-bottom: 5px;
+}
+
+.footer-card {
+    width: 100%;
+    height: 35px;
+    text-align: right;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #ff660c;
+    position: absolute;
+    bottom: 0;
+}

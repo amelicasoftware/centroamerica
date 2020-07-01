@@ -1,0 +1,5 @@
+<div class="globos">
+    <div class="globos-filtros" *ngFor="let globo of filtroGlobitos" class="{{ globo.estado ? 'prueba' : 'prueba2'}}">
+        <div>{{globo.nombre}} <span (click)="borrarFiltro(globo)">x</span></div>
+    </div>
+</div>

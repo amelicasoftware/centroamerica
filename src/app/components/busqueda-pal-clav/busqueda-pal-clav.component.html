@@ -1,0 +1,116 @@
+<app-header>
+</app-header>
+
+<div class="buscador flex"><img src="assets/img/buscador-institucionmdpi.png"> Búsqueda por palabra clave
+    <input class="busqueda" #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Introducir criterio de búsqueda">
+    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" />
+</div>
+
+<div  *ngIf="total.palabra" class="grid-containerh2">
+    <div class="item11">
+        <div class="filtros"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
+        <div class="seleccionado alinear" (click)="limpiarDatos()"><img src="assets/img/articulos-act.png">Articulos de revista</div>
+        <div class="alimodo">Modo de visualizar resultados </div>
+        <div class="cursor" [routerLink]="['/PalClav-table/',total.palabra]"><img src="assets/img/lista.png">Tabla</div>
+        <div class="seleccionado"><img src="assets/img/tarjetas-act.png">Lista</div>
+    </div>
+</div>
+
+<div *ngIf="!loading" class="cargando">
+    <img src="assets/img/giphy.gif" alt="">
+    <p>Cargando contenido...</p>
+</div>
+
+<!--  Filtros menu  -->
+<div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
+    <div *ngIf="total.total >= 1" class="item2">
+        <app-filtpalclav></app-filtpalclav>
+    </div>
+
+    <!-- Termina Filtros menu   -->
+
+    <div class="item3">
+
+        <div *ngIf=" pagAct != pagFinal" class="texto-resultados">
+            <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} </p>
+            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <div *ngIf="pagAct == pagFinal" class="texto-resultados">
+            <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} </p>
+            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <app-globitos-pal-clav></app-globitos-pal-clav>
+
+        <div class="flex-containercont">
+
+            <div class="articulo" *ngFor="let articulo of articulos">
+                <div *ngIf="articulo.origen === 'PDF'"><a class="titulo" href="https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{  articulo.tituloArt | tituloArticulo }}</a></div>
+                <div *ngIf="articulo.origen === 'XML'"><a class="titulo" href="https://www.redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/index.html" target="_blank">{{  articulo.tituloArt | tituloArticulo }}</a></div>
+                <p>{{ articulo.autores | autoresArticulo}}</p>
+                <p>{{ articulo.nombreRevista }}, {{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }}) </p>
+                <p>Fuente: {{ articulo.fuente}} </p>
+                <p [innerHTML]='articulo.contenido'>{{ articulo.contenido }}</p>
+                <div class="flex">
+                    <p>Palabras clave: </p>
+                    <p [innerHTML]='articulo.palClave'>{{articulo.palClave}} </p>
+                </div>
+
+                <br>
+
+                <div *ngIf="articulo.dominio === 'https://www.redalyc.org'">
+                    <div *ngIf="articulo.origen === 'PDF'" class="flex">
+                        <p class="texto-completo">Texto Completo: </p>
+
+                        <button class="button1"><a class="tipoFormato" href="https://redalyc.org/articulo.oa?id={{articulo.claveArt}}"  target="_blank">PDF</a></button>
+
+                        <a class="facebook redes-pdf" href="http://www.facebook.com/sharer.php?u=https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                            <img target="_blank" src="assets/img/tar-face.png" alt="">
+                        </a>
+
+                        <a href="https://twitter.com/intent/tweet?original_referer=https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}} &amp;text={{  articulo.tituloArt | tituloArticulo }} https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}} vía @Ameli_CA" class="twitter"
+                            target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                            <img src="assets/img/tar-twit.png" alt="">
+                        </a>
+
+                    </div>
+
+                    <div *ngIf="articulo.origen === 'XML'" class="flex">
+                        <p class="texto-completo">Texto Completo: </p>
+                        <button class="button1"><a class="tipoFormato" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank">HTML-R</a> </button>
+                        <button class="button1"><a class="tipoFormato" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/{{articulo.claveArt}}.epub" target="_blank">ePUB-R</a></button>
+                        <button class="button1"><a class="tipoFormato" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/movil/index.html" target="_blank">MÓVIL-R</a></button>
+                        <button class="button1"><a class="tipoFormato" href="https://redalyc.org/articulo.oa?id={{articulo.claveArt}}"  target="_blank">PDF</a></button>
+
+                        <a class="facebook redes-xml" href="href=http://www.facebook.com/sharer.php?u=https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                            <img target="_blank" class="img-footer" src="assets/img/tar-face.png" alt="">
+                        </a>
+
+                        <a href="https://twitter.com/intent/tweet?original_referer=https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}} &amp;text={{  articulo.tituloArt | tituloArticulo }} https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}} vía @Ameli_CA" class="twitter"
+                            target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                            <img target="_blank" class="img-footer" src="assets/img/tar-twit.png" alt="">
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-paginador-pal-clav></app-paginador-pal-clav>
+
+    </div>
+</div>
+
+<div class="nothing" *ngIf="totalResultados <= 0 && total.palabra " >
+    <p >No se han encontrado resultados para: {{total.palabra}} </p>
+    <p >Realice una nueva busqueda.</p>
+    <br>       
+</div>     
+<div class="nothing" *ngIf="!total.palabra" >       
+    <p ></p>
+    <br>       
+</div>  
+
+
+<app-footer></app-footer>

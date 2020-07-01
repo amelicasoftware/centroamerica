@@ -1,0 +1,18 @@
+<div class="contenedor-fichas">
+    <div *ngFor="let revistas of revistas" class="card">
+        <div class="titulo-card">
+            <img src="https://www.redalyc.org/redalyc/media/inc/img/revista/movil/revista/rva{{revistas.cveRevista}}.png">
+        </div>
+        <div class="cuerpo-card">
+            <div> {{revistas.nombreRevista}}</div>
+            <div> Issn: {{revistas.issn}} | e-Issn: {{revistas.issnelec}}</div>
+            <div>{{revistas.nombreArea}}</div>
+            <div>{{revistas.nombreInstitucion}}</div>
+            <div>{{revistas.nombrePais}}</div>
+        </div>
+        <div class="footer-card">
+            <img src="http://portal.amelica.org/resources/img/imgPortal/fbTarjetRev.png">
+            <img src="http://portal.amelica.org/resources/img/imgPortal/twTarjetRev.png" alt="">
+        </div>
+    </div>
+</div>

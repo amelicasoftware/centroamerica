@@ -1,0 +1,164 @@
+@font-face {
+    font-family: Barlow-Bold;
+    src: url('../../../../assets/fonts/Barlow-Bold.ttf');
+    /* src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+           url('fonts/OpenSans-Regular.woff') format('woff'),
+           url('fonts/OpenSans-Regular.ttf') format('truetype');*/
+}
+
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('../../../../assets/fonts/Barlow-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlow-Light;
+    src: url('../../../../assets/fonts/Barlow-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../../../../assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../../../../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('../../../../assets/fonts/Roboto-Black.ttf');
+}
+
+.flex-containercont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-containercont>div {
+    width: 90%;
+    height: auto;
+    font-family: 'Barlow-Regular';
+    margin: 10px;
+    margin-left: 21px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 10pt;
+    /* margin-left: 185px; */
+}
+
+.articulo {
+    border: 1px;
+    padding: 10px;
+    box-shadow: 0px 1px 2px 1px #bfbfbf;
+}
+
+.titulo {
+    font-size: 10pt;
+    color: #4762b2;
+    font-family: Barlow-Bold;
+    text-decoration: none !important;
+}
+
+.button1 {
+    background-color: white;
+    color: #4762b2;
+    font-family: Barlow-Regular;
+    margin: 3px;
+    margin-left: 10px;
+    padding: 3px 20px;
+}
+
+.tipoFormato {
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.redes-pdf {
+    margin-left: 75%;
+}
+
+.redes-xml {
+    margin-left: 41%;
+}
+
+.texto-completo {
+    font-size: 10pt;
+    color: #4762b2;
+    padding-top: 9px;
+}
+
+.filtroOculto,
+.filtroOcultoD,
+.filtroOcultoP {
+    display: none;
+}
+
+.mostrar-mas {
+    display: block;
+    transition-property: opacity, left, top, height;
+    transition-duration: 3s, 5s, 3s, 5s;
+}
+
+.mostrar-boton {
+    display: none;
+}
+
+.aquisiA div.otraclase {
+    display: block;
+}
+
+.aquisiP div.otraclase {
+    display: block;
+}
+
+.aquisiD div.otraclase {
+    display: block;
+}
+
+.aquisiI div.otraclase {
+    display: block;
+}
+
+.btn-vermas {
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+#filtroAnio {
+    font-size: 12pt;
+}
+
+.titulo-filtro {
+    margin: 5px 25px;
+}
+
+.contenedor-filtro {
+    margin: 0px 20px;
+}
+
+.btn-vermas {
+    margin: 5px 20px;
+}
+
+#contenedor-btn-filtro {
+    width: 100%;
+    text-align: center;
+}
+
+#btn-filtros {
+    background-color: #090a35;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #090a35;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#btn-filtros :hover {
+    box-shadow: 0px 1px 2px 1px #bfbfbf;
+}

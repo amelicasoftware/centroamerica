@@ -1,0 +1,44 @@
+<div class="flex-containercont">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col" colspan="3">Título</th>
+                <th scope="col" colspan="2">Autores</th>
+                <th scope="col" colspan="2">Revista<img (click)="reversa('nombreRevista',true)" [src]="imagenR" align="right" /></th>
+                <th scope="col">Número<img (click)="reversa('anio',true)" [src]="imagenN" align="right" /></th>
+                <th scope="col">Texto Completo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let articulo of articulos">
+                <td colspan="3">{{ articulo.tituloArt }}</td>
+                <td colspan="2">{{ articulo.autores }}</td>
+                <td colspan="2">{{ articulo.nombreRevista }}</td>
+                <td>{{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }})</td>
+                <td *ngIf="articulo.dominio === 'https://www.redalyc.org' && articulo.origen === 'XML'">
+                    <div class="grid">
+                        <div>
+                            <a class="resumen" href="https://redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank"><b>PDF</b></a>
+                        </div>
+                        <div *ngIf="articulo.origen === 'XML'">
+                            <a class="resumen" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank"><b>HTML-R</b></a>
+                        </div>
+                        <div *ngIf="articulo.origen === 'XML'">
+                            <a class="resumen" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/{{articulo.claveArt}}.epub" target="_blank"><b>ePUB-R</b></a>
+                        </div>
+                        <div *ngIf="articulo.origen === 'XML'">
+                            <a class="resumen" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/movil/index.html" target="_blank"><b>MÓVIL-R</b></a>
+                        </div>
+                    </div>
+                </td>
+                <td *ngIf="articulo.dominio === 'https://www.redalyc.org' && !(articulo.origen === 'XML')">
+                    <div>
+                        <div>
+                            <a class="resumen" href="https://redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank"><b>PDF</b></a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
