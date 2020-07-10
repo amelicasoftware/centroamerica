@@ -1,99 +1,99 @@
 .grid-containerh>div {
-    display: flex;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+  display: flex;
+  text-align: center;
+
+  font-size: 30px;
 }
 
 .item1 {
-    grid-area: header;
-    background-color: #090a35;
-    color: white;
+  grid-area: header;
+  background-color: white;
+  color: white;
 }
 
 .item1>div {
-    font-family: Barlow-regular;
-    font-size: 11pt;
-    /* padding: 20px; */
+  font-family: Barlow-regular;
+  font-size: 11pt;
+  /* padding: 20px; */
 }
 
 .header{    
-    top: 0;
-    width: 100%;
-    text-align: center;
-    color: white;
-    height: 50px;
-    display: table;
-    z-index: 10;
-    background: #090a35;
-    opacity: 0.9;
-    padding-top: 5px;
-    transition: 0.4s;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: #1a1a1a;
+  height: 50px;
+  display: table;
+  z-index: 10;
+  background: white;
+  opacity: 0.9;
+  padding-top: 5px;
+  transition: 0.4s;
 }
 
 
 
 
 @media only screen and (max-width: 600px) {
-    .example {background: red;}
-  }
-  
- 
-  @media only screen and (min-width: 600px) {
-    .example {background: green;}
-  }
-  
+  .example {background: red;}
+}
 
-  @media only screen and (min-width: 768px) {
-    .header{    
-        top: 0;
-        width: 100%;
-        text-align: center;
-        color: white;
-        height: 50px;
-        display: table;
-        z-index: 10;
-        background: #090a35;
-        opacity: 0.9;
-        padding-top: 5px;
-        transition: 0.4s;
-    }
-  } 
-  
 
-  @media only screen and (min-width: 992px) {
-    .header{    
-        top: 0;
-        width: 100%;
-        text-align: center;
-        color: white;
-        height: 50px;
-        display: table;
-        z-index: 10;
-        background: #090a35;
-        opacity: 0.9;
-        padding-top: 5px;
-        transition: 0.4s;
-    }
-  } 
-  
-  
-  @media only screen and (min-width: 1200px) {
-    .header{    
-        top: 0;
-        width: 100%;
-        text-align: center;
-        color: white;
-        height: 50px;
-        display: table;
-        z-index: 10;
-        background: #090a35;
-        opacity: 0.9;
-        padding-top: 5px;
-        transition: 0.4s;
-    }
-    .logo-CA img{
-		width: 220px;
-    	padding: 10px;
-	}
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}
+
+
+@media only screen and (min-width: 768px) {
+  .header{    
+      top: 0;
+      width: 100%;
+      text-align: center;
+      color: #1a1a1a;
+      height: 50px;
+      display: table;
+      z-index: 10;
+      background: white;
+      opacity: 0.9;
+      padding-top: 5px;
+      transition: 0.4s;
   }
+} 
+
+
+@media only screen and (min-width: 992px) {
+  .header{    
+      top: 0;
+      width: 100%;
+      text-align: center;
+      color: #1a1a1a;
+      height: 50px;
+      display: table;
+      z-index: 10;
+      color: #1a1a1a;
+      opacity: 0.9;
+      padding-top: 5px;
+      transition: 0.4s;
+  }
+} 
+
+
+@media only screen and (min-width: 1200px) {
+  .header{    
+      top: 0;
+      width: 100%;
+      text-align: center;
+      color: #1a1a1a;
+      height: 50px;
+      display: table;
+      z-index: 10;
+      color: #1a1a1a;
+      opacity: 0.9;
+      padding-top: 5px;
+      transition: 0.4s;
+  }
+  .logo-CA img{
+  width: 220px;
+    padding: 10px;
+}
+}

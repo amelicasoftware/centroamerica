@@ -40,20 +40,24 @@ export class PaginadorPalClavComponent implements OnInit {
   }
 
   public ultimapagina(ultimapagina: number) {
+    this.paginadorService.cambioloading(false)
     this.articulosService.getBusquedaArticulosPaginadorPalClav(this.articulosService.palabra, this.paginadorService.pFinal).
       subscribe((data: any) => {
         console.log(data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
         this.paginadorService.actualizarPosicion(this.paginadorService.pFinal);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public primerPagina() {
+    this.paginadorService.cambioloading(false)
     console.log("Palabra recibida en el boton de primer palabra", this.articulosService.getpalabra())
     this.articulosService.getBusquedaArticulosPaginadorPalClav(this.articulosService.palabra, 1).subscribe((data: any) => {
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
       this.paginadorService.actualizarPosicion(1);
       this.filtrosService.actualizarPalabra(this.articulosService.getpalabra());
+      this.paginadorService.cambioloading(true)
     });
 
   }
@@ -72,32 +76,38 @@ export class PaginadorPalClavComponent implements OnInit {
   }
 
   public incCount() {
+    this.paginadorService.cambioloading(false)
     console.log('siguiente');
     this.paginadorService.actualizarPosicion(this.paginadorService.posicion + 1);
     this.articulosService.getBusquedaArticulosPaginadorPalClav(this.articulosService.palabra, this.paginadorService.posicion).
       subscribe((data: any) => {
         console.log('paginador', data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
+        this.paginadorService.cambioloading(true)
       });
   }
 
 
   public incDCount() {
+    this.paginadorService.cambioloading(false)
     console.log('anterior');
     this.paginadorService.actualizarPosicion(this.paginadorService.posicion - 1);
     this.articulosService.getBusquedaArticulosPaginadorPalClav(this.articulosService.palabra, this.paginadorService.posicion).
       subscribe((data: any) => {
         console.log('paginador', data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public numerosPag(pagina: number, final: number) {
+    this.paginadorService.cambioloading(false)
     console.log("##############################################", this.articulosService.getpalabra())
     this.paginadorService.actualizarPosicion(pagina);
     this.filtrosService.actualizarPalabra(this.articulosService.getpalabra())
     this.articulosService.getBusquedaArticulosPaginadorPalClav(this.filtrosService.palabra, pagina).subscribe((data: any) => {
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
+      this.paginadorService.cambioloading(true)
     });
 
   }

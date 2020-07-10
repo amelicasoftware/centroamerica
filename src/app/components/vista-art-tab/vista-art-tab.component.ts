@@ -50,7 +50,10 @@ export class VistaArtTABComponent implements OnInit {
       this.paginadorService.actualizarPosicion(1);
     });
 
-
+    this.paginadorService.cambioEstado.subscribe(estado => {
+      console.log('ESTADO DEL LOADING *********************', estado);
+      this.loading = estado
+    });
     this.filtrosService.cambioArticulos.subscribe(data2 => {
       console.log('resutladosServicio', data2);
       this.articulos = data2;
@@ -76,6 +79,8 @@ export class VistaArtTABComponent implements OnInit {
     console.log(palabra);
     this.total.palabra = palabra;
     this.filtrosService.palabra = palabra;
+    this.filtrosService.actualizarPalabra(palabra)
+    this.articuloService.setpalabra(palabra)
     this.articuloService.getBusquedaArticulos(palabra).subscribe((data: any) => {
       console.log(data);
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
@@ -90,6 +95,7 @@ export class VistaArtTABComponent implements OnInit {
       this.loading = true
     });
     this.filtrosService.palabra = palabra;
+    this.filtrosService.actualizarPalabra(palabra)
   }
 
    limpiarDatos() {

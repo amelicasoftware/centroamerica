@@ -65,21 +65,7 @@ export class FiltrosRevistaComponent implements OnInit {
       });
     }
 
-    // if(this.nombreFiltroEstilo === 'otraclaseD'){
-    //   this.nombreFiltroEstilo = '';
-    //   this.estadoPositivo = false;
-    // }else if(this.nombreFiltroEstilo === 'otraclaseP'){
-    //   this.nombreFiltroEstilo = '';
-    // }else if(this.nombreFiltroEstilo === 'otraclaseI'){
-    //   this.nombreFiltroEstilo = '';
-    // }else if(this.nombreFiltroEstilo === 'otraclaseF'){
-    //   this.nombreFiltroEstilo = '';
-    // }else{
-    //   this.nombreFiltroEstilo = 'otraclase' + nombre.charAt(0);
-    //   this.estadoPositivo = true;
-    //   console.log(this.nombreFiltroEstilo);
-    // }
-    // this.prueba();
+   
   }
 
   prueba() {

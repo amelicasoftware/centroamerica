@@ -72,22 +72,6 @@ export class FiltrosComponent implements OnInit {
       });
     }
 
-    // if (!filtro.hasOwnProperty('boton')) {
-    //   Object.defineProperty(filtro, 'boton', {
-    //     value: 'Ver menos',
-    //     writable: true
-    //   });
-    // }
-    // console.log(filtro.estado);
-    // if (filtro.estado) {
-    //   Object.defineProperty(filtro, 'boton', {
-    //     value: 'Ver mas',
-    //   });
-    // } else {
-    //   Object.defineProperty(filtro, 'boton', {
-    //     value: 'Ver menos'
-    //   });
-    // }
   }
 
   activarFiltros(elemento, nombre: string) {

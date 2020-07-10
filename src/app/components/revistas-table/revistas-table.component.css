@@ -262,7 +262,7 @@
 }
 
 input[type=text] {
-    width: 31%;
+    width: 30%;
     margin-left: 20%;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -278,7 +278,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    width: 40%;
+    width: 30%;
 }
 
 .filtroOculto,
@@ -453,4 +453,31 @@ img {
 
 .flex {
     display: flex;
+}
+
+.img+.tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: rgb(241, 241, 241, 0.5);
+    color: black;
+    font-weight: normal;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    margin-left: 40px;
+    margin-top: -42px;
+}
+
+.revista {
+    left: 59%;
+}
+
+.numero {
+    left: 70%;
+}
+
+.img:hover+.tooltiptext {
+    visibility: visible;
 }

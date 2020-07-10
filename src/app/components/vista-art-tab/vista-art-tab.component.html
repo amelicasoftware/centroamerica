@@ -4,14 +4,14 @@
 
 
 <div style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 40px; ;"> Búsqueda General
-    <input #palabra (keyup.enter)="buscar(palabra.value)" style="width: 30%; background-image: url(assets/img/buscador.png);  " type="text" placeholder="Introducir criterio de búsqueda">
-    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" />
+    <input #palabra (keyup.enter)="buscar(palabra.value)" style="width: 30%; background-image: url(assets/img/buscador.png);  " type="text" placeholder="Buscar">
+    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
 </div>
 
 <div *ngIf="total.palabra" class="grid-containerh2">
     <div class="item11">
         <div class="filtros"><img src="assets/img/filtro.png" style="margin: 10px;">Filtros de Búsqueda</div>
-        <div class="cursor" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;" (click)="limpiarDatos()"><img src="assets/img/revista.png" style="margin: 10px;">Revistas</div>
+      <!--  loading     <div class="cursor" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;" (click)="limpiarDatos()"><img src="assets/img/revista.png" style="margin: 10px;">Revistas</div>-->
         <div class="seleccionado alinear" (click)="limpiarDatos()"><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
         <div class="alimodo">Modo de visualizar resultados </div>
         <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
@@ -22,7 +22,7 @@
 
 <div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
 
-    <img   src="assets/img/giphy.gif" alt="">
+    <img src="assets/img/giphy.gif" alt="">
     <p>Cargando contenido...</p>
 
 </div>
@@ -31,28 +31,28 @@
 
 <!--  Filtros menu  -->
 <div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
-    
+
     <div *ngIf="total.total >= 1" class="item2">
-        <app-filtros></app-filtros>      
+        <app-filtros></app-filtros>
     </div>
 
 
 
-        <!-- Termina Filtros menu   -->
-    <div  class="item3">
-       
-        <div  *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
+    <!-- Termina Filtros menu   -->
+    <div class="item3">
+
+        <div *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} en artículos de revista</p>
             <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
-        </div>     
- 
-        <div  *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
+            <p style="text-align: start; margin-left: 50%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <div *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} en artículos de revista</p>
             <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
-        </div>   
-        
+            <p style="text-align: start; margin-left: 56%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div>
+
 
 
 
@@ -72,23 +72,23 @@
 
 </div>
 
-<div class="nothing" *ngIf="totalResultados <= 0 && total.palabra " >
+<div class="nothing" *ngIf="totalResultados <= 0 && total.palabra ">
 
-    <p >No se han encontrado resultados para: {{total.palabra}} </p>
-    <p >Realice una nueva busqueda.</p>
+    <p>No se han encontrado resultados para: {{total.palabra}} </p>
+    <p>Realice una nueva búsqueda.</p>
     <br>
-   
-</div>  
+
+</div>
 
 
 
-<div class="nothing" *ngIf="!total.palabra" >
+<div class="nothing" *ngIf="!total.palabra">
 
-    
-    <p ></p>
+
+    <p></p>
     <br>
-   
-</div>  
+
+</div>
 
 
 <app-footer></app-footer>

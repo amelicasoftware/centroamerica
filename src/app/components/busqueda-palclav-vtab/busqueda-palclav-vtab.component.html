@@ -4,8 +4,8 @@
 
 
 <div class="buscador flex"><img src="assets/img/buscador-institucionmdpi.png"> Búsqueda por palabra clave
-    <input class="busqueda" #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Introducir criterio de búsqueda">
-    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" />
+    <input class="busqueda" #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Buscar">
+    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
 </div>
 
 <div *ngIf="total.palabra" class="grid-containerh2">
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div *ngIf="!loading"   >
+<div *ngIf="!loading">
 
     <img class="loading" src="assets/img/giphy.gif" alt="">
     <p class="loading">Cargando contenido...</p>
@@ -27,9 +27,9 @@
 
 
 <!--  Filtros menu  -->
-<div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">    
+<div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
     <div *ngIf="total.total >= 1" class="item2">
-        <app-filtpalclav></app-filtpalclav>   
+        <app-filtpalclav></app-filtpalclav>
     </div>
 
 
@@ -38,18 +38,18 @@
 
     <!-- Termina Filtros menu   -->
     <div class="item3">
-         
-        <div  *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
+
+        <div *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} en artículos de revista</p>
             <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
-        </div>     
- 
-        <div  *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
+            <p style="text-align: start; margin-left: 50%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <div *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} en artículos de revista</p>
             <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
-        </div>   
+            <p style="text-align: start; margin-left: 50%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div>
 
         <app-globitos-pal-clav></app-globitos-pal-clav>
 
@@ -59,14 +59,19 @@
                     <tr>
                         <th scope="col" colspan="3">Título</th>
                         <th scope="col" colspan="2">Autores</th>
-                        <th scope="col" colspan="2">Revista<img (click)="reversa('nombreRevista',true)" [src]="imagenR" align="right" /></th>
-                        <th scope="col">Número<img (click)="reversa('anio',true)" [src]="imagenN" align="right" /></th>
+                        <th scope="col" colspan="2">Revista<img class="img" (click)="reversa('nombreRevista',true)" [src]="imagenR" align="right" />
+                            <span class="tooltiptext revista">Ordenar resultados por revista</span>
+                        </th>
+                        <th scope="col">Número
+                            <img class="img" (click)="reversa('anio',true)" [src]="imagenN" align="right" />
+                            <span class="tooltiptext numero">Ordenar resultados por número</span></th>
                         <th scope="col">Texto Completo</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let articulo of articulos">
-                        <td colspan="3">{{ articulo.tituloArt }}</td>
+                        <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="titulo-art" href="https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{ articulo.tituloArt }}</a></td>
+                        <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="titulo-art" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank">{{ articulo.tituloArt }}</a></td>
                         <td colspan="2">{{ articulo.autores }}</td>
                         <td colspan="2">{{ articulo.nombreRevista }}</td>
                         <td>{{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }})</td>
@@ -103,15 +108,15 @@
     </div>
 </div>
 
-<div class="nothing" *ngIf="totalResultados <= 0 && total.palabra " >
-    <p >No se han encontrado resultados para: {{total.palabra}} </p>
-    <p >Realice una nueva busqueda.</p>
-    <br>       
-</div>     
-<div class="nothing" *ngIf="!total.palabra" >       
-    <p ></p>
-    <br>       
-</div>  
+<div class="nothing" *ngIf="totalResultados <= 0 && total.palabra ">
+    <p>No se han encontrado resultados para: {{total.palabra}} </p>
+    <p>Realice una nueva búsqueda.</p>
+    <br>
+</div>
+<div class="nothing" *ngIf="!total.palabra">
+    <p></p>
+    <br>
+</div>
 
 
 <app-footer></app-footer>

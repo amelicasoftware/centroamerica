@@ -18,6 +18,9 @@ export class FiltroPaisComponent implements OnInit {
               private filtrosService: FiltrosService, private paginadorService: PaginadorService) { }
 
   ngOnInit(): void {
+    this.serviosBusquedaService.getArticulosXPais(this.filtrosService.cvePais).subscribe((data: any) => {
+      this.filtros = data.filtros;
+    });
     this.filtrosService.cambioFiltros.subscribe(data2 => {
       console.log('filtrosServicio', data2);
       this.filtros = data2;

@@ -40,8 +40,7 @@ export class BusquedaGeneralComponent implements OnInit {
     this.palabra = this._route.snapshot.paramMap.get('palabra');   
     this.articuloService.setpalabra(this.palabra)   
     this.filtrosService.actualizarPalabra(this.palabra)
-    this.ArticuloInyectado.leerjson().subscribe((articulosDesdeApi: any) => {
-      this.loading = true
+    this.ArticuloInyectado.leerjson().subscribe((articulosDesdeApi: any) => {      
       console.log(articulosDesdeApi.articulos.total);
       this.total.total = articulosDesdeApi.articulos.total;
       this.filtrosService.actualizarArticulos(articulosDesdeApi.articulos.articulos);
@@ -49,8 +48,12 @@ export class BusquedaGeneralComponent implements OnInit {
       this.paginadorService.actualizarTotal(articulosDesdeApi.articulos.total, 'articulos');
       this.paginadorService.actualizarPosicion(1);
       this.totalResultados = this.paginadorService.total;
+      this.loading = true
     });
-
+    this.paginadorService.cambioEstado.subscribe(estado => {
+      console.log('ESTADO DEL LOADING *********************', estado);
+      this.loading = estado
+    });
     this.filtrosService.cambioArticulos.subscribe(data2 => {
       console.log('resutladosServicio', data2);
       this.articulos = data2;
@@ -68,6 +71,8 @@ export class BusquedaGeneralComponent implements OnInit {
       console.log('RESULTADO CAMBIO POS pagFinal', data2);
       this.pagFinal = data2;
     });
+   
+
   }
 
 

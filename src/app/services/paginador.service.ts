@@ -11,10 +11,11 @@ export class PaginadorService {
   posicion: number;
   reversa: boolean = false;
   campo: string = '';
-
+  loading: boolean;
   @Output() cambioTotal: EventEmitter<any> = new EventEmitter();
   @Output() cambioFinal: EventEmitter<any> = new EventEmitter();
   @Output() cambioPosicion: EventEmitter<any> = new EventEmitter();
+  @Output() cambioEstado: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -24,6 +25,13 @@ export class PaginadorService {
     console.log(this.total);
     this.calculaFinal(filtros, tipo);
   }
+
+
+   cambioloading(loading:boolean){
+     this.loading = loading
+     this.cambioEstado.emit(this.loading)
+   }
+
 
   actualizarFinal() {
     this.pFinal = this.total;

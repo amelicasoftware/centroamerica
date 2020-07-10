@@ -40,21 +40,24 @@ export class PaginadorPaisComponent implements OnInit {
   }
 
   public ultimapagina(ultimapagina: number) {    
-
+    this.paginadorService.cambioloading(false)
     this.articulosService.getBusquedaArticulosPaginadorPais(this.paginadorService.pFinal, this.filtrosService.cvePais).
       subscribe((data: any) => {
         console.log(data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
         this.paginadorService.actualizarPosicion(this.paginadorService.pFinal);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public primerPagina() {
+    this.paginadorService.cambioloading(false)
     console.log("Palabra recibida en el boton de primer palabra", this.articulosService.getpalabra());
     this.articulosService.getBusquedaArticulosPaginadorPais(1, this.filtrosService.cvePais).subscribe((data: any) => {
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
       this.paginadorService.actualizarPosicion(1);
       this.filtrosService.actualizarPalabra(this.articulosService.getpalabra());
+      this.paginadorService.cambioloading(true)
     });
 
   }
@@ -78,43 +81,36 @@ export class PaginadorPaisComponent implements OnInit {
   }
 
   public incCount() {
+    this.paginadorService.cambioloading(false)
     console.log('siguiente');
     this.paginadorService.actualizarPosicion(this.paginadorService.posicion + 1);
     this.articulosService.getBusquedaArticulosPaginadorPais(this.paginadorService.posicion, this.filtrosService.cvePais).
       subscribe((data: any) => {
         console.log('paginador', data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public incDCount() {
+    this.paginadorService.cambioloading(false)
     console.log('anterior');
     this.paginadorService.actualizarPosicion(this.paginadorService.posicion - 1);
     this.articulosService.getBusquedaArticulosPaginadorPais(this.paginadorService.posicion, this.filtrosService.cvePais).
       subscribe((data: any) => {
         console.log('paginador', data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public numerosPag(pagina: number, final: number) {
-
-    //   if (pagina === final) {
-    //     this.revistasService.setfin(0)
-    //   } else {
-    //     this.revistasService.setfin(1)
-    //   }
-    //   this.revistasService.setcount(pagina)
-    //   this.RevistasInyectado.leerjson().subscribe((revistasDesdeApi: any) => {
-    //     this.revistas = revistasDesdeApi.revistas.revistas;
-    //   });
-    //   this.total.pos = this.revistasService.count
-    // }
-
+    this.paginadorService.cambioloading(false)
     this.paginadorService.actualizarPosicion(pagina);
     this.filtrosService.actualizarPalabra(this.articulosService.getpalabra())
     this.articulosService.getBusquedaArticulosPaginadorPais(pagina, this.filtrosService.cvePais).subscribe((data: any) => {
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
+      this.paginadorService.cambioloading(true)
     });
 
   }

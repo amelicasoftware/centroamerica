@@ -21,30 +21,6 @@ export class PaginadorArticulosComponent implements OnInit {
     private filtrosService: FiltrosService, private paginadorService: PaginadorService) { }
 
   ngOnInit(): void {
-    //  console.log("##########################",this.articulosService.getpalabra())
-    //inicializa la busqueda con el primer metodo del servicio LeerJson 
-    // this.revistasService.leerjson().subscribe((revistasDesdeApi: any) => {
-    //   console.log(revistasDesdeApi.revistas.total);
-    // this.revistas = revistasDesdeApi.revistas.revistas;
-    // this.total.total = revistasDesdeApi.revistas.total;
-    // this.paginadorService.total = revistasDesdeApi.revistas.total;
-    // console.log('total', this.total.total);
-    // if (Number.isInteger((this.total.total / 12))) {
-    //   this.total.final = (this.total.total / 12)
-    // } else {
-    //   this.total.final = Math.floor(this.total.total / 12) + 1
-    // // }
-    // this.paginadorService.calculaFinal(revistasDesdeApi.revistas.total);
-    // this.paginadorService.posicion = 1;
-    // console.log(this.revistas)
-    // console.log(this.total)
-    // this.filtrosRevistasService.actualizarRevistas(revistasDesdeApi.revistas.revistas);
-    // });
-    // this.total.palabra = this.revistasService.getpalabra();
-    // this.filtrosRevistasService.cambioRevistas.subscribe(data2 => {
-    //   console.log('resutladosServicio', data2);
-    //   this.revistas = data2;
-    // });
 
     this.paginadorService.cambioFinal.subscribe(data2 => {
       console.log('filtrosServicio', data2);
@@ -64,23 +40,24 @@ export class PaginadorArticulosComponent implements OnInit {
   }
 
   public ultimapagina(ultimapagina: number) {
-
-
+    this.paginadorService.cambioloading(false)
     this.articulosService.getBusquedaArticulosPaginador(this.articulosService.palabra, this.paginadorService.pFinal).
       subscribe((data: any) => {
         console.log(data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
         this.paginadorService.actualizarPosicion(this.paginadorService.pFinal);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public primerPagina() {
+    this.paginadorService.cambioloading(false)
     console.log("Palabra recibida en el boton de primer palabra", this.articulosService.getpalabra())
-
     this.articulosService.getBusquedaArticulosPaginador(this.articulosService.palabra, 1).subscribe((data: any) => {
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
       this.paginadorService.actualizarPosicion(1);
       this.filtrosService.actualizarPalabra(this.articulosService.getpalabra());
+      this.paginadorService.cambioloading(true)
     });
 
   }
@@ -101,31 +78,37 @@ export class PaginadorArticulosComponent implements OnInit {
   }
 
   public incCount() {
+    this.paginadorService.cambioloading(false)
     console.log('siguiente');
     this.paginadorService.actualizarPosicion(this.paginadorService.posicion + 1);
     this.articulosService.getBusquedaArticulosPaginador(this.articulosService.palabra, this.paginadorService.posicion).
       subscribe((data: any) => {
         console.log('paginador', data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
+        this.paginadorService.cambioloading(true)
       });
   }
 
 
   public incDCount() {
+    this.paginadorService.cambioloading(false)
     console.log('anterior');
     this.paginadorService.actualizarPosicion(this.paginadorService.posicion - 1);
     this.articulosService.getBusquedaArticulosPaginador(this.articulosService.palabra, this.paginadorService.posicion).
       subscribe((data: any) => {
         console.log('paginador', data);
         this.filtrosService.actualizarArticulos(data.articulos.articulos);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public numerosPag(pagina: number, final: number) {
+    this.paginadorService.cambioloading(false)
     this.paginadorService.actualizarPosicion(pagina);
     this.filtrosService.actualizarPalabra(this.articulosService.getpalabra())
     this.articulosService.getBusquedaArticulosPaginador(this.filtrosService.palabra, pagina).subscribe((data: any) => {
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
+      this.paginadorService.cambioloading(true)
     });
 
   }

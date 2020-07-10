@@ -1,6 +1,6 @@
 <div id="mySidebar" class="sidebar">
     <a class="closebtn" onclick="closeNav()">×</a>
-    <a href="#" class="option-menu">Acerca de Amelica</a>
+    <a href="#" class="option-menu">Acerca de Redalyc</a>
     <a href="#" class="option-menu">Proyecto Conocimiento Ancestral</a>
     <a href="#" class="ico-sidebar"><img class="ico-sidebar" src="assets/img/ic-home.png" alt=""> </a>
     <a href="#" class="ico-sidebar"><img class="ico-sidebar" src="assets/img/ic-facebook.png" alt=""></a>
@@ -33,18 +33,18 @@
         <div style="color: #fff !important; display: flex; ">
             <div id="logo-CA" style="width: 50%;">
                 <a href="#"><img src="assets/img/conocimiento-ancestral.png" alt=""></a>
-                <a id="logo-amelica" href="http://amelica.org/"><img src="assets/img/ameliCA.png" alt=""></a>
+                <!-- <a id="logo-amelica" href="http://amelica.org/"><img src="assets/img/ameliCA.png" alt=""></a> -->
                 <a id="logo-redalyc" href="https://www.redalyc.org/"><img src="assets/img/redalyc.png" alt=""></a>
             </div>
             <div id="menu">
                 <div id="contenedor-menu">
-                    <a href="http://amelica.org/index.php/que-es-ameli/" target="_blank" class="option-menu">Acerca de Amelica</a>
+                    <a href="https://www.redalyc.org/redalyc/acerca-de/mision.html" target="_blank" class="option-menu">Acerca de Redalyc</a>
                     <a [routerLink]="['/acerca-de']" class="option-menu">Proyecto Conocimiento Ancestral</a>
                 </div>
                 <div id="logos" style="width: 25%;">
-                    <a href="http://amelica.org/ConocimientoAncestral"><img src="assets/img/ic-home.png" alt=""> </a>
-                    <a href="https://twitter.com/Ameli_CA"><img src="assets/img/ic-facebook.png" alt=""></a>
-                    <a href="https://www.facebook.com/ameli.conocimientoabierto/"><img src="assets/img/ic-twitter.png" alt=""></a>
+                    <a [routerLink]="['/home']"><img src="assets/img/ic-home.png" alt=""> </a>
+                    <a href="https://www.facebook.com/Redalyc/"><img src="assets/img/ic-facebook.png" alt=""></a>
+                    <a href="https://twitter.com/Redalyc"><img src="assets/img/ic-twitter.png" alt=""></a>
                 </div>
                 <a onclick="openNav()">
                     <div id="menu-colap">
@@ -59,13 +59,13 @@
                     <img src="assets/img/tab/nodos-des.png"><span>REPRESENTACIÓN DEL CONOCIMIENTO</span>
                 </div>
                 <div class="op-menu-secciones btn-tema" id="btn-tema">
-                    <img src="assets/img/tab/nube-des.png"><span>ARTÍCULOS POR TEMA</span>
+                    <img src="assets/img/tab/nube-des.png"><span>ARTÍCULOS POR PALABRA CLAVE</span>
                 </div>
                 <div class="op-menu-secciones btn-pais" id="btn-pais">
                     <img src="assets/img/tab/pais-des.png"><span>ARTÍCULOS POR PAÍS</span>
                 </div>
                 <div class="op-menu-secciones btn-recientes" id="btn-recientes">
-                    <img src="assets/img/tab/recientes-des.png"><span>MÁS RECIENTES</span>
+                    <img src="assets/img/tab/recientes-des.png"><span>PUBLICACIONES RECIENTES</span>
                 </div>
                 <!-- <div class="op-menu-secciones btn-blog" id="btn-blog">
                     <img src="assets/img/tab/blog-des.png"><span>BLOG</span>
@@ -83,20 +83,18 @@
                 <div id="contenedor-buscador">
                     <div id="titulo-buscador"><span>Buscador</span></div>
                     <div id="buscador">
-                        <input #palabra (keyup.enter)="buscarTexto(palabra.value)" id="input-buscar" type="text" name="input-articulo" value="" placeholder="Buscar palabra" />
-                        <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" />
+                        <input #palabra (keyup.enter)="buscarTexto(palabra.value)" id="input-buscar" type="text" name="input-articulo" value="" placeholder="Buscar" />
+                        <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" (click)="buscarTexto(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
                     </div>
                 </div>
                 <div id="contenedor-numeralias">
-                    <div class="linea-num">{{numerosHome[2].Articulos}} artículos</div>
-                    <div class="linea-num">{{numerosHome[1].Revistas}} revistas</div>
-                    <div>{{numerosHome[0].Paises}} países</div>
+                    <div><p>Más de <span>{{numerosHome[2].Articulos}} artículos</span> extraidos de <span>{{numerosHome[1].Revistas}} revistas</span> en <span>{{numerosHome[0].Paises}} países</span></p></div>
                 </div>
                 <div id="contenedor-resumen">
                     Por un modelo de publicación sin fines de lucro para conservar la naturaleza académica y abierta de la comunicación cientifíca.
                 </div>
                 <div id="contenedor-logos">
-                    <div>
+                    <!--<div>
                         <a href="http://amelica.org/"><img src="assets/img/ic-amelica-footer.png" /></a>
                     </div>
                     <div>
@@ -104,7 +102,7 @@
                     </div>
                     <div>
                         <a href="https://www.clacso.org/"><img src="assets/img/ic-clacso-footer.png" /></a>
-                    </div>
+                    </div>-->
                     <div>
                         <a href="https://www.redalyc.org/"><img src="assets/img/ic-redalyc-footer.png" /></a>
                     </div>
@@ -117,19 +115,28 @@
                 <img src="assets/img/tab/nodos-des.png"><span>REPRESENTACIÓN DEL CONOCIMIENTO</span>
             </div>
             <div class="op-menu-secciones btn-tema" id="btn-tema">
-                <img src="assets/img/tab/nube-des.png"><span>ARTÍCULOS POR TEMA</span>
+                <img src="assets/img/tab/nube-des.png"><span>ARTÍCULOS POR PALABRA CLAVE</span>
             </div>
             <div class="op-menu-secciones btn-pais" id="btn-pais">
                 <img src="assets/img/tab/pais-des.png"><span>ARTÍCULOS POR PAÍS</span>
             </div>
             <div class="op-menu-secciones btn-recientes" id="btn-recientes">
-                <img src="assets/img/tab/recientes-des.png"><span>MÁS RECIENTES</span>
+                <img src="assets/img/tab/recientes-des.png"><span>PUBLICACIONES RECIENTES</span>
             </div>
             <!-- <div class="op-menu-secciones btn-blog" id="btn-blog">
                 <img src="assets/img/tab/blog-des.png"><span>BLOG</span>
             </div> -->
             <div class="op-menu-secciones btn-sparql" id="btn-sparql">
                 <img src="assets/img/tab/SPARQL-des.png"><span>BASE DEL CONOCIMIENTO EN SPARQL</span>
+            </div>
+        </div>
+    </section>
+    
+    <section id="nube-palabras" ng-init="nube()">
+        <div id="contenedor-nube">
+            <div id="titulo-nube">Artículos por palabra clave</div>
+            <div id="nube">
+                <div id="wordCloud" charset="utf-8"></div>
             </div>
         </div>
     </section>
@@ -148,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            <div style="width: 30%; background: gainsboro;">
+            <div style="width: 30%;">
                 <div id="tituloArticulos" ></div>
                         <div id="contenedorArticulos" style="display:none;">
                             <div id="datosArticulo"></div>
@@ -156,17 +163,9 @@
             </div>
         </div>
     </section>
-    <section id="nube-palabras" ng-init="nube()">
-        <div id="contenedor-nube">
-            <div id="titulo-nube">Artículos por palabra clave</div>
-            <div id="nube">
-                <div id="wordCloud" charset="utf-8"></div>
-            </div>
-        </div>
-    </section>
     <section id="mapa-paises">
         <div id="contenedor-mapa">
-            <div id="titulo-pais">Búsqueda por país</div>
+            <div id="titulo-pais">Artículos por país</div>
             <app-mapa id="mapa"></app-mapa>
         </div>
     </section>
@@ -190,32 +189,8 @@
             </div>
         </div>
     </section>
-    <section id="footer" style="color:white;" >
-            <div id="contendor-footer" style="width: 100%; display: flex; flex-wrap: wrap;">
-                <div id="instituciones-footer" style="width: 90%; padding-top: 20px;">
-                    <div>
-                        <a href="http://amelica.org/"><img src="assets/img/ic-amelica-footer.png" /></a>
-                    </div>
-                    <div>
-                        <a href="https://es.unesco.org/"><img src="assets/img/ic-unesco-footer.png" /></a>
-                    </div>
-                    <div>
-                        <a href="https://www.clacso.org/"><img src="assets/img/ic-clacso-footer.png" /></a>
-                    </div>
-                    <div>
-                        <a href="https://www.redalyc.org/"><img src="assets/img/ic-redalyc-footer.png" /></a>
-                    </div>
-                    <div>
-                        <a href="https://www.uaemex.mx/"><img src="assets/img/escudo-uaem.png" /></a>
-                    </div>
-                </div>
-                <div id="resumen-footer" style="width: 100%; padding-top: 40px;">
-                    <p>Acceso Abierto sin fines de lucro propiedad de la academia</p>
-                    <p>Colección de Conocimiento Ancestral 2020 | Versión 1.0</p> 
-                    <p>Tecnología Redalyc</p>
-                </div>
-            </div>
-            
+    <section id="footer">
+        <app-footer></app-footer>
     </section>
-
+   
 </main>

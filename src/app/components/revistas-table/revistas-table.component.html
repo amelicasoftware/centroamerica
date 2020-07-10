@@ -10,11 +10,11 @@
 </div>-->
 
 <div class="buscador flex"><img src="assets/img/buscador-institucionmdpi.png"> Búsqueda General
-    <input class="busqueda" #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Introducir criterio de búsqueda">
-    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" name="boton-buscar-articulo" alt="Buscar" />
+    <input class="busqueda" #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Buscar">
+    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
 </div>
 
-<div  *ngIf="total.palabra" class="grid-containerh2">
+<div *ngIf="total.palabra" class="grid-containerh2">
     <div class="item11">
         <div class="filtros"><img src="assets/img/filtro.png" style="margin: 10px;">Filtros de Búsqueda</div>
         <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
@@ -49,16 +49,17 @@
     <div class="item3">
 
         <div *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} </p>
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} en revistas</p>
             <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 12 - 11}} a {{posicion() * 12}} de {{totalResultados}} revistas </p>
         </div>
 
         <div *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} </p>
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} en revistas</p>
             <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 12 - 11}} a {{totalResultados}} de {{totalResultados}} revistas </p>
         </div>
+
 
 
 
@@ -72,8 +73,11 @@
                     <tr>
                         <th scope="col">ISSN</th>
                         <th scope="col">e-ISSN</th>
-                        <th scope="col">Revista<img (click)="reversa('nombreRevista',true)" [src]="imagenNR" align="right" /></th>
-                        <th scope="col">Institución Editora<img (click)="reversa('nombreInstitucion',true)" [src]="imagenMI" align="right" /></th>
+                        <th scope="col">Revista<img class="img" (click)="reversa('nombreRevista',true)" [src]="imagenNR" align="right" />
+                            <span class="tooltiptext revista">Ordenar resultados por revista</span></th>
+                        <th scope="col">Institución Editora<img class="img" (click)="reversa('nombreInstitucion',true)" [src]="imagenMI" align="right" />
+                            <span class="tooltiptext numero">Ordenar resultados por Institución</span>
+                        </th>
                         <th scope="col">País</th>
                     </tr>
                 </thead>
@@ -99,23 +103,23 @@
 
 
 
-<div class="nothing" *ngIf="totalResultados <= 0 && total.palabra " >
+<div class="nothing" *ngIf="totalResultados <= 0 && total.palabra ">
 
-    <p >No se han encontrado resultados para: {{total.palabra}} </p>
-    <p >Realice una nueva busqueda.</p>
+    <p>No se han encontrado resultados para: {{total.palabra}} </p>
+    <p>Realice una nueva búsqueda.</p>
     <br>
-   
-</div>  
+
+</div>
 
 
 
-<div class="nothing" *ngIf="!total.palabra" >
+<div class="nothing" *ngIf="!total.palabra">
 
-    
-    <p ></p>
+
+    <p></p>
     <br>
-   
-</div>  
+
+</div>
 
 
 

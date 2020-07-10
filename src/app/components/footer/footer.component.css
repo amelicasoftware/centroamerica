@@ -1,14 +1,51 @@
 .item4 {
+    font-family: Barlow-regular;
     grid-area: footer;
     width: 100%;
-    background-color: #090a35;
     color: white;
+    background-image: url(../../../assets/img/maiz-footer.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .item4>div {
     font-family: Barlow-regular;
-    font-size: 10px;
+    font-size: 10pt;
     padding: 2px;
     text-align: start;
-    padding-left: 10%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+#rectangulo-footer {
+    
+  justify-content: center;
+  align-items: center;
+}
+
+#instituciones-rect {
+    width: 100%; 
+    display: inline-block;
+ 
+    vertical-align: middle;
+}
+
+#instituciones-rect>div {
+    width: 100%;
+    margin: 30px;
+    text-align: center;
+}
+
+#instituciones-footer> div> img {
+    vertical-align: middle;
+}
+
+#resumen-footerec {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
 }

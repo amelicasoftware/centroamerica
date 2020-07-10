@@ -72,7 +72,7 @@
 #mynetwork {
   width: 100%;
   height: 82vh;
-  background-color: #090a35;
+  background-color: white;
   position: relative;
   float: left;
 }
@@ -176,9 +176,9 @@ div.outerBorder {
   font-family: "Barlow-Regular";
 }
 #titulo-red {
-  background: #090a35;
+  background: white;
   font-size: 16pt;
-  color: white;
+  color: #090a35;
   padding: 1em 7em;
 }
 
@@ -263,7 +263,6 @@ div.outerBorder {
 }
 #footer {
   width: 100%;
-  height: 5auto;
   background-image: url(../../../assets/img/maiz-footer.png);
   background-color: #f2f2f2;
   background-position: center;
@@ -277,28 +276,6 @@ div.outerBorder {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-#instituciones-footer {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: stretch;
-  margin: auto;
-  flex-wrap: wrap;
-}
-#instituciones-footer div {
-  width: 25%;
-  margin: 30px;
-  text-align: center;
-}
-#instituciones-footer div img {
-  /* height: 50px; */
-}
-#resumen-footer {
-  width: 50%;
-  text-align: center;
-  margin: 0 auto;
 }
 /*barra iconos*/
 
@@ -374,7 +351,11 @@ div.outerBorder {
 }
 
 #contenedor-numeralias div {
-  width: 15%;
+  width: 100%;
+}
+
+#contenedor-numeralias div p span{
+  font-weight: bold;
 }
 
 .linea-num {
@@ -520,7 +501,7 @@ main {
 color: white;
 border-radius: 5px;
 height: 50px;
-line-height: ;
+
 display: flex;
 justify-content: center;
 align-items: center;
@@ -597,7 +578,7 @@ align-items: center;
     width: 70%;
   }
   #contenedor-numeralias div {
-    width: 35%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -702,7 +683,7 @@ iframe{
     margin-top: 30px;
   }
   #contenedor-numeralias div {
-    width: 30%;
+    width: 100%;
   }
   #contenedor-ultimos-documentos {
     width: 100%;

@@ -44,7 +44,7 @@ export class BusquedarevComponent implements OnInit {
       console.log(revistasDesdeApi);
       this.paginadorService.actualizarTotal(revistasDesdeApi.revistas.total, 'revistas');
       //this.paginadorService.actualizarTotal(revistasDesdeApi.revistas.total, 'revistas');
-      this.paginadorService.actualizarPosicion(1);    
+      this.paginadorService.actualizarPosicion(1);
       this.filtrosRevistasService.actualizarRevistas(revistasDesdeApi.revistas.revistas);
       this.filtrosRevistasService.actualizarFiltros(revistasDesdeApi.filtros);
       this.total.total = revistasDesdeApi.revistas.total;
@@ -77,9 +77,9 @@ export class BusquedarevComponent implements OnInit {
 
   buscar(palabra: string) {
     if(this.palabra === 'allRev'){
-      this.filtrosRevistasService.allRevistas = true;
-    }else{
       this.filtrosRevistasService.allRevistas = false;
+    }else{
+      this.filtrosRevistasService.allRevistas = true;
     }
     this.loading = false
     this.total.palabra = palabra;

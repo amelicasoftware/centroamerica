@@ -1,9 +1,7 @@
 @font-face {
     font-family: Barlow-Bold;
     src: url('../../../../assets/fonts/Barlow-Bold.ttf');
-    /* src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
-           url('fonts/OpenSans-Regular.woff') format('woff'),
-           url('fonts/OpenSans-Regular.ttf') format('truetype');*/
+  
 }
 
 @font-face {

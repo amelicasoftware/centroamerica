@@ -15,8 +15,12 @@
                 <tr>
                     <th scope="col">ISSN</th>
                     <th scope="col">e-ISSN</th>
-                    <th scope="col">Revista<img (click)="reversa('nombreRevista',true)" [src]="imagenNR" align="right" /></th>
-                    <th scope="col">Institución Editora<img (click)="reversa('nombreInstitucion',true)" [src]="imagenMI" align="right" /></th>
+                    <th scope="col">Revista<img class="img" (click)="reversa('nombreRevista',true)" [src]="imagenNR" align="right" />
+                        <span class="tooltiptext revista">Ordenar resultados por revista</span>
+                    </th>
+                    <th scope="col">Institución Editora<img class="img" (click)="reversa('nombreInstitucion',true)" [src]="imagenMI" align="right" />
+                        <span class="tooltiptext numero">Ordenar resultados por Institución</span>
+                    </th>
                     <th scope="col">País</th>
                 </tr>
             </thead>

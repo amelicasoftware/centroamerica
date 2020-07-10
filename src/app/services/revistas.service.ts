@@ -141,7 +141,7 @@ export class RevistasService {
 
   getRevistasXOrdenacion(campo:string, cvePais:number): Observable<Revistas[]>{
     console.log(`${this.url}revistas/pais?c=${cvePais}&page=${this.paginadorService.posicion}&r=${this.reversa}&palOrd=${campo}&${this.filtrosService.cadenafiltros}`);
-    return this.http.get<Revistas[]>(`${this.url}revistas/pais?c=${cvePais}&page=${this.paginadorService.posicion}&r=${this.reversa}&palOrd=${campo}&${this.filtrosService.cadenafiltros}`);
+    return this.http.get<Revistas[]>(`${this.url}revistas/pais?c=${cvePais}&page=${this.paginadorService.posicion}&r=${this.reversa}&palOrd=${campo}&${this.filtrosService.cadenafiltros}&allRev=${this.filtrosRevistasService.allRevistas}`);
   }
 
   getPaises(){

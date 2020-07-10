@@ -37,6 +37,9 @@ export class RevistasTableComponent implements OnInit {
   ngOnInit(): void {
     this.loading = false
     this.palabra = this._route.snapshot.paramMap.get('palabra');
+    if(this.palabra === 'allRev'){
+      this.filtrosRevistasService.allRevistas = true;
+    }
     this.revistasService.setpalabra(this.palabra)
     console.log('$#$$$$$$$$$$$$$$$$$$$$$$$$$',this.palabra);
     this.filtrosRevistasService.actualizarPalabra(this.palabra)
@@ -80,6 +83,11 @@ export class RevistasTableComponent implements OnInit {
 
 
   buscar(palabra: string) {
+    if(this.palabra === 'allRev'){
+      this.filtrosRevistasService.allRevistas = false;
+    }else{
+      this.filtrosRevistasService.allRevistas = true;
+    }
     this.loading = false
     console.log(palabra);
     this.total.palabra = palabra;
