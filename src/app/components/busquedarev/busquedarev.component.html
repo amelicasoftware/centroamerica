@@ -3,23 +3,39 @@
 
 
 
-<!--  termina
-<div style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 40px; ;"> Búsqueda General
-    <input #palabra (keyup.enter)="buscar(palabra.value)" style="width: 30%; background-image: url(assets/img/buscador.png);  " type="text" placeholder="Buscar">
-    <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
-</div>
+
+
  
-<div *ngIf="total.palabra" class="grid-containerh2">
+
+<div *ngIf="total.palabra" class="">
     <div class="item11">
-        <div class="filtros"><img src="assets/img/filtro.png" style="margin: 10px;">Filtros de Búsqueda</div>
-        <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
-        <div class="cursor alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
-        <div class="alimodo">Modo de visualizar resultados </div>
-        <div class="cursor" [routerLink]="['/revistas-table',total.palabra]" style="cursor:pointer"><img src="assets/img/lista.png" style="margin: 10px;">Tabla </div>
-        <div class="seleccionado"><img src="assets/img/tarjetas-act.png" style="margin: 10px;">Lista </div>
+        <div class="filtros"><img src="assets/img/filtro.png" >Filtros de Búsqueda</div>
+           <div  *ngIf=" pagAct != pagFinal " style="width: 75%;">
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>     
+ 
+        <div  *ngIf="pagAct == pagFinal"  style="width: 75%;">
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div>  
+        
     </div>
 </div>
--->
+<div *ngIf="total.palabra" class="">
+    <div class="item11">
+        <div class="filtros"><img src="assets/img/filtro.png" >Filtros de Búsqueda</div>
+       
+      
+        <div class="cursor" [routerLink]="['/revistas-table',total.palabra]" style="cursor:pointer"><img src="assets/img/lista.png" style="margin: 10px;">Tabla </div>
+        <div class="seleccionado"><img src="assets/img/tarjetas-act.png" style="margin: 10px;">Lista </div>
+
+        <app-paginador style="    padding-left: 41%;"></app-paginador>
+    </div>
+</div>
+<!--  termina-->
 
 <div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
 
@@ -29,7 +45,7 @@
 </div>
 
 
-
+<!-- 
 <div *ngIf="total.palabra" class="grid-containerh2">
     <div class="item11">
     
@@ -37,18 +53,31 @@
         <div class="seleccionado"><img src="assets/img/tarjetas-act.png" >Lista </div>
     </div>
 </div>
-<!--  Filtros menu  -->
+ Filtros menu  -->
+
+
+
+
+
+
 <div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
 
     <div *ngIf="total.total >= 1" class="item2">
+        <div style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 40px; ;"> Búsqueda General
+           
+        </div>
+        <div>
+            <input #palabra (keyup.enter)="buscar(palabra.value)"  type="text" placeholder="Buscar">
+            <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
+        </div>
         <app-filtros-revista></app-filtros-revista>
     </div>
 
 
 
-    <!-- Termina Filtros menu   -->
+    
     <div  class="item3">
-       
+       <!-- Termina Filtros menu  
         <div  *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
             <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
             <br>
@@ -60,7 +89,7 @@
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
         </div>   
-        
+         -->
       
             <app-globitos-revista></app-globitos-revista>
         
