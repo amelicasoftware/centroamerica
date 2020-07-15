@@ -175,44 +175,7 @@ body{
 		height: 100vh;
 		background-color: #f2f2f2;
 	}
-	#footer{
-		width: 100%;
-		height: 50vh;
-		background-image: url(assets/img/maiz-footer.png);
-		background-color: #f2f2f2; 
-		background-position: center; 
-		background-size: cover; 
-		background-attachment: fixed;
-		display: flex;
-	    justify-content: center;
-	    align-items: center;
-	}
-	#contenedor-footer{
-		display: flex;
-	    flex-wrap: wrap;
-	    justify-content: center;
-	}
-	#instituciones-footer{
-		width: 80%;
-		display: flex;
-    	justify-content: center;
-    	align-items: center;
-    	align-content: stretch;
-    	margin: auto;
-	}
-	#instituciones-footer div{
-		width: 20%;
-		margin: 30px;		
-		text-align: center;
-	}
-	#instituciones-footer div img{
-		/* height: 50px; */
-	}
-	#resumen-footer{
-		width: 50%;
-    	text-align: center;
-    	margin: 0 auto;
-	}
+	
 	/*barra iconos*/
 
 	.fab{
@@ -578,44 +541,7 @@ body{
 		height: 150vh;
 		background-color: white;
 	}
-	#footer{
-		width: 100%;
-		height: 50vh;
-		background-image: url(assets/img/maiz-footer.png);
-		background-color: #f2f2f2; 
-		background-position: center; 
-		background-size: cover; 
-		background-attachment: fixed;
-		display: flex;
-	    justify-content: center;
-	    align-items: center;
-	}
-	#contenedor-footer{
-		display: flex;
-	    flex-wrap: wrap;
-	    justify-content: center;
-	}
-	#instituciones-footer{
-		width: 80%;
-		display: flex;
-    	justify-content: center;
-    	align-items: center;
-    	align-content: stretch;
-    	margin: auto;
-	}
-	#instituciones-footer div{
-		width: 20%;
-		margin: 30px;	
-		text-align: center;	
-	}
-	#instituciones-footer div img{
-		/* height: 50px; */
-	}
-	#resumen-footer{
-		width: 50%;
-    	text-align: center;
-    	margin: 0 auto;
-	}
+	
 	/*barra iconos*/
 
 	.fab{
