@@ -32,6 +32,11 @@ am4core.ready(function() {
 	var polygonTemplate = polygonSeries.mapPolygons.template;
 	polygonTemplate.tooltipText = "{name}";
 	polygonTemplate.fill = am4core.color("#1a1a1a");
+	polygonTemplate.events.on("hit", function(ev) {
+		var data = ev.target.dataItem.dataContext;
+		console.log('voy a enviar' + data.id);
+		window.location.href = `${url}/#/busquedarev/${data.id}`;
+	  });
 
 	// Create hover state and set alternative fill color
 	var hs = polygonTemplate.states.create("hover");
@@ -47,7 +52,6 @@ am4core.ready(function() {
 	"value": 100,
 	"fill": am4core.color("#ffc200")
 	}];
-	polygonSeries.data.url = url + "#/busquedaPais/{clave}";
 
 	// Bind "fill" property to "fill" key in data
 	polygonTemplate.propertyFields.fill = "fill";
