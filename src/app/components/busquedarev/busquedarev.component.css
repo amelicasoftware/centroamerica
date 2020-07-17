@@ -48,16 +48,16 @@
 .item2 {
     font-family: Barlow-regular;
     grid-area: menu;
-    border-right: 1px solid #a7a7a7;
-    width: 20vw;
+    border-right: 1px solid #f1f1f1;
+    width: 94%;
 }
 
 .item2>div {
     font-family: Barlow-regular;
     font-size: 10pt;
-    padding: 2px;
+    padding: 6px;
     text-align: start;
-    padding-left: 10%;
+    padding-left: 12%;
 }
 
 .item3 {
@@ -93,18 +93,45 @@
     font-size: 12pt;
 }
 
+.barraroja{
+    width: 90%; 
+    color: white;
+    background-color: black;
+      padding-left: -10px !important; 
+
+}
 .grid-container>div {
+    
     /* text-align: center; */
-    padding: 20px 12px;
+    padding: 20px 0px;
     font-size: 12pt;
 }
+
 
 .filtros {
     background-color: #ffc200;
     font-size: 10pt;
     font-family: Barlow-Bold;
     font-size: 10px;
-    width: 20vw;
+    width: 19%;
+    color: white;
+    text-align: center;
+}
+
+.filtrosblank {
+    background-color: white;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
+    width: 19%;
+    color: black;
+    text-align: center;
+}
+.filtrosNue {
+    background-color: black;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
     color: white;
     text-align: center;
 }
@@ -118,7 +145,7 @@
 
 .item11 {
     grid-area: header;
-    background-color: #f1f1f1;
+    background-color: white;
     color: black;
     display: flex;
    /* justify-content: center; */
@@ -128,7 +155,7 @@
 .item11>div {
     display: flex;
     align-items: center;
-    padding: 13px;
+    padding: 10px;
     font-size: 10pt;
     font-family: 'Barlow-Regular';
    
@@ -137,7 +164,7 @@
 .card {
     width: 260px;
     height: 275px;
-    background-color: #f1f1f1;
+    background-color: white;
     margin: 20px;
     flex: 0 0 auto;
     border-radius: 4px;
@@ -155,9 +182,14 @@
     flex-wrap: wrap;
     margin-left: 5%;
 }
+.shadow {
+    border: 1px;
+    padding: 10px;
+    box-shadow: 0px 1px 2px 1px #bfbfbf;
+}
 
 .contenedor-fichas>div {
-    width: 260px;
+    width: 290px;
     height: 250px;
     font-family: 'Barlow-Regular';
     margin: 10px;
@@ -224,7 +256,7 @@ input[type=text]:focus {
     height: 35px; 
     text-align: right; 
     border-radius: 0px 0px 10px 10px; ; 
-    background-color: #f1f1f1; 
+    background-color: white; 
     position: absolute; bottom: 0; 
     border-color: black;
     border-style: solid;

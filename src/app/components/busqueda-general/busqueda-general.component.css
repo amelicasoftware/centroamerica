@@ -96,11 +96,21 @@
     src: url('../../../assets/fonts/Roboto-Black.ttf');
 }
 
+.filtrosblank {
+    background-color: white;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
+    width: 19%;
+    color: black;
+    text-align: center;
+}
 .item11 {
     grid-area: header;
     background-color: #f1f1f1;
     color: black;
     position: relative;
+    display: flex;
 }
 
 .item11>div {
