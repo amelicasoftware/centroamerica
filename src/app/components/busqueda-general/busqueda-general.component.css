@@ -145,7 +145,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-areas: 'header header header header header header' 'menu menu main main main main' 'footer footer footer footer footer footer';
+    grid-template-areas: 'header header header header header' 'menu main main main main' 'footer footer footer footer footer';
     grid-gap: 0px;
 }
 
