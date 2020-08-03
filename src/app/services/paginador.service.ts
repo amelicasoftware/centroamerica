@@ -28,6 +28,7 @@ export class PaginadorService {
 
 
    cambioloading(loading:boolean){
+     
      this.loading = loading
      this.cambioEstado.emit(this.loading)
    }

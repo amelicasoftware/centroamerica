@@ -1,4 +1,67 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
 
+.flex-container>div {
+    background-color: white;
+    width: 100px;
+    margin: 10px;
+    text-align: left;
+    line-height: 15px;
+    font-size: 10px;
+}
+
+.flex-containerhz {
+    display: flex;
+    background-color: #f1f1f1;
+}
+
+.flex-containerhz>div {
+    background-color: #f1f1f1;
+    margin: 0px;
+    padding: 13px;
+    font-size: 10pt;
+    font-family: 'Barlow-Regular';
+}
+
+.filtro {
+    background-color: #4762b2;
+    font-size: 10px;
+    color: white;
+}
+
+.filtro>div {
+    background-color: #4762b2;
+    font-size: 10px;
+    color: white;
+}
+
+.button2 {
+    background-color: #4762b2;
+    /* Green */
+    border: none;
+    font-family: Barlow-Regular;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+}
+
+.button2:hover {
+    background-color: #4762b2;
+    color: black;
+}
 
 @font-face {
     font-family: Barlow-Bold;
@@ -33,22 +96,57 @@
     src: url('../../../assets/fonts/Roboto-Black.ttf');
 }
 
-.item1 {
-    grid-area: header;
-    background-color: #090a35;
+
+.filtros {
+    background-color: #ffc200;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
+    width: 19%;
     color: white;
+    text-align: center;
 }
 
-.item1>div {
-    font-family: Barlow-regular;
-    font-size: 11pt;
-    /* padding: 20px; */
+.filtrosblank {
+    background-color: white;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
+    width: 19%;
+    color: black;
+    text-align: center;
+}
+.filtrosNue {
+    background-color: black;
+    font-size: 10pt;
+    font-family: Barlow-Bold;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+}
+.item11 {
+    grid-area: header;
+    background-color: #f1f1f1;
+    color: black;
+    position: relative;
+    display: flex;
+}
+
+.item11>div {
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    font-size: 10pt;
+    font-family: 'Barlow-Regular';
+}
+
+.item11 img {
+    margin: 10px;
 }
 
 .item2 {
-    font-family: Barlow-regular;
     grid-area: menu;
-    border-right: 1px solid #a7a7a7;
+    border-right: 1px solid #f1f1f1;
     width: 20vw;
 }
 
@@ -64,80 +162,210 @@
     grid-area: main;
 }
 
-.item4 {
-    grid-area: footer;
-    width: 100%;
-    background-color: #090a35;
-    color: white;
-    background-image: url(/src/assets/img/maiz-footer.png);
-}
-
-.item4>div {
-    font-family: Barlow-regular;
-    font-size: 10px;
-    padding: 2px;
-    text-align: start;
-    padding-left: 10%;
-}
-
 .grid-container {
     display: grid;
-    grid-template-areas: 'header header header header header header' 'menu main main main main main' 'footer footer footer footer footer footer';
-    /* grid-gap: 10px; */
-}
-
-.grid-containerh>div {
-    display: flex;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 12pt;
-}
-
-.grid-container>div {
-    /* text-align: center; */
-    padding: 20px 12px;
-    font-size: 12pt;
-}
-
-.filtros {
-    background-color: #ffc200;
-    font-size: 10pt;
-    font-family: Barlow-Bold;
-    font-size: 10px;
-    width: 20vw;
-    color: white;
-    text-align: center;
+    grid-template-areas: 'header header header header header' 'menu main main main main' 'footer footer footer footer footer';
+    grid-gap: 0px;
 }
 
 .grid-containerh2>div {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    position: relative;
     font-size: 30px;
 }
 
-.item11 {
-    grid-area: header;
-    background-color: #f1f1f1;
-    color: black;
-    display: flex;
-   /* justify-content: center; */
-    
+.grid-container>div {
+    /* text-align: center; */
+    padding: 20px 0px;
+    font-size: 12pt;
 }
 
-.item11>div {
+
+
+input[type=text] {
+    width: 30%;
+    margin-left: 20%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(/src/assets/img/buscador.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 2px 20px 7px 0px;
+    transition: width 0.4s ease-in-out;
+    font-family: Barlow-Regular;
+}
+
+input[type=text]:focus {
+    width: 30%;
+}
+
+.menu {
+    z-index: 999;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-top: -4px;
+}
+
+.menu .share i.fa {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.menu .share:hover.bottom .submenu li:nth-child(1) {
+    opacity: 1;
+    top: 20px;
+    transform: rotate(0deg);
+    border-top: 1px dashed #cccccc;
+    transition-delay: 0.08s;
+}
+
+.menu .share:hover.bottom .submenu li:nth-child(2) {
+    opacity: 1;
+    top: 40px;
+    transform: rotate(0deg);
+    border-top: 1px dashed #cccccc;
+    transition-delay: 0.16s;
+}
+
+.menu .submenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu .submenu li {
+    transition: all ease-in-out 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+.menu .submenu li a {
+    color: #212121;
+}
+
+.menu .submenu li a:hover i.fa {
+    color: #fff;
+}
+
+.menu .submenu li a:hover.facebook i.fa {
+    background-color: #3b5999;
+}
+
+.menu .submenu li a:hover.twitter i.fa {
+    background-color: #55acee;
+}
+
+.menu .submenu li:nth-child(1) {
+    transform: rotateX(45deg);
+}
+
+.menu .submenu li:nth-child(2) {
+    transform: rotateX(90deg);
+}
+
+.menu .submenu li:nth-child(3) {
+    transform: rotateX(135deg);
+}
+
+.menu .submenu li:nth-child(4) {
+    transform: rotateX(180deg);
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.seleccionado {
+    color: #4762b2;
+    cursor: default;
+}
+
+.alimodo {
+    margin-left: 15%;
+    text-align: center;
+    width: 15vw;
+}
+
+.alinear {
+    text-align: center;
+    width: 15vw;
+}
+
+.no-resultados {
+    margin: 50px;
+}
+
+.buscador {
+    align-self: center;
+    font-family: Barlow-Regular;
+    align-items: center;
+}
+
+.buscador img {
+    margin: 40px;
+}
+
+.flex {
+    display: flex;
+}
+
+.texto-formato {
+    text-align: start;
+    font-family: Barlow-Regular;
+    font-size: 10pt;
+}
+
+.texto-resultados {
+    align-self: center;
+    font-family: Barlow-Regular;
     display: flex;
     align-items: center;
-    padding: 13px;
-    font-size: 10pt;
-    font-family: 'Barlow-Regular';
-   
 }
+
+.tamaño-resul-pal {
+    margin-left: 21px;
+    margin-bottom: 15px;
+}
+
+.tamaño-resul-busqueda {
+    margin-left: 46%;
+    margin-bottom: 15px;
+}
+
+.resultados {
+    text-align: center;
+    margin: 16px;
+    padding: 16px;
+    padding-top: 10%;
+    align-self: center;
+    font-family: Barlow-Regular;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+.resultados>p {
+    margin-left: 10px;
+}
+
 
 .card {
     width: 260px;
     height: 275px;
-    background-color: #f1f1f1;
+    background-color: white;
     margin: 20px;
     flex: 0 0 auto;
     border-radius: 4px;
@@ -153,11 +381,16 @@
 .contenedor-fichas {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 5%;
+    margin-left: 0%;
+}
+.shadow {
+    border: 1px;
+    padding: 10px;
+    box-shadow: 0px 1px 2px 1px #bfbfbf;
 }
 
 .contenedor-fichas>div {
-    width: 260px;
+    width: 290px;
     height: 250px;
     font-family: 'Barlow-Regular';
     margin: 10px;
@@ -224,7 +457,7 @@ input[type=text]:focus {
     height: 35px; 
     text-align: right; 
     border-radius: 0px 0px 10px 10px; ; 
-    background-color: #f1f1f1; 
+    background-color: white; 
     position: absolute; bottom: 0; 
     border-color: black;
     border-style: solid;
