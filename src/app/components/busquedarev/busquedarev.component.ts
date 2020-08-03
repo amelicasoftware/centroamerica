@@ -49,7 +49,10 @@ export class BusquedarevComponent implements OnInit {
       this.filtrosRevistasService.actualizarFiltros(revistasDesdeApi.filtros);
       this.total.total = revistasDesdeApi.revistas.total;
     });
-
+    this.paginadorService.cambioEstado.subscribe(estado => {
+      console.log('ESTADO DEL LOADING *********************', estado);
+      this.loading = estado
+    });
     this.total.palabra = this.revistasService.getpalabra();
     this.filtrosRevistasService.cambioRevistas.subscribe(data2 => {
       console.log('resutladosServicio', data2);

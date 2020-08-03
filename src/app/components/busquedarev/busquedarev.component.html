@@ -1,12 +1,6 @@
 <!-- Inicia Header  -->
 <app-header></app-header>
 
-
-
-
-
-
-
 <div *ngIf="total.palabra" class="">
     <div class="item11">
         <div class="filtros"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
@@ -34,12 +28,20 @@
 </div>
 
 
+
 <div *ngIf="total.palabra" class="">
     <div class="item11" >
         <div class="filtros" style="background-color: black"><img src="assets/img/filtro.png">Caracter no definido</div>
         <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
         <div class="cursor alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>     
     </div>
+</div>
+
+<div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
+
+    <img src="assets/img/giphy.gif" alt="">
+    <p>Cargando contenido...</p>
+
 </div>
 
 <div *ngIf="total.palabra" class="">
@@ -54,19 +56,6 @@
         <app-paginador style="    padding-left: 41%;"></app-paginador>
     </div>
 </div>
-
-
-
-
-
-<!--  termina-->
-<div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
-
-    <img src="assets/img/giphy.gif" alt="">
-    <p>Cargando contenido...</p>
-
-</div>
-
 
 <div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
 
@@ -87,23 +76,17 @@
     </div>
 
 
+    <div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
+
+        <img src="assets/img/giphy.gif" alt="">
+        <p>Cargando contenido...</p>
+    
+    </div>
+    
 
 
     <div class="item3">
-        <!-- Termina Filtros menu  
-        <div  *ngIf=" pagAct != pagFinal " style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
-            <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
-        </div>     
- 
-        <div  *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}}  </p>
-            <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
-        </div>   
-         -->
-
+  
         <app-globitos-revista></app-globitos-revista>
 
 

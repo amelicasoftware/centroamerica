@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Revistas } from '../../models/revistas';
-import { Usuario } from '../../models/usuario';
-import { ServiosBusquedaService } from '../../services/servios-busqueda.service';
 import { FiltrosRevistasService } from '../../services/filtros-revistas.service';
 import { Total } from '../../models/total'
 import { RevistasService } from '../../services/revistas.service'
 import { Router } from '@angular/router';
-import { from } from 'rxjs';
-import { number } from '@amcharts/amcharts4/core';
 import { PaginadorService } from 'src/app/services/paginador.service';
 
 @Component({
@@ -46,17 +42,22 @@ export class PaginadorComponent implements OnInit {
   }
 
   public ultimapagina(ultimapagina: number) {
+    this.paginadorService.cambioloading(false)
+    console.log("estado debe ser false",  this.paginadorService.cambioloading(false) )
     this.revistasService.getBusquedaRevistasPaginador(this.revistasService.palabra, this.paginadorService.pFinal).
       subscribe((data: any) => {
         this.filtrosRevistasService.actualizarRevistas(data.revistas.revistas);
         this.paginadorService.actualizarPosicion(this.paginadorService.pFinal);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public primerPagina() {
+    this.paginadorService.cambioloading(false)
     this.revistasService.getBusquedaRevistasPaginador(this.revistasService.palabra, 1).subscribe((data: any) => {
       this.filtrosRevistasService.actualizarRevistas(data.revistas.revistas);
       this.paginadorService.actualizarPosicion(1);
+      this.paginadorService.cambioloading(true)
     });
   }
 
@@ -74,35 +75,38 @@ export class PaginadorComponent implements OnInit {
   }
 
   public incCount() {
+    this.paginadorService.cambioloading(false)
     console.log('siguiente');
     this.paginadorService.actualizarPosicion(this.paginadorService.posicion + 1);
     this.revistasService.getBusquedaRevistasPaginador(this.revistasService.palabra, this.paginadorService.posicion).
       subscribe((data: any) => {
         console.log('paginador', data);
         this.filtrosRevistasService.actualizarRevistas(data.revistas.revistas);
+        this.paginadorService.cambioloading(true)
       });
   }
 
 
 
   public incDCount() {
+    this.paginadorService.cambioloading(false)
     console.log('anterior');
     this.paginadorService.actualizarPosicion(this.paginadorService.posicion - 1);
     this.revistasService.getBusquedaRevistasPaginador(this.revistasService.palabra, this.paginadorService.posicion).
       subscribe((data: any) => {
         console.log('paginador', data);
         this.filtrosRevistasService.actualizarRevistas(data.revistas.revistas);
+        this.paginadorService.cambioloading(true)
       });
   }
 
   public numerosPag(pagina: number, final: number) {
-
-
-
+    this.paginadorService.cambioloading(false)
     this.paginadorService.actualizarPosicion(pagina);
     console.log(this.revistasService.palabra);
     this.revistasService.getBusquedaRevistasPaginador(this.filtrosRevistasService.palabra, pagina).subscribe((data: any) => {
       this.filtrosRevistasService.actualizarRevistas(data.revistas.revistas);
+      this.paginadorService.cambioloading(true)
     });
 
   }
