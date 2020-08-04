@@ -5,7 +5,7 @@
 
 <div *ngIf="total.palabra" class="">
     <div class="item11">
-        <div class="filtros"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
+        <div class="filtros"></div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
             <p *ngIf="total.palabra != 'allRev'"
                 style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
@@ -38,7 +38,7 @@
 
 <div *ngIf="total.palabra" class="">
     <div class="item11" >
-        <div class="filtros" style="background-color: black"><img src="assets/img/filtro.png">Caracter no definido</div>
+        <div class="filtros" style="background-color: white"></div>
         <div class="seleccionado" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
            
         <div class="seleccionado alinear" ><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
@@ -46,8 +46,8 @@
 </div>
 
 <div *ngIf="total.palabra" class="">
-    <div class="item11" style="background-color: #f1f1f1;">
-        <div class="filtrosblank"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda General</div>
+    <div class="item11" style="background-color: #f1f1f1; ">
+        <div class="filtrosblank"style="justify-content: center;"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda General</div>
 
 
         <div class="cursor" [routerLink]="['/vista-art-tab',total.palabra]" style="cursor:pointer"><img
