@@ -25,7 +25,13 @@
     <div id="contenedor-banner">
         <div><img src="assets/img/libro-colecciones.png"></div>
         <div class="w100 m20" id="titulo">AmeliCA Centroamérica</div>
-        <div class="w100 m20">Colección de Revistas Cientifcas de Centroamérica</div>
+        <div class="w100 m20" id="subttulo">Colección de Revistas Científicas de Centroamérica</div>
+        <div id="contenedor-buscador">
+            <div id="buscador">
+                <input #palabra (keyup.enter)="buscarTexto(palabra.value)" id="input-buscar" type="text" name="input-articulo" value="" placeholder="Buscar" />
+                <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" (click)="buscarTexto(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
+            </div>
+        </div>
         <div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quam omnis exercitationem numquam repellendus pariatur autem quod cum, maiores tempore odit velit id optio dolores eaque, sed quae totam dolor.</div>
         <div id="contenedor-tarjetas">
             <div class="tarjeta-numero">
@@ -56,6 +62,12 @@
     </div>
 </section>
 <section id="mapa">
+    <div class="titulo-area color-white">
+        Colección de Revistas
+    </div>
+    <div class="subtitulo color-white">
+        Revistas por País
+    </div>
     <div id="contenedor-mapa">
         <app-mapa></app-mapa>
     </div>
@@ -68,15 +80,16 @@
         Revistas por Área
     </div>
     <div id="colecciones">
+        <!--<div class="imagen-colecciones imagen-ciencias-sociales" *ngFor="let area of areas" *ngIf="area.nombre">-->
         <div class="imagen-colecciones imagen-ciencias-sociales">
-            <a href="">
-                <p class="text-img-center">CIENCIAS SOCIALES +</p>
+            <a [routerLink]="['/busquedaGeneral', areas[0].clave]">
+                <p class="text-img-center">{{ areas[0].nombre }} +</p>
             </a>
 
         </div>
         <div class="imagen-colecciones imagen-humanidades">
-            <a href="">
-                <p class="text-img-center">ARTES Y HUMANIDADES +</p>
+            <a [routerLink]="['/busquedaGeneral', areas[1].clave]">
+                <p class="text-img-center">{{ areas[1].nombre }} +</p>
             </a>
         </div>
     </div>

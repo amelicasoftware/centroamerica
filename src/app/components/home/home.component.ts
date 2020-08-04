@@ -13,6 +13,7 @@ import { GlobalConstants } from '../../common/global-constants';
 import "core-js";
 import { get } from 'scriptjs';
 import { Router } from '@angular/router';
+import { Area } from '../../models/Area';
 
 
 
@@ -32,6 +33,7 @@ export class HomeComponent {
   url: string = GlobalConstants.serviciosURL;
   url2: string = GlobalConstants.url;
   numerosHome: any;
+  areas: Array<Area> = new Array<Area>();
 
   constructor(private zone: NgZone, private service: ServicioHomeService, private router: Router) {
   }
@@ -51,6 +53,11 @@ export class HomeComponent {
       console.log(this.numerosHome[0].Paises);
       console.log(this.numerosHome[1].Revistas);
       console.log(this.numerosHome[2].Articulos);
+    });
+
+    this.service.getAreas().subscribe((areasAPI: any) => {
+      console.log(areasAPI[0].elementos);
+      this.areas = areasAPI[0].elementos;
     });
   }
 

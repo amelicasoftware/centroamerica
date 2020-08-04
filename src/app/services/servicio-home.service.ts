@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalConstants } from '../common/global-constants';
-
-
+import { Area } from '../models/Area';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioHomeService {
+
+  public areas: Area = new Area();
 
   url: string = GlobalConstants.serviciosURL;
   public urlFront: string = GlobalConstants.url;
@@ -28,5 +30,10 @@ export class ServicioHomeService {
 
   getNumeros(): any{
     return this.http.get(`${this.urlFront}assets/js/json/numeraliasCA.json`);
+  }  
+
+  getAreas(): Observable<Area[]> {
+    return this.http.get<Area[]>(`${this.url + 'centroamerica/articulos/areas'}`);
   }
+ 
 }
