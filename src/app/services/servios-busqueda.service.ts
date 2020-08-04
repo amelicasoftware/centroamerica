@@ -22,12 +22,23 @@ export class ServiosBusquedaService {
   
   public count = 1;
   public fin = 1;
+  public numdisc
   public palabra: string = "ciencia";
   public reversa: boolean = false;
   public palabraOrdenar: string = 'nulo';
 
+
   constructor(private http: HttpClient, private filtrosService: FiltrosService, private paginadorService: PaginadorService) {
   }
+
+/////////BusquedaxDisciplina/////
+
+leerArea(): Observable<Articulo[]> {
+  return this.http.get<Articulo[]>(this.url + 'centroamerica/articulos/area?a=1' +"\""+ this.numdisc +"\""+ '&page=' + this.count);
+}
+
+
+//////
 
   leerjson(): Observable<Articulo[]> {
     return this.http.get<Articulo[]>(this.url + 'articulos/general?p=' +"\""+ this.palabra +"\""+ '&page=' + this.count);
@@ -186,4 +197,7 @@ ordenarReversaPalClav(campo:string, palabra:string): Observable<Articulo[]>{
   getPaises(){
     return this.http.get(`${this.urlFront}assets/js/json/paises.json`);
   }
+
+
+  
 }

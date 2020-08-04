@@ -49,6 +49,7 @@ export class BusquedaGeneralComponent implements OnInit {
       this.paginadorService.actualizarPosicion(1);
       this.totalResultados = this.paginadorService.total;
       this.loading = true
+      
     });
     this.paginadorService.cambioEstado.subscribe(estado => {
       console.log('ESTADO DEL LOADING *********************', estado);
@@ -85,6 +86,7 @@ export class BusquedaGeneralComponent implements OnInit {
     this.articuloService.setpalabra(palabra)
     this.articuloService.getBusquedaArticulos(palabra).subscribe((data: any) => {
       console.log(data);
+      console.log('que estoy consumiendo*********************', this.articuloService.getBusquedaArticulos(palabra) );
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
       this.filtrosService.actualizarFiltros(data.filtros);
       const globos = [];
