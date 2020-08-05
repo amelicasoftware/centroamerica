@@ -1,0 +1,20 @@
+<div class="font-filtros">
+    <div *ngFor="let filtro of filtros; let indexOfelementF=index;">
+        <div class="titulo-filtro"> {{filtro.nombre}} :</div>
+        <div id="{{'filtro' + filtro.nombre}}" class="contenedor-filtro">
+            <div class="{{ indexOfelement>4 ? 'filtroOculto' : 'filtroVisible'}} animated fast" [ngClass]="{'mostrar-mas': filtro.estado}" *ngFor="let elemento of filtro.elementos; let indexOfelement=index;">
+                <input style="width: 20px;" type="checkbox" name="isOk" [checked]="activarFiltros(elemento, filtro.nombre)" class="custom-control-input" id="{{'customCheck' + elemento.clave + filtro.nombre}}" (click)="agregarFiltro(elemento.clave, filtro.nombre, elemento.nombre)">
+                <label class="custom-control-label" for="{{ 'customCheck' + elemento.clave + filtro.nombre}}">{{elemento.nombre}} ({{elemento.total}})</label>
+            </div>
+        </div>
+        <div class="btn-vermas" id="bnt-vermas" (click)="mostrarElementos(filtro)" [ngClass]="{'mostrar-boton': mostrarBoton(filtro)}">
+            <span *ngIf="!filtro.estado">Ver más</span>
+            <span *ngIf="filtro.estado">Ver menos</span>
+        </div>
+
+        <br>
+    </div>
+    <div id="contenedor-btn-filtro">
+        <button id="btn-filtros" (click)="applicarFiltros()">Aplicar Filtros</button>
+    </div>
+</div>

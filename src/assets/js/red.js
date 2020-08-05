@@ -116,7 +116,7 @@
                     // console.log(element.contenido);
                     // console.log(element.tituloArt);
                     var item = document.createElement('a');
-                    item.setAttribute("href", 'https://redalyc.org/articulo.oa?id=' + element.claveArt);
+                    item.setAttribute("href", 'http://portal.amelica.org/articulo.oa?id=' + element.claveArt);
                     item.setAttribute("target", "_blank");
                     item.innerHTML = '<div class="tituloArt"><span class="text-link">' + element.tituloArt + '</span><br><span class="text-revista">' + element.nombreRevista + ', ' + element.anio + ', ' + element.numero + '(' + element.volumen + ')</span></div>';
                     document.getElementById('datosArticulo').appendChild(item);

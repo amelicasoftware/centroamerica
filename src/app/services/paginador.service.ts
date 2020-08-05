@@ -12,6 +12,7 @@ export class PaginadorService {
   reversa: boolean = false;
   campo: string = '';
   loading: boolean;
+  area:string;
   @Output() cambioTotal: EventEmitter<any> = new EventEmitter();
   @Output() cambioFinal: EventEmitter<any> = new EventEmitter();
   @Output() cambioPosicion: EventEmitter<any> = new EventEmitter();

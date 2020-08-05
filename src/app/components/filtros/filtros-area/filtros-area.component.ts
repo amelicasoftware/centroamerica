@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiosBusquedaService } from '../../services/servios-busqueda.service';
+import { ServiosBusquedaService } from '../../../services/servios-busqueda.service';
 //import { BusquedaGeneralComponent } from '../busqueda-general/busqueda-general.component';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { Filtro } from '../../models/Filtro';
-import { ElementoFiltro } from '../../models/ElementoFiltro';
+import { Filtro } from '../../../models/Filtro';
+import { ElementoFiltro } from '../../../models/ElementoFiltro';
 import { element } from 'protractor';
-import { FiltrosService } from '../../services/filtros.service';
-import { PaginadorService } from '../../services/paginador.service';
-import { VistaArtTABComponent } from '../vista-art-tab/vista-art-tab.component';
+import { FiltrosService } from '../../../services/filtros.service';
+import { PaginadorService } from '../../../services/paginador.service';
 
 @Component({
-  selector: 'app-filtros',
-  templateUrl: './filtros.component.html',
-  styleUrls: ['./filtros.component.css']
+  selector: 'app-filtros-area',
+  templateUrl: './filtros-area.component.html',
+  styleUrls: ['./filtros-area.component.css']
 })
-export class FiltrosComponent implements OnInit {
+export class FiltrosAreaComponent implements OnInit {
 
   filtros: [] = [];
   estadoPositivo: boolean = false;
@@ -25,7 +24,7 @@ export class FiltrosComponent implements OnInit {
               private filtrosService: FiltrosService, private paginadorService: PaginadorService) { }
 
   ngOnInit(): void {
-    this.serviosBusquedaService.leerjson().subscribe((data: any) => {
+    this.serviosBusquedaService.getAreas().subscribe((data: any) => {
       this.filtros = data.filtros;
     });
 
@@ -92,7 +91,7 @@ export class FiltrosComponent implements OnInit {
     let cadenaIdioma = this.filtrosService.construirCadena('Idioma');
     let palabra = this.filtrosService.palabra;
     console.log(palabra);
-    this.serviosBusquedaService.getBusquedaArtFiltro(palabra, cadenaAnio, cadenaPais, cadenaDisciplina, 
+    this.serviosBusquedaService.getBusquedaArtFiltroArea(palabra, cadenaAnio, cadenaPais, cadenaDisciplina, 
                                                       cadenaFuente, cadenaIdioma).subscribe((data: any) => {
         console.log('resultados', data);
         this.filtrosService.actualizarFiltros(data.filtros);

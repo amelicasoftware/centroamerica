@@ -49,6 +49,8 @@ import { GlobitosRevistaPaisComponent } from './components/busqueda-revista-pais
 import { TablaArticuloComponent } from './components/busqueda-pais/tabla-articulo/tabla-articulo.component';
 import { TablaRevistaComponent } from './components/busqueda-revista-pais/tabla-revista/tabla-revista.component';
 import { BusquedaDisciplinaComponent } from './components/busqueda-disciplina/busqueda-disciplina.component';
+import { PaginadorAreasComponent } from './components/paginador/paginador-areas/paginador-areas.component';
+import { FiltrosAreaComponent } from './components/filtros/filtros-area/filtros-area.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +97,9 @@ import { BusquedaDisciplinaComponent } from './components/busqueda-disciplina/bu
     GlobitosRevistaPaisComponent,
     TablaArticuloComponent,
     TablaRevistaComponent,
-    BusquedaDisciplinaComponent
+    BusquedaDisciplinaComponent,
+    PaginadorAreasComponent,
+    FiltrosAreaComponent
   ],
   imports: [
     BrowserModule,

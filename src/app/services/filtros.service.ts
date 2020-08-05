@@ -10,6 +10,7 @@ export class FiltrosService {
   resultadoArticulos: Array<any> = [];
   filtrosGlobos: Array<any> = [];
   palabra: string = '';
+  area: string;
   cadenafiltros: string;
 
   cvePais: number;
