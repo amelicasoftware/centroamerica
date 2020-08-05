@@ -1,7 +1,7 @@
 export class Articulo{
-    tituloArt: string; 
+    titulo: string; 
     issn: number;
-    area: string; 
+    nombreArea: string; 
     institucion: string; 
     pais: string; 
     dominio:string;
