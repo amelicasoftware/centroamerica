@@ -16,7 +16,7 @@ export class BusquedaDisciplinaComponent implements OnInit {
   articulos: Array<Articulo> = new Array<Articulo>();
   totales: Array<Total> = new Array<Total>();
   total: Total = new Total();
-  
+  area: string;
   articulosResultado: [] = [];
   palabraBusqueda: string;
   totalResultados: number;
@@ -30,12 +30,12 @@ export class BusquedaDisciplinaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.loading = false    
-    this.palabra = this._route.snapshot.paramMap.get('palabra');   
-    this.articuloService.setpalabra(this.palabra)   
-    this.filtrosService.actualizarPalabra(this.palabra)
-    this.ArticuloInyectado.leerjson().subscribe((articulosDesdeApi: any) => {      
-      console.log(articulosDesdeApi.articulos.total);
+    this.loading = false
+    console.log("este es el parametro desde alias de la home", this._route.snapshot.paramMap)
+    this.ArticuloInyectado.setNumA(this._route.snapshot.paramMap.get('area'));
+    this.filtrosService.actualizarPalabra(this.articuloService.getNumA());
+    this.ArticuloInyectado.getAreas().subscribe((articulosDesdeApi: any) => {
+      console.log("TOTALES TOTALES XD", articulosDesdeApi.articulos.total);
       this.total.total = articulosDesdeApi.articulos.total;
       this.filtrosService.actualizarArticulos(articulosDesdeApi.articulos.articulos);
       this.filtrosService.actualizarFiltros(articulosDesdeApi.filtros);
@@ -43,7 +43,8 @@ export class BusquedaDisciplinaComponent implements OnInit {
       this.paginadorService.actualizarPosicion(1);
       this.totalResultados = this.paginadorService.total;
       this.loading = true
-      
+
+
     });
     this.paginadorService.cambioEstado.subscribe(estado => {
       console.log('ESTADO DEL LOADING *********************', estado);
@@ -66,7 +67,7 @@ export class BusquedaDisciplinaComponent implements OnInit {
       console.log('RESULTADO CAMBIO POS pagFinal', data2);
       this.pagFinal = data2;
     });
-   
+
   }
 
   posicion() {
@@ -84,7 +85,7 @@ export class BusquedaDisciplinaComponent implements OnInit {
     this.articuloService.setpalabra(palabra)
     this.articuloService.getBusquedaArticulos(palabra).subscribe((data: any) => {
       console.log(data);
-      console.log('que estoy consumiendo*********************', this.articuloService.getBusquedaArticulos(palabra) );
+      console.log('que estoy consumiendo*********************', this.articuloService.getBusquedaArticulos(palabra));
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
       this.filtrosService.actualizarFiltros(data.filtros);
       const globos = [];

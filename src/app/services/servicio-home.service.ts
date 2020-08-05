@@ -33,7 +33,7 @@ export class ServicioHomeService {
   }  
 
   getAreas(): Observable<Area[]> {
-    return this.http.get<Area[]>(`${this.url + 'centroamerica/articulos/areas'}`);
+    return this.http.get<Area[]>(`${this.url + 'articulos/areas'}`);
   }
  
 }

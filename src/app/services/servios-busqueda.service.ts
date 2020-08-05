@@ -26,7 +26,7 @@ export class ServiosBusquedaService {
   public palabra: string = "ciencia";
   public reversa: boolean = false;
   public palabraOrdenar: string = 'nulo';
-  public area: number;
+  public area: string;
 
 
   constructor(private http: HttpClient, private filtrosService: FiltrosService, private paginadorService: PaginadorService) {
@@ -94,7 +94,7 @@ getreversa(){
   getNumA(){
     return this.area    
   }
-  setNumA(area: number){
+  setNumA(area: string){
     this.area = area;
   }
 
@@ -204,9 +204,9 @@ ordenarReversaPalClav(campo:string, palabra:string): Observable<Articulo[]>{
 /////////BusquedaxDisciplina-CENTRO AMERICA/////
 
  
-leerjsonDisc(): Observable<Articulo[]> {
+getAreas(): Observable<Articulo[]> {
  // console.log(this.url + 'articulos/palClave?p=' +"\""+ this.palabra +"\""+ '&page=' + this.count)
-  return this.http.get<Articulo[]>(this.url + 'articulos/area?a=' +"\""+ this.area +"\""+ '&page=' + this.count);
+  return this.http.get<Articulo[]>(this.url + 'articulos/area?a=' +"\""+ this.getNumA() +"\""+ '&page=' + this.count);
 
 }
 
@@ -238,15 +238,35 @@ ordenarReversaDisc(campo:string, area:number): Observable<Articulo[]>{
     return this.http.get(`${this.url}articulos/area?a="${palabra}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
   }
 
-  getBusquedaArticulosPaginadorDisc(area: number, pagina: number) {
-    console.log(`${this.url}articulos/area?a="${area}"&page=${pagina}&${this.filtrosService.cadenafiltros}`);
-    return this.http.get(`${this.url}articulos/area?a="${this.filtrosService.area}"&page=${pagina}&${this.filtrosService.cadenafiltros}&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}`);
+  getBusquedaArticulosPaginadorDisc(area: string, pagina: number) {
+    console.log("consultando servicio de paginadoo################################",`${this.url}articulos/area?a="${area}"&page=${pagina}&${this.filtrosService.cadenafiltros}`);
+    return this.http.get(`${this.url}articulos/area?a="${this.filtrosService.palabra}"&page=${pagina}&${this.filtrosService.cadenafiltros}&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}`);
   }
 
   getPaisesDisc(){
     return this.http.get(`${this.urlFront}assets/js/json/paises.json`);
   }
 
+  getBusquedaFiltroArea(area: string, cadenaAnio: string, cadenaPais: string,
+    cadenaDisciplina: string, cadenaFuente: string, cadenaIdioma: string) {
+if (this.getNumA() === undefined) {
+area = '';
+}
+this.filtrosService.cadenafiltros = `f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`
+console.log('servicio', `${this.url}articulos/area?a="${area}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
+return this.http.get(`${this.url}articulos/area?a="${area}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
+}
+
+
+getBusquedaArtFiltroArea(palabra: string, cadenaAnio: string, cadenaPais: string,
+  cadenaDisciplina: string, cadenaFuente: string, cadenaIdioma: string) {
+if (palabra === undefined) {
+palabra = '';
+}
+this.filtrosService.cadenafiltros = `f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`
+console.log('servicio', `${this.url}articulos/area?a="${palabra}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
+return this.http.get(`${this.url}articulos/area?a="${palabra}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
+}
 //////
 
   

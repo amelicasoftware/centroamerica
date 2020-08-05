@@ -8,8 +8,8 @@
         <div class="filtros"></div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
             <p *ngIf="total.palabra != 'allRev'"
-                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
-                para: {{total.palabra}} </p>
+                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;"><!--      Resultados
+                para: {{total.palabra}}  --> </p>
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
@@ -55,7 +55,7 @@
         <div class="seleccionado"><img src="assets/img/tarjetas-act.png" style="margin: 10px;">Lista </div>
 
       
-        <app-paginador-articulos style="    padding-left: 41%;"></app-paginador-articulos>
+        <app-paginador-areas style="padding-left: 41%;"></app-paginador-areas>
     </div>
 </div>
 
@@ -78,7 +78,7 @@
         
            <div class="filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
            <br>
-           <app-filtros></app-filtros>
+           <app-filtros-area></app-filtros-area>
     </div>
 
 

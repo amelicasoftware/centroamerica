@@ -15,31 +15,31 @@
         </thead>
         <tbody>
             <tr *ngFor="let articulo of articulos">
-                <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="titulo-art" href="https://www.redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{ articulo.tituloArt }}</a></td>
-                <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="titulo-art" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank">{{ articulo.tituloArt }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="titulo-art" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{ articulo.tituloArt }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="titulo-art" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank">{{ articulo.tituloArt }}</a></td>
                 <td colspan="2">{{ articulo.autores }}</td>
                 <td colspan="2">{{ articulo.nombreRevista }}</td>
                 <td>{{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }})</td>
-                <td *ngIf="articulo.dominio === 'https://www.redalyc.org' && articulo.origen === 'XML'">
+                <td *ngIf="articulo.dominio === 'http://portal.amelica.org' && articulo.origen === 'XML'">
                     <div class="grid">
                         <div>
-                            <a class="resumen" href="https://redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank"><b>PDF</b></a>
+                            <a class="resumen" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank"><b>PDF</b></a>
                         </div>
                         <div *ngIf="articulo.origen === 'XML'">
-                            <a class="resumen" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank"><b>HTML-R</b></a>
+                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank"><b>HTML-R</b></a>
                         </div>
                         <div *ngIf="articulo.origen === 'XML'">
-                            <a class="resumen" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/{{articulo.claveArt}}.epub" target="_blank"><b>ePUB-R</b></a>
+                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/{{articulo.claveArt}}.epub" target="_blank"><b>ePUB-R</b></a>
                         </div>
                         <div *ngIf="articulo.origen === 'XML'">
-                            <a class="resumen" href="https://redalyc.org/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/movil/index.html" target="_blank"><b>MÓVIL-R</b></a>
+                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/movil/index.html" target="_blank"><b>MÓVIL-R</b></a>
                         </div>
                     </div>
                 </td>
-                <td *ngIf="articulo.dominio === 'https://www.redalyc.org' && !(articulo.origen === 'XML')">
+                <td *ngIf="articulo.dominio === 'http://portal.amelica.org' && !(articulo.origen === 'XML')">
                     <div>
                         <div>
-                            <a class="resumen" href="https://redalyc.org/articulo.oa?id={{articulo.claveArt}}" target="_blank"><b>PDF</b></a>
+                            <a class="resumen" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank"><b>PDF</b></a>
                         </div>
                     </div>
                 </td>
