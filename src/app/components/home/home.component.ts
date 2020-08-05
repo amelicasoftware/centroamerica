@@ -33,6 +33,9 @@ export class HomeComponent {
   url: string = GlobalConstants.serviciosURL;
   url2: string = GlobalConstants.url;
   numerosHome: any;
+  numArticulos: number;
+  numRevistas: number;
+  numPaises: number;
   areas: Array<Area> = new Array<Area>();
 
   constructor(private zone: NgZone, private service: ServicioHomeService, private router: Router) {
@@ -47,12 +50,11 @@ export class HomeComponent {
     get(`${this.url2}assets/js/red.js`, () => {
     });
 
-    this.service.getNumeros().subscribe( numeros => {
+    this.service.getNumeros().subscribe( (numeros: any) => {
       this.numerosHome = numeros;
-      console.log(this.numerosHome);
-      console.log(this.numerosHome[0].Paises);
-      console.log(this.numerosHome[1].Revistas);
-      console.log(this.numerosHome[2].Articulos);
+      this.numArticulos = numeros[2].Articulos;
+      this.numRevistas = numeros[1].Revistas;
+      this.numPaises = numeros[0].Paises;
     });
 
     this.service.getAreas().subscribe((areasAPI: any) => {

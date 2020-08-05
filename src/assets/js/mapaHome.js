@@ -34,8 +34,10 @@ am4core.ready(function() {
 	polygonTemplate.fill = am4core.color("#1a1a1a");
 	polygonTemplate.events.on("hit", function(ev) {
 		var data = ev.target.dataItem.dataContext;
-		console.log('voy a enviar' + data.id);
-		window.location.href = `${url}/#/busquedarev/${data.id}`;
+		console.log('voy a enviar' + data.cvePais);
+		if(data.cvePais != undefined){
+			window.location.href = `${url}/#/busquedaPais/${data.cvePais}`;
+		}		
 	  });
 
 	// Create hover state and set alternative fill color
@@ -47,11 +49,47 @@ am4core.ready(function() {
 
 	// Add some data
 	polygonSeries.data = [{
-	"id": "PA",
-	"name": "Panama",
-	"value": 100,
-	"fill": am4core.color("#ffc200")
-	}];
+		"id": "PA",
+		"cvePais": 79,
+		"name": "Panama",
+		"value": 9,
+		"fill": "#ffc200"
+		},
+		{
+		"id": "CU",
+		"cvePais": 35,
+		"name": "Cuba",
+		"value": 3,
+		"fill": "#ffc200"
+		},
+		{
+		"id": "HN",
+		"cvePais": 57,
+		"name": "Honduras",
+		"value": 2,
+		"fill": "#ffc200"
+		},
+		{
+		"id": "CR",
+		"cvePais": 33,
+		"name": "Costa Rica",
+		"value": 2,
+		"fill": "#ffc200"
+		},
+		{
+		"id": "SV",
+		"cvePais": 39,
+		"name": "El Salvador",
+		"value": 1,
+		"fill": "#ffc200"
+		},
+		{
+		"id": "GT",
+		"cvePais": 52,
+		"name": "Guatemala",
+		"value": 1,
+		"fill": "#ffc200"
+		}];
 
 	// Bind "fill" property to "fill" key in data
 	polygonTemplate.propertyFields.fill = "fill";

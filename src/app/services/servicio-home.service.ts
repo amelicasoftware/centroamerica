@@ -29,8 +29,8 @@ export class ServicioHomeService {
   }
 
   getNumeros(): any{
-    return this.http.get(`${this.urlFront}assets/js/json/numeraliasCA.json`);
-  }  
+    return this.http.get(`${this.urlFront}assets/js/json/numeraliasCentroAmerica.json`);
+  }
 
   getAreas(): Observable<Area[]> {
     return this.http.get<Area[]>(`${this.url + 'centroamerica/articulos/areas'}`);
