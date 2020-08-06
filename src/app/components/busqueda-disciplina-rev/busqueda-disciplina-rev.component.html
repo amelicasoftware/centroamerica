@@ -5,9 +5,8 @@
     <div class="item11">
         <div class="filtros" ></div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
-            <p *ngIf="total.palabra != 'allRev'"
-                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
-                para: {{this.area}} </p>
+            <p *ngIf="total.palabra == 1" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Ciencias Sociales</p>
+            <p *ngIf="total.palabra == 4" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Artes y Humanidades</p>
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
@@ -15,9 +14,8 @@
         </div>
 
         <div *ngIf="pagAct == pagFinal" style="width: 75%;">
-            <p *ngIf="total.palabra != 'allRev'"
-                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
-                para: {{total.palabra}} </p>
+            <p *ngIf="total.palabra == 1" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Ciencias Sociales</p>
+            <p *ngIf="total.palabra == 4" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Artes y Humanidades</p>
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
@@ -50,8 +48,7 @@
         "><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda General</div>
 
 
-        <div class="cursor" [routerLink]="['/revistas-table',total.palabra]" style="cursor:pointer"><img
-                src="assets/img/lista.png" style="margin: 10px;">Tabla </div>
+       <!-- <div class="cursor" [routerLink]="['/revistas-table',total.palabra]" style="cursor:pointer"><img src="assets/img/lista.png" style="margin: 10px;">Tabla </div> -->
         <div class="seleccionado"><img src="assets/img/tarjetas-act.png" style="margin: 10px;">Lista </div>
 
         <app-paginador-disc-rev style="    padding-left: 41%;"></app-paginador-disc-rev>
