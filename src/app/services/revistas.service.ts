@@ -17,8 +17,7 @@ export class RevistasService {
   public total: Total = new Total();
   public url: string = GlobalConstants.serviciosURL;
   public urlFront: string = GlobalConstants.url;
-
-  
+  public area: string;  
   public count = 1;
   public fin = 1;
   public palabra: string ;
@@ -90,6 +89,14 @@ export class RevistasService {
     this.count = pagina;  
   }
 
+  getNumA(){
+    return this.area    
+  }
+  setNumA(area: string){
+    this.area = area;
+  }
+
+
   getBusquedaRevistas(palabra: string) {
     console.log(`${this.url}revistas/general?p="${palabra}"&page=1&${this.filtrosService.cadenafiltros}`);
     return this.http.get(`${this.url}revistas/general?p="${palabra}"&page=1&${this.filtrosService.cadenafiltros}`);
@@ -147,4 +154,84 @@ export class RevistasService {
   getPaises(){
     return this.http.get(`${this.urlFront}assets/js/json/paises.json`);
   }
+
+////////////////////////////////////////////////////////////// AREAS CENTROAMERICA
+
+
+
+
+getAreas(): Observable<Revistas[]> {
+  // console.log(this.url + 'articulos/palClave?p=' +"\""+ this.palabra +"\""+ '&page=' + this.count)
+   return this.http.get<Revistas[]>(this.url + 'revistas/area?a=' +"\""+ this.getNumA() +"\""+ '&page=' + this.count);
+ 
+ }
+ 
+ ordenarReversaDisc(campo:string, area:number): Observable<Revistas[]>{
+   return this.http.get<Revistas[]>(this.url + 'revistas/area?a=' +"\""+ area +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
+ }
+ 
+ 
+   getBusquedaArticulosDisc(area: number) {
+     //console.log(`${this.url}revistas/general?p="${palabra}"&page=1&${this.filtrosService.cadenafiltros}`);
+     return this.http.get(`${this.url}revistas/area?a="${area}"&page=${this.count}`);
+   }
+ 
+   getPaginaFinalDisc(area: number, ultima:number) {
+     return this.http.get(`${this.url}revistas/area?a="${area}"&page=${ultima}`);
+   }
+   
+   getPaginaPDisc(area: number){
+     return this.http.get(`${this.url}revistas/area?a="${area}"&page=1`);
+   }
+ 
+
+   getBusquedaRevistaFiltroDisc(palabra: string, cadenaDisciplina: string, cadenaInstitucion: string,
+    cadenaPais: string, cadenaFuente: string) {
+if (palabra === undefined) {
+palabra = '';
+}
+if(this.paginadorService.reversa === undefined){
+this.paginadorService.reversa = false;
+}
+this.filtrosRevistasService.cadenaFitros = `f=${cadenaDisciplina},${cadenaInstitucion},${cadenaPais},${cadenaFuente},`;
+console.log('servicio', `${this.url}revistas/general?p="${palabra}"&f=${cadenaDisciplina},${cadenaInstitucion},${cadenaPais},${cadenaFuente},&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}`);
+return this.http.get(`${this.url}revistas/area?a="${palabra}"&f=${cadenaDisciplina},${cadenaInstitucion},${cadenaPais},${cadenaFuente},&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}&allRev=${this.filtrosRevistasService.allRevistas}`);
+}
+
+
+
+ 
+   getBusquedaRevistasPaginadorDisc(area: string, pagina: number) {
+     console.log("consultando servicio de paginadoo################################",`${this.url}revistas/area?a="${area}"&page=${pagina}&${this.filtrosService.cadenafiltros}`);
+     return this.http.get(`${this.url}revistas/area?a="${this.filtrosService.palabra}"&page=${pagina}&${this.filtrosService.cadenafiltros}&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}`);
+   }
+ 
+   getPaisesDisc(){
+     return this.http.get(`${this.urlFront}assets/js/json/paises.json`);
+   }
+ 
+   getBusquedaFiltroArea(area: string, cadenaAnio: string, cadenaPais: string,
+     cadenaDisciplina: string, cadenaFuente: string, cadenaIdioma: string) {
+ if (this.getNumA() === undefined) {
+ area = '';
+ }
+ this.filtrosService.cadenafiltros = `f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`
+ console.log('servicio', `${this.url}revistas/area?a="${area}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
+ return this.http.get(`${this.url}revistas/area?a="${area}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
+ }
+ 
+ 
+ getBusquedaArtFiltroArea(palabra: string, cadenaAnio: string, cadenaPais: string,
+   cadenaDisciplina: string, cadenaFuente: string, cadenaIdioma: string) {
+ if (palabra === undefined) {
+ palabra = '';
+ }
+ this.filtrosService.cadenafiltros = `f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`
+ console.log('servicio', `${this.url}revistas/area?a="${palabra}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
+ return this.http.get(`${this.url}revistas/area?a="${palabra}"&f=${cadenaAnio},${cadenaDisciplina},${cadenaPais},${cadenaIdioma},${cadenaFuente},`);
+ }
+
+
+
+
 }
