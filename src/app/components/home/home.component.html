@@ -83,13 +83,13 @@
         <!--<div class="imagen-colecciones imagen-ciencias-sociales" *ngFor="let area of areas" *ngIf="area.nombre">-->
         <div class="imagen-colecciones imagen-ciencias-sociales">
             <a #area [routerLink]="['/busqueda-disciplina', areas[0].clave]">
-                <p class="text-img-center">{{ areas[0].nombre }} +</p>
+                <p class="text-img-center">{{ areas[1].nombre }} +</p>
             </a>
 
         </div>
         <div class="imagen-colecciones imagen-humanidades">
             <a [routerLink]="['/busqueda-disciplina', areas[1].clave]">
-                <p class="text-img-center">{{ areas[1].nombre }} +</p>
+                <p class="text-img-center">{{ areas[2].nombre }} +</p>
             </a>
         </div>
     </div>
