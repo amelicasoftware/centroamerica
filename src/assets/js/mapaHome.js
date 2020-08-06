@@ -1,6 +1,6 @@
 am4core.ready(function() {
 
-	let url = "http://localhost:4200/";
+	let url = "http://amelica.org/centroamerica/";
 	console.log('voy hacer la graficas44444');
 	am4core.useTheme(am4themes_animated);
 
