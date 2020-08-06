@@ -11,7 +11,7 @@ import { BusquedaPalclavVtabComponent } from './components/busqueda-palclav-vtab
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { BusquedaRevistaPaisComponent } from './components/busqueda-revista-pais/busqueda-revista-pais.component';
 import { BusquedaDisciplinaComponent } from './components/busqueda-disciplina/busqueda-disciplina.component';
-
+import { BusquedaDisciplinaRevComponent } from './components/busqueda-disciplina-rev/busqueda-disciplina-rev.component';
 
 
 
@@ -36,6 +36,8 @@ export const ROUTES: Routes = [
     { path: 'acerca-de', component: AcercaDeComponent },
     { path: 'busqueda-disciplina', component: BusquedaDisciplinaComponent },
     { path: 'busqueda-disciplina/:area', component: BusquedaDisciplinaComponent },
+    { path: 'busqueda-disciplina-rev', component: BusquedaDisciplinaRevComponent },
+    { path: 'busqueda-disciplina-rev/:area', component: BusquedaDisciplinaRevComponent },
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

@@ -31,12 +31,12 @@ export class BusquedaDisciplinaComponent implements OnInit {
   ngOnInit(): void {
 
     this.loading = false
-    console.log("este es el parametro desde alias de la home", this._route.snapshot.paramMap)
+    this.articuloService.setpalabra(this._route.snapshot.paramMap.get('area'))
+    console.log("PARAMETRO DEBE SER TOTAL.PALABRA", this.total.palabra)
     this.ArticuloInyectado.setNumA(this._route.snapshot.paramMap.get('area'));
     this.filtrosService.actualizarPalabra(this.articuloService.getNumA());
     this.ArticuloInyectado.getAreas().subscribe((articulosDesdeApi: any) => {
-      console.log("TOTALES TOTALES XD", articulosDesdeApi.articulos.total);
-      this.total.total = articulosDesdeApi.articulos.total;
+        this.total.total = articulosDesdeApi.articulos.total;
       this.filtrosService.actualizarArticulos(articulosDesdeApi.articulos.articulos);
       this.filtrosService.actualizarFiltros(articulosDesdeApi.filtros);
       this.paginadorService.actualizarTotal(articulosDesdeApi.articulos.total, 'articulos');

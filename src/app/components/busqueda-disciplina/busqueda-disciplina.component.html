@@ -39,7 +39,7 @@
 <div *ngIf="total.palabra" class="">
     <div class="item11" >
         <div class="filtros" style="background-color: white"></div>
-        <div class="seleccionado" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
+        <div class="seleccionado" #area [routerLink]="['/busqueda-disciplina-rev', total.palabra]" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
            
         <div class="seleccionado alinear" ><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
     </div>
