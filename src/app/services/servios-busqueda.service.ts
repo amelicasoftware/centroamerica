@@ -195,7 +195,7 @@ ordenarReversaPalClav(campo:string, palabra:string): Observable<Articulo[]>{
   }
 
   getPaises(){
-    return this.http.get(`${this.urlFront}assets/js/json/paises.json`);
+    return this.http.get(`${this.urlFront}assets/js/json/paisesCentroAmerica.json`);
   }
 
 
