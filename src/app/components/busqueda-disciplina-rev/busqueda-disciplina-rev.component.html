@@ -31,7 +31,7 @@
     <div class="item11" >
         <div class="filtros" style="background-color: white"></div>
         <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
-        <div class="cursor alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>     
+        <div class="cursor alinear" [routerLink]="['/busqueda-disciplina',total.palabra]"><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>     
     </div>
 </div>
 
@@ -45,7 +45,7 @@
 <div *ngIf="total.palabra" class="">
     <div class="item11" style="background-color: #f1f1f1;">
         <div class="filtrosblank" style="justify-content: center;
-        "><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda General</div>
+        "><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda por Area</div>
 
 
        <!-- <div class="cursor" [routerLink]="['/revistas-table',total.palabra]" style="cursor:pointer"><img src="assets/img/lista.png" style="margin: 10px;">Tabla </div> -->
@@ -59,14 +59,13 @@
 
     <div *ngIf="total.total >= 1" class="item2">
       
-
+<!--
         <div>
             <input #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Buscar">
             <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png"
                 (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
-        </div>
-        <br>
-    
+        </div> -->
+        
         
            <div class="filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
            <br>
