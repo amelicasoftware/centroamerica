@@ -1,9 +1,9 @@
 <div class="flex-containercont">
 
     <div class="articulo" *ngFor="let articulo of articulos">
-        <div *ngIf="articulo.origen === 'PDF'" class="titulo"><a class="titulo" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{  articulo.tituloArt | tituloArticulo }}</a></div>
-        <div *ngIf="articulo.origen === 'XML'" class="titulo"><a class="titulo" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/index.html" target="_blank">{{  articulo.tituloArt | tituloArticulo }}</a></div>
-        <p>{{ articulo.autores | autoresArticulo}}</p>
+        <div *ngIf="articulo.origen === 'PDF'" class="titulo"><a class="titulo" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{  articulo.tituloArt }}</a></div>
+        <div *ngIf="articulo.origen === 'XML'" class="titulo"><a class="titulo" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/index.html" target="_blank">{{  articulo.tituloArt }}</a></div>
+        <p>{{ articulo.autores}}</p>
         <p>{{ articulo.nombreRevista }}, {{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }}) </p>
         <p>Fuente: {{ articulo.fuente}} </p>
         <p [innerHTML]='articulo.contenido'>{{ articulo.contenido }}</p>
