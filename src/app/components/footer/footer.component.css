@@ -3,7 +3,8 @@
     grid-area: footer;
     width: 100%;
     color: white;
-    background-image: url(../../../assets/img/maiz-footer.png);
+    /* background-image: url(../../../assets/img/maiz-footer.png); */
+    background-color: #cacaca;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -28,15 +29,16 @@
 }
 
 #instituciones-rect {
-    width: 100%; 
-    display: inline-block;
- 
-    vertical-align: middle;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px auto;
 }
 
 #instituciones-rect>div {
-    width: 100%;
-    margin: 30px;
+    width: 26%;
+    /* margin: 30px; */
     text-align: center;
 }
 
@@ -48,4 +50,7 @@
     width: 50%;
     text-align: center;
     margin: 0 auto;
+}
+.linea-footer{
+    background-image: url('../../../assets/img/linea.png');    
 }
