@@ -5,8 +5,8 @@
     <div class="item11">
         <div class="filtros" ></div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
-            <p *ngIf="total.palabra == 1" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Ciencias Sociales</p>
-            <p *ngIf="total.palabra == 4" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Artes y Humanidades</p>
+            <!-- <p *ngIf="total.palabra == 1" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Ciencias Sociales</p>
+            <p *ngIf="total.palabra == 4" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Artes y Humanidades</p> -->
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
@@ -14,8 +14,8 @@
         </div>
 
         <div *ngIf="pagAct == pagFinal" style="width: 75%;">
-            <p *ngIf="total.palabra == 1" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Ciencias Sociales</p>
-            <p *ngIf="total.palabra == 4" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Artes y Humanidades</p>
+            <!-- <p *ngIf="total.palabra == 1" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Ciencias Sociales</p>
+            <p *ngIf="total.palabra == 4" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Artes y Humanidades</p> -->
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a

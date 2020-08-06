@@ -60,7 +60,7 @@ export class BusquedaPaisComponent implements OnInit {
       this.filtrosService.actualizarFiltros(articulosXPais.filtros);
       this.paginadorService.actualizarTotal(articulosXPais.articulos.total, 'articulos');
       this.paginadorService.actualizarPosicion(1);
-      this.nombrePais = articulosXPais.articulos.articulos[0].pais;
+      this.nombrePais = articulosXPais.articulos.articulos[0].nombrePais;
       this.filtrosService.actualizarPais(this.cvePais);
     });
     this.paginadorService.cambioEstado.subscribe(estado => {
@@ -116,7 +116,7 @@ export class BusquedaPaisComponent implements OnInit {
       this.filtrosService.actualizarFiltros(articulosXPais.filtros);
       this.paginadorService.actualizarTotal(articulosXPais.articulos.total, 'articulos');
       this.paginadorService.actualizarPosicion(1);
-      this.nombrePais = articulosXPais.articulos.articulos[0].pais;
+      this.nombrePais = articulosXPais.articulos.articulos[0].nombrePais;
       this.filtrosService.actualizarPais(this.cvePais);
       const globos = [];
       this.filtrosService.actualizarGlobos(globos);
