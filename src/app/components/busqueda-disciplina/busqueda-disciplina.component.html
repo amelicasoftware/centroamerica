@@ -96,7 +96,7 @@
 
 
     <div class="item3">
-        <div style="width: 75%;" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+        <div *ngIf="pagAct != pagFinal" style="width: 75%;" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
             <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;"> Resultados de area: {{articulos[0].nombreArea}} </p>
 
 
@@ -105,7 +105,7 @@
         </div>
 
         <div *ngIf="pagAct == pagFinal" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
-            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados para: {{total.palabra}} </p>
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{articulos[0].nombreArea}} </p>
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
         </div>

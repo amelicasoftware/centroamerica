@@ -42,7 +42,9 @@ export class ServiosBusquedaService {
   ordenarReversa(campo:string, palabra:string): Observable<Articulo[]>{
     return this.http.get<Articulo[]>(this.url + 'articulos/general?p=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
   }
-
+  ordenarReversaArea(campo:string, palabra:string): Observable<Articulo[]>{
+    return this.http.get<Articulo[]>(this.url + 'articulos/area?a=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
+  }
   setpalabraOrdenar(palabraOrdenar: string){
     this.palabraOrdenar = palabraOrdenar;
 }

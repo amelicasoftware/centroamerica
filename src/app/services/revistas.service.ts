@@ -40,6 +40,11 @@ export class RevistasService {
     console.log(this.url + 'revistas/general?p=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
     return this.http.get<Revistas[]>(this.url + 'revistas/general?p=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
   }
+
+  ordenarReversaArea(campo:string, palabra:string): Observable<Revistas[]>{
+    console.log(this.url + 'revistas/general?p=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
+    return this.http.get<Revistas[]>(this.url + 'revistas/area?a=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
+  }
   
   setpalabraOrdenar(palabraOrdenar: string){ 
       this.palabraOrdenar = palabraOrdenar;

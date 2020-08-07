@@ -106,7 +106,7 @@ export class BusquedaDisciplinaTabComponent implements OnInit {
       this.articuloService.setreversa(true);
     }
     let palabra = this.filtrosService.palabra;
-    this.articuloService.ordenarReversa(campo, palabra).subscribe((data: any) => {
+    this.articuloService.ordenarReversaArea(campo, palabra).subscribe((data: any) => {
       this.articulos = data.articulos.articulos;
       this.filtrosService.actualizarArticulos(data.articulos.articulos);
       this.filtrosService.actualizarFiltros(data.filtros);
