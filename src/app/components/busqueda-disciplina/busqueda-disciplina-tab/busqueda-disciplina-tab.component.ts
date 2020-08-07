@@ -28,6 +28,9 @@ export class BusquedaDisciplinaTabComponent implements OnInit {
   loading: boolean;
   pagAct: number;
   pagFinal: number;
+  imagenR = 'assets/img/des.png';
+  imagenN = 'assets/img/des.png';
+
   constructor(private ArticuloInyectado: ServiosBusquedaService, private Ruta: Router,
     private articuloService: ServiosBusquedaService, private filtrosService: FiltrosService,
     private paginadorService: PaginadorService, private _route: ActivatedRoute) { this.loading = true; }
@@ -76,6 +79,47 @@ export class BusquedaDisciplinaTabComponent implements OnInit {
 
   posicion() {
     return this.paginadorService.posicion;
+  }
+
+
+  public reversa(campo: string, reversa: boolean){ 
+    console.log(this.articuloService.getreversa());
+    console.log(this.articuloService.getpalabraOrdenar());
+    console.log(this.filtrosService.palabra);
+    this.paginadorService.reversa = reversa;
+    this.paginadorService.campo = campo;
+    this.articuloService.setpalabraOrdenar(campo);
+    if(this.articuloService.getreversa()){
+      // this.imagenNR = "assets/img/des.png";
+      this.articuloService.setreversa(false);
+      this.paginadorService.reversa = false;
+    }else{
+      // this.imagenNR = "assets/img/as.png";
+      this.paginadorService.reversa = true;
+      this.articuloService.setreversa(true);
+    }
+    let palabra = this.filtrosService.palabra;
+    this.articuloService.ordenarReversa(campo, palabra).subscribe((data: any) => {
+      this.articulos = data.articulos.articulos;
+      this.filtrosService.actualizarArticulos(data.articulos.articulos);
+      this.filtrosService.actualizarFiltros(data.filtros);
+      console.log(this.articulos);
+    });
+    this.cambioIcono(campo);
+
+  }
+
+  cambioIcono(campo: string){
+    if(campo === 'nombreRevista' && this.paginadorService.reversa){
+      this.imagenR = "assets/img/as.png";
+    }else if(campo === 'nombreRevista' && this.paginadorService.reversa === false){
+      this.imagenR = "assets/img/des.png";
+    }
+    if(campo === 'anio' && this.paginadorService.reversa){
+      this.imagenN = "assets/img/as.png";
+    }else if(campo === 'anio' && this.paginadorService.reversa === false){
+      this.imagenN = "assets/img/des.png";
+    }
   }
 
 
