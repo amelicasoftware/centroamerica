@@ -31,11 +31,11 @@ export class VistaTablaArticulosComponent implements OnInit {
               private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.articulosService.setpalabra(this._route.snapshot.paramMap.get('area'))
+    this.articulosService.setpalabra(this._route.snapshot.paramMap.get('palabra'))
     console.log("PARAMETRO DEBE SER TOTAL.PALABRA", this.total.palabra)
-    this.articulosService.setNumA(this._route.snapshot.paramMap.get('area'));
+    this.articulosService.setNumA(this._route.snapshot.paramMap.get('palabra'));
     this.filtrosArticulos.actualizarPalabra(this.articulosService.getNumA());
-    this.articulosService.getAreas().subscribe((articulosApi: any) => {
+    this.articulosService.leerjson().subscribe((articulosApi: any) => {
       console.log(articulosApi.articulos.total);
       this.articulos = articulosApi.articulos.articulos;
       // this.total.total = revistasDesdeApi.revistas.total;
