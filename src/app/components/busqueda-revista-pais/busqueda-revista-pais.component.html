@@ -11,7 +11,7 @@
     <p class="sel-pais">Seleccionar el país:</p>
     <!-- <input #palabra (keyup.enter)="buscar(palabra.value, 'prueba')" style="width: 30%; background-image: url(assets/img/buscador.png);  " type="text"> -->
     <select id="lista-paises" #pais (change)="llenarCombo(pais.value)">
-        <option *ngFor="let pais of listaPaises" value="{{pais.clave}}" #pais.name>{{pais.name}}</option>
+        <option *ngFor="let pais of listaPaises" value="{{pais.cvePais}}" #pais.name>{{pais.name}}</option>
     </select>
 </div>
 

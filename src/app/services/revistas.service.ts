@@ -15,7 +15,7 @@ import { FiltrosRevistasService } from './filtros-revistas.service';
 export class RevistasService {
   public revista: Revistas = new Revistas();
   public total: Total = new Total();
-  public url: string = GlobalConstants.serviciosURL;
+  public url: string = GlobalConstants.serviciosURL; 
   public urlFront: string = GlobalConstants.url;
   public area: string;  
   public count = 1;
@@ -152,7 +152,7 @@ export class RevistasService {
   }
 
   getPaises(){
-    return this.http.get(`${this.urlFront}assets/js/json/paises.json`);
+    return this.http.get(`${this.urlFront}assets/js/json/paisesCentroAmerica.json`);
   }
 
 ////////////////////////////////////////////////////////////// AREAS CENTROAMERICA

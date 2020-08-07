@@ -38,7 +38,7 @@ export class BusquedaRevistaPaisComponent implements OnInit {
                   this.cvePais = params['cvePais'];
                   console.log(this.cvePais);
                 });
-               }
+               } 
 
   ngOnInit(): void {
     this.revistasService.getRevistasXPais(this.cvePais).subscribe((revistasXPais: any) => {
