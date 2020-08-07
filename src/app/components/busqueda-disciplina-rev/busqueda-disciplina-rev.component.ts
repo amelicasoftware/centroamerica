@@ -39,6 +39,7 @@ export class BusquedaDisciplinaRevComponent implements OnInit {
     this.filtrosRevistasService.actualizarPalabra(this.revistasService.getNumA());
     this.revistasService.getAreas().subscribe((revistasDesdeApi: any) => {      
       this.total.total = revistasDesdeApi.revistas.total;      
+      
       this.filtrosRevistasService.actualizarRevistas(revistasDesdeApi.revistas.revistas);
       this.filtrosRevistasService.actualizarFiltros(revistasDesdeApi.filtros);
       this.paginadorService.actualizarTotal(revistasDesdeApi.revistas.total, 'revistas');
