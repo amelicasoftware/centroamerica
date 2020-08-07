@@ -4,15 +4,16 @@
     font-size: 10pt;
     margin-bottom: 0px;
 }
-.nothing{
+
+.nothing {
     text-align: center;
     margin: 16px;
-    padding: 16px; 
+    padding: 16px;
     padding-top: 10%;
-    align-self: center; 
+    align-self: center;
     font-family: Barlow-Regular;
-    align-items: center; 
-    width: 100%; 
+    align-items: center;
+    width: 100%;
     height: 50%;
 }
 
@@ -207,10 +208,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-areas: 
-    'header header header header header header' 
-    'menu menu main main main main' 
-    'footer footer footer footer footer footer';
+    grid-template-areas: 'header header header header header header' 'menu menu main main main main' 'footer footer footer footer footer footer';
     grid-gap: 0px;
 }
 
@@ -423,11 +421,15 @@ input[type=text]:focus {
 
 .alinear {
     text-align: center;
-    width: 15vw;
+    width: 7vw;
+}
+
+.item11 img {
+    margin: 10px;
 }
 
 .filtros {
-    background-color: #ffc200;
+    background-color: black;
     font-size: 10pt;
     font-family: Barlow-Bold;
     font-size: 10px;
@@ -445,6 +447,7 @@ input[type=text]:focus {
     color: black;
     text-align: center;
 }
+
 .filtrosNue {
     background-color: black;
     font-size: 10pt;

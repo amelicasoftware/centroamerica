@@ -183,13 +183,9 @@
     padding-left: 10%;
 }
 
-
 .grid-container {
     display: grid;
-    grid-template-areas: 
-    'header header header header header header' 
-    'menu menu main main main main' 
-    'footer footer footer footer footer footer';
+    grid-template-areas: 'header header header header header header' 'menu menu main main main main' 'footer footer footer footer footer footer';
     grid-gap: 0px;
 }
 
@@ -212,6 +208,7 @@
     padding: 20px 0px;
     font-size: 12pt;
 }
+
 .grid-containerh2>div {
     display: flex;
     text-align: center;
@@ -385,6 +382,10 @@ input[type=text]:focus {
     width: 15vw;
 }
 
+.item11 img {
+    margin: 10px;
+}
+
 table {
     table-layout: fixed;
 }
@@ -498,7 +499,7 @@ img {
 }
 
 .filtros {
-    background-color: #ffc200;
+    background-color: black;
     font-size: 10pt;
     font-family: Barlow-Bold;
     font-size: 10px;
@@ -516,6 +517,7 @@ img {
     color: black;
     text-align: center;
 }
+
 .filtrosNue {
     background-color: black;
     font-size: 10pt;

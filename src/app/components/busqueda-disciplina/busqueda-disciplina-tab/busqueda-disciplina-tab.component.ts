@@ -28,6 +28,13 @@ export class BusquedaDisciplinaTabComponent implements OnInit {
   loading: boolean;
   pagAct: number;
   pagFinal: number;
+
+  vista = true;
+  imgLista = 'assets/img/lista.png';
+  // imgListaA = 'assets/img/lista-act.png';
+  imgTabla = 'assets/img/tarjetas.png';
+  // imgTablaA = 'assets/img/tarjetas-act.png';s
+
   constructor(private ArticuloInyectado: ServiosBusquedaService, private Ruta: Router,
     private articuloService: ServiosBusquedaService, private filtrosService: FiltrosService,
     private paginadorService: PaginadorService, private _route: ActivatedRoute) { this.loading = true; }
@@ -87,6 +94,17 @@ export class BusquedaDisciplinaTabComponent implements OnInit {
     this.filtrosService.filtrosElegidos = [];
     const globos = [];
     this.filtrosService.actualizarGlobos(globos);
+  }
+
+  cambioVista(estado: boolean){
+    this.vista = estado;
+    if(estado){
+      this.imgLista = 'assets/img/lista.png';
+      this.imgTabla = 'assets/img/tarjetas-act.png';
+    }else{
+      this.imgTabla = 'assets/img/tarjetas.png';
+      this.imgLista = 'assets/img/lista-act.png';
+    }
   }
 
 }

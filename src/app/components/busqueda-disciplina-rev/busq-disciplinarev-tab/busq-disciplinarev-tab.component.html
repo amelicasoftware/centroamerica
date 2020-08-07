@@ -1,58 +1,64 @@
 <!-- Inicia Header  -->
 <app-header></app-header>
 
-<div *ngIf="total.palabra" class="">
+<!--<div *ngIf="total.palabra" class="">
     <div class="item11">
         <div class="filtros"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
-            <p *ngIf="total.palabra != 'allRev'"
-                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{revistas[0].nombreArea}}</p>
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{revistas[0].nombreArea}}</p>
             <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
-                [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
-                {{posicion() * 10}} de {{totalResultados}} artículos </p>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
         </div>
 
         <div *ngIf="pagAct == pagFinal" style="width: 75%;">
-            <p *ngIf="total.palabra != 'allRev'"
-                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{revistas[0].nombreArea}}</p>
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{revistas[0].nombreArea}}</p>
             <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
-                [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
-                {{totalResultados}} de {{totalResultados}} artículos </p>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
         </div>
 
     </div>
-</div>
+</div>-->
 
-
-<div *ngIf="total.palabra" class="">
+<div class="grid-containerh2">
     <div class="item11">
-        <div class="filtros" style="background-color: black"><img src="assets/img/filtro.png">Caracter no definido</div>
-        <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png"
-                style="margin: 10px;">Revistas</div>
-        <div class="cursor alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img
-                src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
+
+        <div class="filtros"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
+        <!--       <div class="cursor" [routerLink]="['/busquedaRevistaPais/',cvePais]" (click)="limpiarDatos()"><img src="assets/img/revista.png">Revistas</div> -->
+        <div class="seleccionado"><img src="assets/img/revistas-act.png">Revistas</div>
+        <div class="alinear cursor" [routerLink]="['/busqueda-disciplina',total.palabra]" (click)="limpiarDatos()"><img src="assets/img/articulos.png">Artículos de revista</div>
+        <div class="alimodo">Modo de visualizar resultados </div>
+        <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
+        <div class="cursor" [routerLink]="['/busqueda-disciplina-rev',total.palabra]"><img [src]="imgTabla">Lista</div>
+
+
     </div>
 </div>
 
-<div *ngIf="total.palabra" class="">
+<!--<div *ngIf="total.palabra" class="">
+    <div class="item11">
+        <div class="filtros" style="background-color: black"><img src="assets/img/filtro.png">Caracter no definido</div>
+        <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
+        <div class="cursor alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
+    </div>
+</div>-->
+
+<!--<div *ngIf="total.palabra" class="">
     <div class="item11" style="background-color: #f1f1f1;">
-        <div class="filtrosblank"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda
-            General</div>
+        <div class="filtrosblank"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda General
+        </div>
         <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
         <div class="cursor" [routerLink]="['/busqueda-disciplina-rev',total.palabra]"><img src="assets/img/tarjetas.png" style="margin: 10px;">Lista </div>
 
         <app-paginador-disc-rev style="    padding-left: 41%;"></app-paginador-disc-rev>
     </div>
-</div>
+</div>-->
 
 <div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
     <div *ngIf="total.total >= 1" class="item2">
-      
-        <br>
+
+        <!--<br>
         <div class="filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
-        <br>
+        <br>-->
         <app-filtdisc-rev></app-filtdisc-rev>
     </div>
 
@@ -68,6 +74,18 @@
 
     <div class="item3">
 
+        <div *ngIf=" pagAct != pagFinal " style="width: 75%;" style="width: 75%;" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{revistas[0].nombreArea}}</p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <div *ngIf="pagAct == pagFinal" style="width: 75%;" style="width: 75%;" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
+            <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{revistas[0].nombreArea}}</p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div>
+        <app-paginador-disc-rev style="    padding-left: 41%;"></app-paginador-disc-rev>
         <app-globitos-disc-rev></app-globitos-disc-rev>
 
         <div class="flex-containercont">
@@ -76,11 +94,9 @@
                     <tr>
                         <th scope="col">ISSN</th>
                         <th scope="col">e-ISSN</th>
-                        <th scope="col">Revista<img class="img" (click)="reversa('nombreRevista',true)" [src]="imagenNR"
-                                align="right" />
+                        <th scope="col">Revista<img class="img" (click)="reversa('nombreRevista',true)" [src]="imagenNR" align="right" />
                             <span class="tooltiptext revista">Ordenar resultados por revista</span></th>
-                        <th scope="col">Institución Editora<img class="img" (click)="reversa('nombreInstitucion',true)"
-                                [src]="imagenMI" align="right" />
+                        <th scope="col">Institución Editora<img class="img" (click)="reversa('nombreInstitucion',true)" [src]="imagenMI" align="right" />
                             <span class="tooltiptext numero">Ordenar resultados por Institución</span>
                         </th>
                         <th scope="col">País</th>
