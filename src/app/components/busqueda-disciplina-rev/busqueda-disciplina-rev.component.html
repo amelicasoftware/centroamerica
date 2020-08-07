@@ -4,8 +4,9 @@
 <div  class="">
     <div class="item11">
         <div class="filtros" ></div>
+        
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
-                  <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: </p>
+                  <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: {{revistas[0].nombreArea}} </p>
          
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
@@ -14,6 +15,7 @@
         </div>
 
         <div *ngIf="pagAct == pagFinal" style="width: 75%;">
+            <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: {{revistas[0].nombreArea}} </p>
             <!-- <p *ngIf="total.palabra == 1" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Ciencias Sociales</p>
             <p *ngIf="total.palabra == 4" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: Artes y Humanidades</p> -->
            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
@@ -92,7 +94,7 @@
             <div class="shadow" style="padding-top: 10px; border-color: grey;
                      border-style: solid; border: 1px;  box-shadow: 0px 1px 2px 1px #bfbfbf;" *ngFor="let revistas of revistas" class="card">
                 <div style="float: right; margin-right: 2%;">
-                    <a href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}"
+                    <a href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/ameli/jatsRepo/79/79623008/index.html"
                         class="facebook" target="_blank"
                         OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
                         <img target="_blank" style="margin: 10px;" class="img-footer" src="assets/img/facebook.png"
