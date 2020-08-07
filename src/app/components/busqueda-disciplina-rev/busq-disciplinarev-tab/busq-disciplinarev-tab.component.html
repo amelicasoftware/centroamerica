@@ -1,7 +1,5 @@
 <!-- Inicia Header  -->
 <app-header></app-header>
-<!--  termina Header    -->
-
 
 <div *ngIf="total.palabra" class="">
     <div class="item11">
@@ -31,78 +29,91 @@
 
 
 <div *ngIf="total.palabra" class="">
-    <div class="item11" >
+    <div class="item11">
         <div class="filtros" style="background-color: black"><img src="assets/img/filtro.png">Caracter no definido</div>
-        <div class="seleccionado" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
-           
-        <div class="seleccionado alinear" (click)="limpiarDatos()"><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
+        <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png"
+                style="margin: 10px;">Revistas</div>
+        <div class="cursor alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img
+                src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
     </div>
 </div>
 
 <div *ngIf="total.palabra" class="">
     <div class="item11" style="background-color: #f1f1f1;">
-        <div class="filtrosblank"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda General</div>
-
-        
-     
+        <div class="filtrosblank"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda
+            General</div>
         <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
-        <div class="cursor" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/tarjetas.png" style="margin: 10px;">Lista </div>
+        <div class="cursor" [routerLink]="['/busquedarev',total.palabra]"><img src="assets/img/tarjetas.png"
+                style="margin: 10px;">Lista </div>
 
-      
-        <app-paginador-articulos style="    padding-left: 41%;"></app-paginador-articulos>
+        <app-paginador style="    padding-left: 41%;"></app-paginador>
     </div>
 </div>
 
-
-
-<!--  Filtros menu  -->
 <div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
-
-
     <div *ngIf="total.total >= 1" class="item2">
-      
-
         <div>
             <input #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Buscar">
             <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png"
                 (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
         </div>
         <br>
-    
-        
-           <div class="filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
-           <br>
-           <app-filtros></app-filtros>
+        <div class="filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
+        <br>
+        <app-filtros-revista></app-filtros-revista>
     </div>
 
 
-    <!-- <div *ngIf="total.total >= 0" class="item2">
-        
-    </div> -->
+    <div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
+
+        <img src="assets/img/giphy.gif" alt="">
+        <p>Cargando contenido...</p>
+
+    </div>
 
 
 
-    <!-- Termina Filtros menu   -->
     <div class="item3">
 
-    
+        <app-globitos-revista></app-globitos-revista>
 
-        <app-globitos></app-globitos>
+        <div class="flex-containercont">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ISSN</th>
+                        <th scope="col">e-ISSN</th>
+                        <th scope="col">Revista<img class="img" (click)="reversa('nombreRevista',true)" [src]="imagenNR"
+                                align="right" />
+                            <span class="tooltiptext revista">Ordenar resultados por revista</span></th>
+                        <th scope="col">Institución Editora<img class="img" (click)="reversa('nombreInstitucion',true)"
+                                [src]="imagenMI" align="right" />
+                            <span class="tooltiptext numero">Ordenar resultados por Institución</span>
+                        </th>
+                        <th scope="col">País</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let revista of revistas">
+                        <td>{{ revista.issn }}</td>
+                        <td>{{ revista.issnelec }}</td>
+                        <td>{{ revista.nombreRevista }}</td>
+                        <td>{{ revista.nombreInstitucion }}</td>
+                        <td>{{ revista.nombrePais }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <div *ngIf="totalResultados < 1" class="no-resultados">
-            no hay resultados.
+
         </div>
-
-        <app-vista-tabla-articulos></app-vista-tabla-articulos>
-
-
-
-        <app-paginador-articulos></app-paginador-articulos>
-
+        <app-paginador></app-paginador>
     </div>
 
-
 </div>
+
+
+
+
 
 <div class="nothing" *ngIf="totalResultados <= 0 && total.palabra ">
 
@@ -123,10 +134,7 @@
 </div>
 
 
+
+
+
 <app-footer></app-footer>
-
-
-<div class="seleccionado alinear" (click)="limpiarDatos()"><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
-        <div class="alimodo">Modo de visualizar resultados </div>
-        <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
-        <div class="cursor" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/tarjetas.png" style="margin: 10px;">Lista </div>

@@ -6,4 +6,5 @@ export class Revistas{
     issn:string;
     cveRevista: number;
     nombrePais: string;
+    nombreArea: string;
 }
