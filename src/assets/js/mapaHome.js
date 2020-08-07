@@ -56,6 +56,20 @@ am4core.ready(function() {
 		"fill": "#ffc200"
 		},
 		{
+		"id": "CR",
+		"cvePais": 33,
+		"name": "Costa Rica",
+		"value": 4,
+		"fill": "#ffc200"
+		},
+		{
+		"id": "NI",
+		"cvePais": 76,
+		"name": "Nicaragua",
+		"value": 3,
+		"fill": "#ffc200"
+		},
+		{
 		"id": "CU",
 		"cvePais": 35,
 		"name": "Cuba",
@@ -66,13 +80,6 @@ am4core.ready(function() {
 		"id": "HN",
 		"cvePais": 57,
 		"name": "Honduras",
-		"value": 2,
-		"fill": "#ffc200"
-		},
-		{
-		"id": "CR",
-		"cvePais": 33,
-		"name": "Costa Rica",
 		"value": 2,
 		"fill": "#ffc200"
 		},

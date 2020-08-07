@@ -167,7 +167,7 @@
 .w100>a {
     text-decoration: none;
     color: black;
-    opacity: 50%;
+    /* opacity: 50%; */
 }
 
 .m20 {
@@ -176,11 +176,11 @@
 
 .negrita-opacity {
     font-weight: bold;
-    opacity: 60%;
+    /* opacity: 60%; */
 }
 
 .lugar {
-    opacity: 50%;
+    /* opacity: 50%; */
 }
 
 .titulo-area {
@@ -216,6 +216,10 @@
 
 .imagen-humanidades {
     background-image: url('../../../assets/img/humanidades.jpg');
+}
+
+.ciencias-exactas {
+    background-image: url('../../../assets/img/ciencias-exactas.jpg');
 }
 
 .imagen-colecciones a {
