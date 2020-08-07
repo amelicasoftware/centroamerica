@@ -32,6 +32,10 @@
                 <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png" (click)="buscarTexto(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <!--<div class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quam omnis exercitationem numquam repellendus pariatur autem quod cum, maiores tempore odit velit id optio dolores eaque, sed quae totam dolor.</div>-->
         <div id="contenedor-tarjetas">
             <div class="tarjeta-numero">
@@ -80,29 +84,9 @@
         Revistas por Área
     </div>
     <div id="colecciones">
-        <!--<div class="imagen-colecciones imagen-ciencias-sociales" *ngFor="let area of areas" *ngIf="area.nombre">-->
-        <div class="imagen-colecciones imagen-ciencias-sociales">
-            <a #area [routerLink]="['/busqueda-disciplina', areas[0].clave]">
-                <p class="text-img-center">{{ areas[0].nombre }} +</p>
-            </a>
-
-        </div>
-        <div class="imagen-colecciones ciencias-exactas">
-            <a [routerLink]="['/busqueda-disciplina', areas[1].clave]">
-                <p class="text-img-center">{{ areas[1].nombre }} +</p>
-            </a>
-        </div>
-
-        <div class="imagen-colecciones imagen-humanidades">
-            <a #area [routerLink]="['/busqueda-disciplina', areas[2].clave]">
-                <p class="text-img-center">{{ areas[2].nombre }} +</p>
-            </a>
-
-        </div>
-
-        <div class="imagen-colecciones imagen-ciencias-sociales">
-            <a #area [routerLink]="['/busqueda-disciplina', areas[3].clave]">
-                <p class="text-img-center">{{ areas[3].nombre }} +</p>
+        <div *ngFor="let area of areas" class="imagen-colecciones" [ngClass]="{'imagen-ciencias-sociales': area.clave=='1', 'ciencias-exactas': area.clave=='2', 'Multidisciplinarias': area.clave=='3', 'imagen-humanidades': area.clave=='4'}">
+            <a #area [routerLink]="['/busqueda-disciplina', area.clave]">
+                <p class="text-img-center">{{ area.nombre }} +</p>
             </a>
 
         </div>
