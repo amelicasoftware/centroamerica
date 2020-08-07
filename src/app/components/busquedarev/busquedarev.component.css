@@ -303,6 +303,19 @@
     display: flex;
 }
 
+.nombre-busqueda{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 15pt;
+}
+
+.contenedor-input{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
 .texto-formato {
     text-align: start;
     font-family: Barlow-Regular;

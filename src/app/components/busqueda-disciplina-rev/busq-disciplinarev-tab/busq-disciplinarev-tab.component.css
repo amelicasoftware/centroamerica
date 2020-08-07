@@ -143,9 +143,10 @@
 .item2>div {
     font-family: Barlow-regular;
     font-size: 10pt;
-    padding: 5px;  
+    padding: 5px;
     text-align: center;
 }
+
 .item3 {
     grid-area: main;
 }
@@ -191,7 +192,6 @@
     padding: 20px 0px;
     font-size: 12pt;
 }
-
 
 .item11 {
     grid-area: header;
@@ -472,7 +472,7 @@ img {
 }
 
 .filtros {
-    background-color: #ffc200;
+    background-color: black;
     font-size: 10pt;
     font-family: Barlow-Bold;
     font-size: 10px;
@@ -490,6 +490,7 @@ img {
     color: black;
     text-align: center;
 }
+
 .filtrosNue {
     background-color: black;
     font-size: 10pt;
@@ -498,6 +499,7 @@ img {
     color: white;
     text-align: center;
 }
+
 .item11 {
     grid-area: header;
     background-color: #f1f1f1;
@@ -517,8 +519,6 @@ img {
 .item11 img {
     margin: 10px;
 }
-
-
 
 .item3 {
     grid-area: main;

@@ -27,6 +27,12 @@ export class BusquedaDisciplinaRevComponent implements OnInit {
   todoRevitas: boolean;
   revistasResultado: [] = [];
   area: string;
+
+  vista = true;
+  imgLista = 'assets/img/lista.png';
+  // imgListaA = 'assets/img/lista-act.png';
+  imgTabla = 'assets/img/tarjetas-act.png';
+  // imgTablaA = 'assets/img/tarjetas-act.png';
   constructor(private RevistasInyectado: RevistasService, private Ruta: Router,
     private revistasService: RevistasService, private filtrosRevistasService: FiltrosRevistasService,
     private paginadorService: PaginadorService, private _route: ActivatedRoute) { this.loading = true; }
@@ -112,6 +118,25 @@ export class BusquedaDisciplinaRevComponent implements OnInit {
 
   allRevistas(){
     
+  }
+
+  limpiarDatos() {
+    console.log('voy a limpiar');
+    this.filtrosRevistasService.filtrosElegidos = [];
+    const globos = [];
+    this.filtrosRevistasService.actualizarGlobos(globos);
+  }
+
+
+  cambioVista(estado: boolean){
+    this.vista = estado;
+    if(estado){
+      this.imgLista = 'assets/img/lista.png';
+      this.imgTabla = 'assets/img/tarjetas-act.png';
+    }else{
+      this.imgTabla = 'assets/img/tarjetas.png';
+      this.imgLista = 'assets/img/lista-act.png';
+    }
   }
 
 }
