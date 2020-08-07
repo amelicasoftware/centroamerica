@@ -12,8 +12,8 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { BusquedaRevistaPaisComponent } from './components/busqueda-revista-pais/busqueda-revista-pais.component';
 import { BusquedaDisciplinaComponent } from './components/busqueda-disciplina/busqueda-disciplina.component';
 import { BusquedaDisciplinaRevComponent } from './components/busqueda-disciplina-rev/busqueda-disciplina-rev.component';
-
-
+import { BusqDisciplinarevTabComponent} from './components/busqueda-disciplina-rev/busq-disciplinarev-tab/busq-disciplinarev-tab.component';
+import { BusquedaDisciplinaTabComponent } from './components/busqueda-disciplina/busqueda-disciplina-tab/busqueda-disciplina-tab.component';
 
 
 
@@ -38,6 +38,10 @@ export const ROUTES: Routes = [
     { path: 'busqueda-disciplina/:area', component: BusquedaDisciplinaComponent },
     { path: 'busqueda-disciplina-rev', component: BusquedaDisciplinaRevComponent },
     { path: 'busqueda-disciplina-rev/:area', component: BusquedaDisciplinaRevComponent },
+    { path: 'busqueda-disciplina-revtab', component: BusqDisciplinarevTabComponent},
+    { path: 'busqueda-disciplina-revtab/:area', component: BusqDisciplinarevTabComponent},
+    { path: 'busqueda-disciplina-tab/', component: BusquedaDisciplinaTabComponent },
+    { path: 'busqueda-disciplina-tab/:area', component: BusquedaDisciplinaTabComponent },
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

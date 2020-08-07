@@ -6,8 +6,7 @@
         <div class="filtros"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
             <p *ngIf="total.palabra != 'allRev'"
-                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
-                para: {{total.palabra}} </p>
+                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{revistas[0].nombreArea}}</p>
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
@@ -16,8 +15,7 @@
 
         <div *ngIf="pagAct == pagFinal" style="width: 75%;">
             <p *ngIf="total.palabra != 'allRev'"
-                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
-                para: {{total.palabra}} </p>
+                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area: {{revistas[0].nombreArea}}</p>
             <br>
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
@@ -43,24 +41,19 @@
         <div class="filtrosblank"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda
             General</div>
         <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
-        <div class="cursor" [routerLink]="['/busquedarev',total.palabra]"><img src="assets/img/tarjetas.png"
-                style="margin: 10px;">Lista </div>
+        <div class="cursor" [routerLink]="['/busqueda-disciplina-rev',total.palabra]"><img src="assets/img/tarjetas.png" style="margin: 10px;">Lista </div>
 
-        <app-paginador style="    padding-left: 41%;"></app-paginador>
+        <app-paginador-disc-rev style="    padding-left: 41%;"></app-paginador-disc-rev>
     </div>
 </div>
 
 <div *ngIf="total.palabra && total.total >= 1 && loading " class="grid-container">
     <div *ngIf="total.total >= 1" class="item2">
-        <div>
-            <input #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Buscar">
-            <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png"
-                (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
-        </div>
+      
         <br>
         <div class="filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
         <br>
-        <app-filtros-revista></app-filtros-revista>
+        <app-filtdisc-rev></app-filtdisc-rev>
     </div>
 
 
@@ -75,7 +68,7 @@
 
     <div class="item3">
 
-        <app-globitos-revista></app-globitos-revista>
+        <app-globitos-disc-rev></app-globitos-disc-rev>
 
         <div class="flex-containercont">
             <table class="table table-hover">

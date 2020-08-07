@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Articulo } from '../../models/articulo';
 import { Usuario } from '../../models/usuario';
 import { ServiosBusquedaService } from '../../services/servios-busqueda.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FiltrosComponent } from '../filtros/filtros.component';
 import { FiltrosService } from '../../services/filtros.service';
 import { PaginadorService } from '../../services/paginador.service';
@@ -21,37 +21,52 @@ export class VistaTablaArticulosComponent implements OnInit {
   total: Total = new Total();
   imagenR = 'assets/img/des.png';
   imagenN = 'assets/img/des.png';
-
+  loading: boolean;
+  pagAct: number;
+  pagFinal: number;
+  totalResultados: number;
   constructor(private articulosService: ServiosBusquedaService,
               private filtrosArticulos: FiltrosService,
-              private paginadorService: PaginadorService) { }
+              private paginadorService: PaginadorService,
+              private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let palabra = this.articulosService.getpalabra();
-    // this.total.palabra = this.filtrosRevistasService.palabra;
-    console.log('aqui leo la palabra2', this.total.palabra );
-    this.articulosService.getBusquedaArticulos(palabra).subscribe((articulosApi: any) => {
+    this.articulosService.setpalabra(this._route.snapshot.paramMap.get('area'))
+    console.log("PARAMETRO DEBE SER TOTAL.PALABRA", this.total.palabra)
+    this.articulosService.setNumA(this._route.snapshot.paramMap.get('area'));
+    this.filtrosArticulos.actualizarPalabra(this.articulosService.getNumA());
+    this.articulosService.getAreas().subscribe((articulosApi: any) => {
       console.log(articulosApi.articulos.total);
       this.articulos = articulosApi.articulos.articulos;
       // this.total.total = revistasDesdeApi.revistas.total;
       this.filtrosArticulos.actualizarArticulos(articulosApi.articulos.articulos);
       this.filtrosArticulos.actualizarFiltros(articulosApi.filtros);
       this.paginadorService.actualizarTotal(articulosApi.articulos.total, 'articulos');
+      this.totalResultados = this.paginadorService.total;
     });
 
+    this.paginadorService.cambioEstado.subscribe(estado => {
+      console.log('ESTADO DEL LOADING *********************', estado);
+      this.loading = estado
+    });
     this.filtrosArticulos.cambioArticulos.subscribe(data2 => {
       console.log('resutladosServicio', data2);
       this.articulos = data2;
     });
-    
-    this.filtrosArticulos.cambioPalabra.subscribe(palabra => {
-      console.log('cambioPalabra', palabra);
-      this.total.palabra = palabra;
+    this.total.palabra = this.articulosService.getpalabra();
+    this.paginadorService.cambioTotal.subscribe(data => {
+      this.totalResultados = data;
+    });
+    this.total.palabra = this.articulosService.getpalabra()
+    this.paginadorService.cambioPosicion.subscribe(data2 => {
+      console.log('RESULTADO CAMBIO POS PAG ACT', data2);
+      this.pagAct = data2;
+    });
+    this.paginadorService.cambioFinal.subscribe(data2 => {
+      console.log('RESULTADO CAMBIO POS pagFinal', data2);
+      this.pagFinal = data2;
     });
 
-    this.paginadorService.cambioTotal.subscribe( total =>{
-      this.total.total = total;
-    });
   }
 
   public reversa(campo: string, reversa: boolean){ 
