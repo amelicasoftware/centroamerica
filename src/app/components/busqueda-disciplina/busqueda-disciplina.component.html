@@ -1,29 +1,7 @@
 <!-- Inicia Header  -->
 <app-header></app-header>
 
-<div *ngIf="total.palabra" class="">
-    <div  class="item11">
-        <div class="filtros"></div>
-        <div  style="width: 75%;">
-            <p   style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: {{articulos[0].nombreArea}} </p>
-           
 
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;">
-                 {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
-        </div>
-
-        <div *ngIf="pagAct == pagFinal" style="width: 75%;">
-            <p *ngIf="total.palabra != 'allRev'"
-                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
-                para: {{total.palabra}} </p>
-            <br>
-            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
-                [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
-                {{totalResultados}} de {{totalResultados}} artículos </p>
-        </div>
-
-    </div>
-</div>
 
 
 <div *ngIf="total.palabra" class="">
@@ -41,7 +19,7 @@
           <div class="cursor" [routerLink]="['/busqueda-disciplina-tab',total.palabra]" style="cursor:pointer"><img src="assets/img/lista.png" style="margin: 10px;">Tabla </div> 
         <div class="seleccionado"><img src="assets/img/tarjetas-act.png" style="margin: 10px;">Lista </div>   
 
-        <app-paginador-areas style="padding-left: 41%;"></app-paginador-areas>
+       
 
     </div>
 </div>
@@ -52,6 +30,14 @@
     <p>Cargando contenido...</p>
 
 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -78,6 +64,28 @@
 
    
     <div class="item3">
+
+        <div  class="">
+           
+            <div *ngIf="pagAct != pagFinal" style="width: 75%;">
+                <p   style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">    Resultados de area: {{articulos[0].nombreArea}} </p>
+               
+    
+                <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;">
+                     {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+            </div>
+    
+            <div *ngIf="pagAct == pagFinal" style="width: 75%;">
+                <p *ngIf="total.palabra != 'allRev'" style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados de area para: {{total.palabra}} </p>
+             
+                <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
+                    [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
+                    {{totalResultados}} de {{totalResultados}} artículos </p>
+            </div>
+
+            <app-paginador-areas style="padding-left: 41%;"></app-paginador-areas>
+    
+        </div>
   <!-- Termina Filtros menu         <div *ngIf=" pagAct != pagFinal" class="texto-resultados">
             <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</p>
             <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
