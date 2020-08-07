@@ -222,6 +222,11 @@
     background-image: url('../../../assets/img/ciencias-exactas.jpg');
 }
 
+.Multidisciplinarias {
+    background-image: url('../../../assets/img/ciencias-sociales.jpg');
+    /*margin-right: 40px;*/
+}
+
 .imagen-colecciones a {
     text-decoration: none;
 }
