@@ -7,4 +7,4 @@ export class Revistas{
     cveRevista: number;
     nombrePais: string;
     nombreArea: string;
-}
+} 
