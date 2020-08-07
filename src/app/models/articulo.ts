@@ -14,4 +14,5 @@ export class Articulo{
     claveRevista:number;
     contenido:string;
     fuente:string;    
+    
 }
