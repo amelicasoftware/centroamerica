@@ -85,15 +85,7 @@
     <!-- Termina Filtros menu   -->
     <div class="item3">
 
-        <div *ngIf=" pagAct != pagFinal" class="texto-resultados">
-            <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</p>
-            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
-        </div>
-
-        <div *ngIf="pagAct == pagFinal" class="texto-resultados">
-            <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</p>
-            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
-        </div>
+    
 
         <app-globitos></app-globitos>
 

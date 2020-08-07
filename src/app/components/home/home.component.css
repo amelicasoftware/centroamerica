@@ -167,7 +167,7 @@
 .w100>a {
     text-decoration: none;
     color: black;
-    opacity: 50%;
+    /* opacity: 50%; */
 }
 
 .m20 {
@@ -176,11 +176,11 @@
 
 .negrita-opacity {
     font-weight: bold;
-    opacity: 60%;
+    /* opacity: 60%; */
 }
 
 .lugar {
-    opacity: 50%;
+    /* opacity: 50%; */
 }
 
 .titulo-area {
