@@ -68,8 +68,8 @@
     <div class="item11">
         <div class="filtros filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
         <!--       <div class="cursor" [routerLink]="['/busquedarev',total.palabra]" (click)="limpiarDatos()"><img src="assets/img/revista.png">Revistas</div> -->
-        <div class="seleccionado" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
-        <div class="alinear" ><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
+        <div class="seleccionado" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
+        <div class="alinear" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
         <div class="alimodo">Modo de visualizar resultados </div>
         <div class="cursor" [routerLink]="['/vista-art-tab',total.palabra]"><img src="assets/img/lista.png">Tabla</div>
         <div class="seleccionado"><img src="assets/img/tarjetas-act.png">Lista</div>
@@ -125,6 +125,10 @@
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
                 {{totalResultados}} de {{totalResultados}} revistas </p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin: 10px; padding-right: 5%;">
+            <app-paginador-articulos></app-paginador-articulos>
         </div>
   
         <app-globitos-revista></app-globitos-revista>
