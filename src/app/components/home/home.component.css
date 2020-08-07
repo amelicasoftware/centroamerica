@@ -218,6 +218,10 @@
     background-image: url('../../../assets/img/humanidades.jpg');
 }
 
+.ciencias-exactas {
+    background-image: url('../../../assets/img/ciencias-exactas.jpg');
+}
+
 .imagen-colecciones a {
     text-decoration: none;
 }
