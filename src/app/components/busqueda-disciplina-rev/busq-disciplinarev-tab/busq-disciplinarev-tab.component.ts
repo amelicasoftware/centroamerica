@@ -32,18 +32,15 @@ export class BusqDisciplinarevTabComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = false
-    this.palabra = this._route.snapshot.paramMap.get('palabra');
-    if(this.palabra === 'allRev'){
-      this.filtrosRevistasService.allRevistas = true;
-    }
-    this.revistasService.setpalabra(this.palabra)
-    console.log('$#$$$$$$$$$$$$$$$$$$$$$$$$$',this.palabra);
-    this.filtrosRevistasService.actualizarPalabra(this.palabra)
-    this.revistasService.leerjson().subscribe((revistasDesdeApi: any) => {
+   
+    this.revistasService.setpalabra(this._route.snapshot.paramMap.get('area'))
+    this.revistasService.setNumA(this._route.snapshot.paramMap.get('area'));
+    this.filtrosRevistasService.actualizarPalabra(this.revistasService.getNumA());
+    this.revistasService.getAreas().subscribe((revistasDesdeApi: any) => {
       this.loading = true
       console.log(revistasDesdeApi);
       this.paginadorService.actualizarTotal(revistasDesdeApi.revistas.total, 'revistas');
-      this.paginadorService.actualizarTotal(revistasDesdeApi.revistas.total, 'revistas');
+    
       this.paginadorService.actualizarPosicion(1);    
       this.filtrosRevistasService.actualizarRevistas(revistasDesdeApi.revistas.revistas);
       this.filtrosRevistasService.actualizarFiltros(revistasDesdeApi.filtros);
@@ -74,41 +71,12 @@ export class BusqDisciplinarevTabComponent implements OnInit {
     });
   
   }
-
-
-
-
-  buscar(palabra: string) {
-    if(this.palabra === 'allRev'){
-      this.filtrosRevistasService.allRevistas = false;
-    }else{
-      this.filtrosRevistasService.allRevistas = true;
-    }
-    this.loading = false
-    console.log(palabra);
-    this.total.palabra = palabra;
-    this.filtrosRevistasService.palabra = palabra;  
-    this.filtrosRevistasService.actualizarPalabra(palabra)
-    this.revistasService.setpalabra(palabra)
-    this.revistasService.getBusquedaRevistas(palabra).subscribe((data: any) => {
-      console.log(data);
-      this.filtrosRevistasService.actualizarRevistas(data.revistas.revistas);
-      this.filtrosRevistasService.actualizarFiltros(data.filtros);
-      const globos = [];
-      this.filtrosRevistasService.actualizarGlobos(globos);
-      this.filtrosRevistasService.filtrosElegidos = [];
-      this.filtrosRevistasService.cadenaFitros = '';
-      this.paginadorService.actualizarTotal(data.revistas.total, 'revistas');
-      this.paginadorService.actualizarPosicion(1);
-      this.total.total = data.revistas.total;
-      this.loading = true
-    });
-    this.paginadorService.reversa = false;
-    this.filtrosRevistasService.actualizarPalabra(palabra);
-  }
   posicion() {
     return this.paginadorService.posicion;
   }
+
+
+
 
 
 

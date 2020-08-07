@@ -38,7 +38,7 @@
 <div *ngIf="total.palabra" class="">
     <div class="item11" style="background-color: #f1f1f1; ">
         <div class="filtrosblank"style="justify-content: center;"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda por Area</div>
-       <!--   <div class="cursor" [routerLink]="['/vista-art-tab',total.palabra]" style="cursor:pointer"><img src="assets/img/lista.png" style="margin: 10px;">Tabla </div> -->
+          <div class="cursor" [routerLink]="['/busqueda-disciplina-tab',total.palabra]" style="cursor:pointer"><img src="assets/img/lista.png" style="margin: 10px;">Tabla </div> 
         <div class="seleccionado"><img src="assets/img/tarjetas-act.png" style="margin: 10px;">Lista </div>   
 
         <app-paginador-areas style="padding-left: 41%;"></app-paginador-areas>
@@ -99,7 +99,7 @@
             <app-tarjeta-articulos [articulos]="articulos" ></app-tarjeta-articulos>
 
 
-            <app-paginador-articulos></app-paginador-articulos>
+            <app-paginador-areas></app-paginador-areas>
         </div>
 
     </div>

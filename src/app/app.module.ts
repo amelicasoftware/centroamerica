@@ -57,6 +57,7 @@ import { PaginadorDiscRevComponent } from './components/paginador/paginador-disc
 import { FiltdiscRevComponent } from './components/filtros/filtdisc-rev/filtdisc-rev.component';
 import { GlobitosDiscRevComponent } from './components/globitos/globitos-disc-rev/globitos-disc-rev.component';
 import { BusqDisciplinarevTabComponent } from './components/busqueda-disciplina-rev/busq-disciplinarev-tab/busq-disciplinarev-tab.component';
+import { BusquedaDisciplinaTabComponent } from './components/busqueda-disciplina/busqueda-disciplina-tab/busqueda-disciplina-tab.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { BusqDisciplinarevTabComponent } from './components/busqueda-disciplina-
     PaginadorDiscRevComponent,
     FiltdiscRevComponent,
     GlobitosDiscRevComponent,
-    BusqDisciplinarevTabComponent
+    BusqDisciplinarevTabComponent,
+    BusquedaDisciplinaTabComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Articulo } from '../../models/articulo';
-import { ServiosBusquedaService } from '../../services/servios-busqueda.service';
+import { Articulo } from '../../../models/articulo';
+import { ServiosBusquedaService } from '../../../services/servios-busqueda.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FiltrosComponent } from '../filtros/filtros.component';
-import { FiltrosService } from '../../services/filtros.service';
-import { PaginadorService } from '../../services/paginador.service';
-import { Total } from '../../models/total'
+import { FiltrosService } from '../../../services/filtros.service';
+import { PaginadorService } from '../../../services/paginador.service';
+import { Total } from '../../../models/total'
 
 
 
 @Component({
-  selector: 'app-busqueda-disciplina',
-  templateUrl: './busqueda-disciplina.component.html',
-  styleUrls: ['./busqueda-disciplina.component.css']
+  selector: 'app-busqueda-disciplina-tab',
+  templateUrl: './busqueda-disciplina-tab.component.html',
+  styleUrls: ['./busqueda-disciplina-tab.component.css']
 })
-export class BusquedaDisciplinaComponent implements OnInit {
 
+export class BusquedaDisciplinaTabComponent implements OnInit {
+
+ 
   articulos: Array<Articulo> = new Array<Articulo>();
   totales: Array<Total> = new Array<Total>();
   total: Total = new Total();
