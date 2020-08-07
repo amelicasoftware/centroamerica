@@ -23,6 +23,10 @@ export class BusqDisciplinarevTabComponent implements OnInit {
   pagAct: number;
   pagFinal: number;
   loading: boolean;
+
+  imgLista = 'assets/img/lista.png';
+  // imgListaA = 'assets/img/lista-act.png';
+  imgTabla = 'assets/img/tarjetas.png';
  
   revistasResultado: [] = [];
   constructor(private RevistasInyectado: RevistasService, private Ruta: Router,
@@ -117,6 +121,13 @@ export class BusqDisciplinarevTabComponent implements OnInit {
     } else if (campo === 'nombreInstitucion' && this.paginadorService.reversa === false) {
       this.imagenMI = "assets/img/des.png";
     }
+  }
+
+  limpiarDatos() {
+    console.log('voy a limpiar');
+    this.filtrosRevistasService.filtrosElegidos = [];
+    const globos = [];
+    this.filtrosRevistasService.actualizarGlobos(globos);
   }
 
 
