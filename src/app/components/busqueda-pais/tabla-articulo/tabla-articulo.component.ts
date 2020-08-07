@@ -45,7 +45,7 @@ export class TablaArticuloComponent implements OnInit {
       this.articulosService.setreversa(true);
     }
     let palabra = this.filtrosArticulos.palabra;
-    this.articulosService.getArticulosXOrdenacion(campo, this.cvePais).subscribe((data: any) => {
+    this.articulosService.getArticulosXOrdenacion(campo, this.cvePais).subscribe((data: any) => {      
       this.articulos = data.articulos.articulos;
       this.filtrosArticulos.actualizarArticulos(data.articulos.articulos);
       this.filtrosArticulos.actualizarFiltros(data.filtros);

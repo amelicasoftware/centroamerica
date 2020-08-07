@@ -203,15 +203,15 @@
 .imagen-colecciones {
     background-repeat: no-repeat;
     background-position: center;
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    width: 25%;
     float: left;
     text-align: center;
 }
 
 .imagen-ciencias-sociales {
     background-image: url('../../../assets/img/ciencias-sociales.jpg');
-    margin-right: 40px;
+    /*margin-right: 40px;*/
 }
 
 .imagen-humanidades {
@@ -315,8 +315,8 @@
     .imagen-colecciones {
         background-repeat: no-repeat;
         background-position: center;
-        height: 400px;
-        width: 400px;
+        height: 88%;
+        width: 25%;
         float: left;
         text-align: center;
     }
@@ -324,6 +324,7 @@
         padding: 189px 0px;
         color: white;
         font-weight: bold;
+        text-transform: uppercase;
     }
 }
 
@@ -346,21 +347,28 @@
         padding: 10px;
     }
     #colecciones {
-        padding: 20px 0% 0px 17%;
+        padding: 20px 0px 0px 0px;
         height: 450px;
     }
 }
 
 @media only screen and (min-width: 1400px) {
     #colecciones {
-        padding: 20px 8% 0px 22%;
+        padding: 20px 0px 0px 0px;
         height: 450px;
     }
 }
 
 @media only screen and (min-width: 1700px) {
     #colecciones {
-        padding: 20px 16% 0px 26%;
+        padding: 20px 0% 0px 5%;
+        height: 450px;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    #colecciones {
+        padding: 20px 0px 0px 0px;
         height: 450px;
     }
 }

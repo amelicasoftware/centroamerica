@@ -69,8 +69,9 @@ export class BusquedaPaisComponent implements OnInit {
         });
 
     this.filtrosService.cambioArticulos.subscribe(data2 => {
-      console.log('resutladosArticuloPais', data2);
+      console.log('resutladosArticuloPais', data2);      
       this.articulos = data2;
+      console.log(this.articulos[0].cveArticulo);
     });
     this.total.palabra = this.articuloService.getpalabra();
 

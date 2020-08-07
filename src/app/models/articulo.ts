@@ -10,9 +10,9 @@ export class Articulo{
     volumen: number;
     numero:number;
     origen:string;
-    claveArt: number;
+    cveArticulo: number;
     claveRevista:number;
     contenido:string;
-    fuente:string;    
-    
+    fuente:string;
+    autores:string;
 }
