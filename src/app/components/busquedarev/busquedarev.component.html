@@ -68,8 +68,8 @@
     <div class="item11">
         <div class="filtros filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
         <!--       <div class="cursor" [routerLink]="['/busquedarev',total.palabra]" (click)="limpiarDatos()"><img src="assets/img/revista.png">Revistas</div> -->
-        <div class="" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revista.png" style="margin: 10px;">Revistas</div>
-        <div class="seleccionado alinear" ><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
+        <div class="seleccionado" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
+        <div class="alinear" ><img src="assets/img/articulos.png" style="margin: 10px;">Artículos de revista</div>
         <div class="alimodo">Modo de visualizar resultados </div>
         <div class="cursor" [routerLink]="['/vista-art-tab',total.palabra]"><img src="assets/img/lista.png">Tabla</div>
         <div class="seleccionado"><img src="assets/img/tarjetas-act.png">Lista</div>
@@ -105,6 +105,27 @@
 
 
     <div class="item3">
+
+        <div class="filtros" ></div>
+        <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
+            <p *ngIf="total.palabra != 'allRev'"
+                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
+                para: {{total.palabra}} </p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
+                [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
+                {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <div *ngIf="pagAct == pagFinal" style="width: 75%;">
+            <p *ngIf="total.palabra != 'allRev'"
+                style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
+                para: {{total.palabra}} </p>
+            <br>
+            <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
+                [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
+                {{totalResultados}} de {{totalResultados}} revistas </p>
+        </div>
   
         <app-globitos-revista></app-globitos-revista>
 
@@ -128,7 +149,7 @@
                 </div>
 
                 <div class="titulo-card" style=" font-weight: bold; font-size: 12px; padding: 10px;">
-                    <img style="height: 60px;"
+                    <img style="height: 60px; width: 60%;"
                         src="http://portal.amelica.org/ameli/static/media/img/revista/rva{{revistas.cveRevista}}.png">
                 </div>
                 <div class="cuerpo-card" style="height: 70px; font-size: 12px; padding: 0px 10px; ">
