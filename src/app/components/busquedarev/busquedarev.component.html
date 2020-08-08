@@ -106,7 +106,7 @@
 
     <div class="item3">
 
-        <div class="filtros" ></div>
+        <!-- <div class="filtros" ></div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
             <p *ngIf="total.palabra != 'allRev'"
                 style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
@@ -125,6 +125,11 @@
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
                 {{totalResultados}} de {{totalResultados}} revistas </p>
+        </div> -->
+
+        <div class="resultados-paises" style="display: flex;">
+            <p class="texto-formato tamaño-resul-pal"> Artículos publicados en revistas de: {{total.palabra}}</p>
+            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> Resultados de la Búsqueda: {{ total.total}} </p>
         </div>
 
         <div style="display: flex; justify-content: flex-end; margin: 10px; padding-right: 5%;">

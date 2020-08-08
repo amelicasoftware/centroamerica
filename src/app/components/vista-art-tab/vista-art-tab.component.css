@@ -453,3 +453,30 @@ input[type=text]:focus {
     color: white;
     text-align: center;
 }
+
+.buscador {
+    align-self: center;
+    font-family: Barlow-Regular;
+    align-items: center;
+}
+
+.buscador img {
+    margin: 40px;
+}
+
+.flex {
+    display: flex;
+}
+
+.nombre-busqueda{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 15pt;
+}
+
+.contenedor-input{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}

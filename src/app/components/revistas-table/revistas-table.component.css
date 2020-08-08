@@ -254,7 +254,7 @@
     display: none;
 }
 
-input[type=text] {
+/* input[type=text] {
     width: 30%;
     margin-left: 20%;
     box-sizing: border-box;
@@ -272,7 +272,7 @@ input[type=text] {
 
 input[type=text]:focus {
     width: 30%;
-}
+} */
 
 .filtroOculto,
 .filtroOcultoD,
@@ -434,18 +434,25 @@ img {
     margin-top: 10%;
 }
 
-.buscador {
-    align-self: center;
-    font-family: Barlow-Regular;
-    align-items: center;
-}
-
 .buscador img {
     margin: 40px;
 }
 
 .flex {
     display: flex;
+}
+
+.nombre-busqueda{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 15pt;
+}
+
+.contenedor-input{
+    width: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 .img+.tooltiptext {
