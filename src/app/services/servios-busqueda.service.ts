@@ -43,6 +43,7 @@ export class ServiosBusquedaService {
     return this.http.get<Articulo[]>(this.url + 'articulos/general?p=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
   }
   ordenarReversaArea(campo:string, palabra:string): Observable<Articulo[]>{
+    console.log("URL DEL ORDENAMIENTO",this.url + 'articulos/area?a=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}` )
     return this.http.get<Articulo[]>(this.url + 'articulos/area?a=' +"\""+ palabra +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
   }
   setpalabraOrdenar(palabraOrdenar: string){
@@ -212,11 +213,6 @@ getAreas(): Observable<Articulo[]> {
 
 }
 
-ordenarReversaDisc(campo:string, area:number): Observable<Articulo[]>{
-  return this.http.get<Articulo[]>(this.url + 'articulos/area?a=' +"\""+ area +"\""+ '&page=' + this.paginadorService.posicion + '&r=' + this.reversa + '&palOrd=' + campo + `&${this.filtrosService.cadenafiltros}`);
-}
-
-
   getBusquedaArticulosDisc(area: number) {
     //console.log(`${this.url}revistas/general?p="${palabra}"&page=1&${this.filtrosService.cadenafiltros}`);
     return this.http.get(`${this.url}articulos/area?a="${area}"&page=${this.count}`);
@@ -243,10 +239,6 @@ ordenarReversaDisc(campo:string, area:number): Observable<Articulo[]>{
   getBusquedaArticulosPaginadorDisc(area: string, pagina: number) {
     console.log("consultando servicio de paginadoo################################",`${this.url}articulos/area?a="${area}"&page=${pagina}&${this.filtrosService.cadenafiltros}`);
     return this.http.get(`${this.url}articulos/area?a="${this.filtrosService.palabra}"&page=${pagina}&${this.filtrosService.cadenafiltros}&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}`);
-  }
-
-  getPaisesDisc(){
-    return this.http.get(`${this.urlFront}assets/js/json/paises.json`);
   }
 
   getBusquedaFiltroArea(area: string, cadenaAnio: string, cadenaPais: string,
