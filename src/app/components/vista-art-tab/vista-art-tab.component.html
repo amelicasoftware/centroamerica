@@ -13,8 +13,8 @@
 </div>
 
 <div *ngIf="total.palabra" class="">
-    <div class="item11">
-        <!-- <div class="filtros"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
+    <!-- <div class="item11">
+        <div class="filtros"></div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
             <p *ngIf="total.palabra != 'allRev'"
                 style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
@@ -35,40 +35,44 @@
                 {{totalResultados}} de {{totalResultados}} artículos </p>
         </div> -->
 
-    </div>
+</div>
+<div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
+
+    <img src="assets/img/giphy.gif" alt="">
+    <p>Cargando contenido...</p>
+
 </div>
 
 
-<!-- <div *ngIf="total.palabra" class="">
-    <div class="item11" >
-        <div class="filtros" style="background-color: black"><img src="assets/img/filtro.png">Caracter no definido</div>
+<div *ngIf="total.palabra" class="">
+    <!-- <div class="item11" >
+        <div class="filtros" style="background-color: white"></div>
         <div class="seleccionado" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revistas-act.png" style="margin: 10px;">Revistas</div>
            
-        <div class="seleccionado alinear" (click)="limpiarDatos()"><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
-    </div>
-</div> -->
+        <div class="seleccionado alinear" ><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
+    </div> -->
+</div>
 
 <div *ngIf="total.palabra" class="">
-    <!-- <div class="item11" style="background-color: #f1f1f1;">
-        <div class="filtrosblank"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda General</div>
+    <!-- <div class="item11" style="background-color: #f1f1f1; ">
+        <div class="filtrosblank"style="justify-content: center;"><img src="assets/img/buscador-institucionmdpi.png" style="margin: 15px; ;"> Búsqueda General</div>
 
-        
-     
-        <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
-        <div class="cursor" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/tarjetas.png" style="margin: 10px;">Lista </div>
+
+        <div class="cursor" [routerLink]="['/vista-art-tab',total.palabra]" style="cursor:pointer"><img
+                src="assets/img/lista.png" style="margin: 10px;">Tabla </div>
+        <div class="seleccionado"><img src="assets/img/tarjetas-act.png" style="margin: 10px;">Lista </div>
 
       
-        <app-paginador-articulos style="    padding-left: 41%;"></app-paginador-articulos>
-    </div> -->
-
+        <app-paginador-articulos style="    padding-left: 41%;"></app-paginador-articulos> -->
+    <!-- </div> -->
     <div class="item11">
         <div class="filtros filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div>
         <!--       <div class="cursor" [routerLink]="['/busquedarev',total.palabra]" (click)="limpiarDatos()"><img src="assets/img/revista.png">Revistas</div> -->
-        <div class="" [routerLink]="['/revistas-table',total.palabra]" style="text-align:center;"><img src="assets/img/revista.png" style="margin: 10px;">Revistas</div>
+        <div class="" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revista.png" style="margin: 10px;">Revistas</div>
         <div class="seleccionado alinear" ><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
         <div class="alimodo">Modo de visualizar resultados </div>
-        <div class="seleccionado"><img src="assets/img/lista-act.png">Tabla</div>
-        <div class="cursor" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/tarjetas.png">Lista</div>
+        <div class="cursor" [routerLink]="['/vista-art-tab',total.palabra]"><img src="assets/img/lista.png">Tabla</div>
+        <div class="seleccionado"><img src="assets/img/tarjetas-act.png">Lista</div>
     </div>
 </div>
 
@@ -85,11 +89,9 @@
             <input #palabra (keyup.enter)="buscar(palabra.value)" type="text" placeholder="Buscar">
             <input id="boton-buscar" type="image" src="assets/img/buscador-institucionmdpi.png"
                 (click)="buscar(palabra.value)" name="boton-buscar-articulo" alt="Buscar" />
-        </div>
-        <br>
-    
+        </div> -->    
         
-           <div class="filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div> -->
+           <!-- <div class="filtrosNue"><img src="assets/img/filtro.png">Filtros de Búsqueda</div> -->
            <br>
            <app-filtros></app-filtros>
     </div>
@@ -104,21 +106,30 @@
     <!-- Termina Filtros menu   -->
     <div class="item3">
         <div>
-            <div *ngIf=" pagAct != pagFinal" class="texto-resultados" style="display: flex; justify-content: space-between; width: 100%;">
+            <div *ngIf=" pagAct != pagFinal" class="texto-resultados" style="display: flex; justify-content: space-between; width: 90%;">
                 <div class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</div>
                 <div class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </div>
             </div>
     
-            <div *ngIf="pagAct == pagFinal" class="texto-resultados" style="display: flex; justify-content: space-between; width: 100%;">
+            <div *ngIf="pagAct == pagFinal" class="texto-resultados" style="display: flex; justify-content: space-between; width: 90%;">
                 <div class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</div>
                 <div class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </div>
             </div>
         </div>
 
+        <!-- <div *ngIf=" pagAct != pagFinal" class="texto-resultados">
+            <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</p>
+            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+        </div>
+
+        <div *ngIf="pagAct == pagFinal" class="texto-resultados">
+            <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</p>
+            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+        </div> -->
+
         <div style="display: flex; justify-content: flex-end; margin: 10px; padding-right: 5%;">
             <app-paginador-articulos></app-paginador-articulos>
         </div>
-    
 
         <app-globitos></app-globitos>
 
@@ -130,7 +141,7 @@
 
 
 
-        <app-paginador-articulos></app-paginador-articulos>
+   
 
     </div>
 
@@ -158,8 +169,3 @@
 
 <app-footer></app-footer>
 
-
-<div class="seleccionado alinear" (click)="limpiarDatos()"><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
-        <div class="alimodo">Modo de visualizar resultados </div>
-        <div class="seleccionado"><img src="assets/img/lista-act.png" style="margin: 10px;">Tabla </div>
-        <div class="cursor" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/tarjetas.png" style="margin: 10px;">Lista </div>

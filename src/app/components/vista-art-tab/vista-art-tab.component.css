@@ -425,7 +425,7 @@ input[type=text]:focus {
     text-align: center;
     width: 15vw;
 }
-
+/*generales*/
 .filtros {
     background-color: #ffc200;
     font-size: 10pt;
@@ -453,6 +453,18 @@ input[type=text]:focus {
     color: white;
     text-align: center;
 }
+.texto-resultados {
+    align-self: center;
+    font-family: Barlow-Regular;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-input{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
 
 .buscador {
     align-self: center;
@@ -467,16 +479,30 @@ input[type=text]:focus {
 .flex {
     display: flex;
 }
-
 .nombre-busqueda{
     width: 30%;
     display: flex;
     align-items: center;
     font-size: 15pt;
 }
-
-.contenedor-input{
-    width: 50%;
+.texto-resultados {
+    align-self: center;
+    font-family: Barlow-Regular;
     display: flex;
-    justify-content: center;
+    align-items: center;
+}
+.texto-formato {
+    text-align: start;
+    font-family: Barlow-Regular;
+    font-size: 10pt;
+}
+
+.tamaño-resul-pal {
+    margin-left: 21px;
+    margin-bottom: 15px;
+}
+
+.tamaño-resul-busqueda {
+    margin-left: 46%;
+    margin-bottom: 15px;
 }

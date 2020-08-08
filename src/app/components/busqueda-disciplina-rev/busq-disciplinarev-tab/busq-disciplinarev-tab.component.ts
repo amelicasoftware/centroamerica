@@ -101,7 +101,7 @@ export class BusqDisciplinarevTabComponent implements OnInit {
       this.revistasService.setreversa(true);
     }
     let palabra = this.filtrosRevistasService.palabra;
-    this.revistasService.ordenarReversa(campo, palabra).subscribe((data: any) => {
+    this.revistasService.ordenarReversaArea(campo, palabra).subscribe((data: any) => {
       this.revistas = data.revistas.revistas;
       this.filtrosRevistasService.actualizarRevistas(data.revistas.revistas);
       this.filtrosRevistasService.actualizarFiltros(data.filtros);
