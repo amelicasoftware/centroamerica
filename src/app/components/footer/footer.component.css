@@ -29,11 +29,26 @@
 }
 
 #instituciones-rect {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 50px auto;
+}
+#instituciones-texto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px auto;
+}
+
+#instituciones-texto-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 #instituciones-rect>div {
@@ -53,4 +68,9 @@
 }
 .linea-footer{
     background-image: url('../../../assets/img/linea.png');    
+}
+.texto{
+    font-size: 12pt;
+    font-family: Barlow-regular;
+    color: black;
 }
