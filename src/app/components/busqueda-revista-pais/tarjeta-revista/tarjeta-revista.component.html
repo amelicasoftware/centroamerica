@@ -1,12 +1,18 @@
 <div class="contenedor-fichas">
     <div *ngFor="let revistas of revistas" class="card">
-        <div class="titulo-card">
-            <img src="http://portal.amelica.org/ameli/static/media/img/revista/rva{{revistas.cveRevista}}.png">
-        </div>
-        <div class="cuerpo-card">
-            <div> {{revistas.nombreRevista}}</div>
-            <div> Issn: {{revistas.issn}} | e-Issn: {{revistas.issnelec}}</div>
-            <div>{{revistas.nombreArea}}</div>
+         <div class="titulo-card" style=" font-weight: bold; font-size: 12px; padding: 10px;">
+                    <img style="height: 60px; width: 60%;"
+                        src="http://portal.amelica.org/ameli/static/media/img/revista/rva{{revistas.cveRevista}}.png">
+                </div>
+        <div class="cuerpo-card" style="height: 70px; font-size: 12px; padding: 0px 10px; ">
+            <a target="_blank" href="http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}">
+            <div style="font-weight: bold;"> {{revistas.nombreRevista}}</div>
+        </a>
+            <br>
+            <div *ngIf=" revistas.issn && revistas.issnelec "> Issn: {{revistas.issn}} | e-Issn:
+                {{revistas.issnelec}}</div>
+            <div *ngIf=" revistas.issn && !revistas.issnelec"> Issn: {{revistas.issn}} </div>
+            <div *ngIf=" !revistas.issn && revistas.issnelec "> e-Issn: {{revistas.issnelec}}</div>
             <div>{{revistas.nombreInstitucion}}</div>
             <div>{{revistas.nombrePais}}</div>
         </div>

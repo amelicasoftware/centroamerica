@@ -151,7 +151,7 @@
                     <tr *ngFor="let revista of revistas">
                         <td>{{ revista.issn }}</td>
                         <td>{{ revista.issnelec }}</td>
-                        <td>{{ revista.nombreRevista }}</td>
+                        <a target="_blank" href="http://portal.amelica.org/revista.oa?id={{revista.cveRevista}}">  <td>{{ revista.nombreRevista }}</td> </a>
                         <td>{{ revista.nombreInstitucion }}</td>
                         <td>{{ revista.nombrePais }}</td>
                     </tr>
