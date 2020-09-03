@@ -152,8 +152,12 @@
                     <img style="height: 60px; width: 60%;"
                         src="http://portal.amelica.org/ameli/static/media/img/revista/rva{{revistas.cveRevista}}.png">
                 </div>
+                <br>
                 <div class="cuerpo-card" style="height: 70px; font-size: 12px; padding: 0px 10px; ">
+                    <a target="_blank" href="http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}">
                     <div style="font-weight: bold;"> {{revistas.nombreRevista}}</div>
+                </a>
+                    <br>
                     <div *ngIf=" revistas.issn && revistas.issnelec "> Issn: {{revistas.issn}} | e-Issn:
                         {{revistas.issnelec}}</div>
                     <div *ngIf=" revistas.issn && !revistas.issnelec"> Issn: {{revistas.issn}} </div>
