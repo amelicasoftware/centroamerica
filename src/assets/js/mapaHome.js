@@ -36,7 +36,7 @@ am4core.ready(function() {
 		var data = ev.target.dataItem.dataContext;
 		console.log('voy a enviar' + data.cvePais);
 		if(data.cvePais != undefined){
-			window.location.href = `${url}/#/busquedaPais/${data.cvePais}`;
+			window.location.href = `${url}/#/busquedaRevistaPais/${data.cvePais}`;
 		}		
 	  });
 
