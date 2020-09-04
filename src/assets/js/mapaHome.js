@@ -1,7 +1,8 @@
-am4core.ready(function() {
+am4core.ready(async function() {
 
 	let url = "http://amelica.org/centroamerica/";
-	console.log('voy hacer la graficas44444');
+	// let url = "http://localhost:4200/";
+	// console.log('voy hacer la graficas44444');
 	am4core.useTheme(am4themes_animated);
 
 	// Create map instance
@@ -20,6 +21,7 @@ am4core.ready(function() {
 	latitude: 14,
 	longitude: -88
 	};
+	chart.chartContainer.wheelable = false;
 
 	// Create map polygon series
 	var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
@@ -48,18 +50,20 @@ am4core.ready(function() {
 	polygonSeries.exclude = ["AQ"];
 
 	// Add some data
-	polygonSeries.data = [{
+	// polygonSeries.data = datosPais;
+	polygonSeries.data = [
+		{
 		"id": "PA",
 		"cvePais": 79,
 		"name": "Panama",
-		"value": 9,
+		"value": 11,
 		"fill": "#ffc200"
 		},
 		{
 		"id": "CR",
 		"cvePais": 33,
 		"name": "Costa Rica",
-		"value": 4,
+		"value": 5,
 		"fill": "#ffc200"
 		},
 		{
@@ -80,7 +84,7 @@ am4core.ready(function() {
 		"id": "HN",
 		"cvePais": 57,
 		"name": "Honduras",
-		"value": 2,
+		"value": 3,
 		"fill": "#ffc200"
 		},
 		{
@@ -96,11 +100,10 @@ am4core.ready(function() {
 		"name": "Guatemala",
 		"value": 1,
 		"fill": "#ffc200"
-		}];
+		}
+	];
 
 	// Bind "fill" property to "fill" key in data
 	polygonTemplate.propertyFields.fill = "fill";
 
 });
-
-

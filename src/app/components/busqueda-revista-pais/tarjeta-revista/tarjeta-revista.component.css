@@ -32,13 +32,14 @@
 .card {
     width: 260px;
     height: 275px;
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
     margin: 20px;
     flex: 0 0 auto;
     border-radius: 10px;
     position: relative;
-    cursor: pointer;
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    cursor: pointer;    
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .titulo-card {
@@ -71,7 +72,15 @@
     height: 35px;
     text-align: right;
     border-radius: 0px 0px 10px 10px;
-    background-color: #ff660c;
+    /* background-color: #ff660c; */
     position: absolute;
     bottom: 0;
+    border-top: 1px grey solid;
+}
+
+.text-titulo-revista{
+    text-decoration: none; 
+    color: black; 
+    font-weight: bold; 
+    font-size: 10pt;
 }

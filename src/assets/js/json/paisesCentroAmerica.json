@@ -3,14 +3,14 @@
 	"id": "PA",
 	"cvePais": 79,
 	"name": "Panama",
-	"value": 9,
+	"value": 11,
 	"fill": "#ffc200"
 	},
 	{
 	"id": "CR",
 	"cvePais": 33,
 	"name": "Costa Rica",
-	"value": 4,
+	"value": 5,
 	"fill": "#ffc200"
 	},
 	{
@@ -31,7 +31,7 @@
 	"id": "HN",
 	"cvePais": 57,
 	"name": "Honduras",
-	"value": 2,
+	"value": 3,
 	"fill": "#ffc200"
 	},
 	{

@@ -29,9 +29,9 @@
 }
 
 #instituciones-rect {
-    width: 100%;
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin: 50px auto;
 }
@@ -55,6 +55,9 @@
   /*  width: 26%;*/
     /* margin: 30px; */
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #instituciones-footer> div> img {
@@ -73,6 +76,7 @@
     font-size: 12pt;
     font-family: Barlow-regular;
     color: black;
+    text-align: center;
 }
 
 .logo-up{
@@ -83,14 +87,36 @@
     width: 100%;
 }
 
+.texto-institucion{
+    width: 80%;
+    color: black;
+    font-size: 15pt;
+    font-weight: bold;
+    display: flex;
+}
+.img-institucion{
+    margin: 0px 10px;
+}
+.derecha{
+    justify-content: flex-end;
+}
+
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    #instituciones-rect > div{
+        width: 100%;
+    }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    #instituciones-rect > div{
+        width: 45%;
+    }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}
