@@ -70,8 +70,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let articulo of articulos">
-                        <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="titulo-art" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{ articulo.tituloArt }}</a></td>
-                        <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="titulo-art" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank">{{ articulo.tituloArt }}</a></td>
+                        <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="titulo-art" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{articulo.tituloArticuloArt }}</a></td>
+                        <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="titulo-art" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank">{{articulo.tituloArticuloArt }}</a></td>
                         <td colspan="2">{{ articulo.autores }}</td>
                         <td colspan="2">{{ articulo.nombreRevista }}</td>
                         <td>{{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }})</td>

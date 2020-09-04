@@ -1,8 +1,8 @@
 <div class="flex-containercont">
 
     <div class="articulo" *ngFor="let articulo of articulos">
-        <div *ngIf="articulo.origen === 'PDF'" class="titulo"><a class="titulo" href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{  articulo.titulo }}</a></div>
-        <div *ngIf="articulo.origen === 'XML'" class="titulo"><a class="titulo" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{  articulo.titulo }}</a></div>
+        <div *ngIf="articulo.origen === 'PDF'" class="titulo"><a class="titulo" href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{ articulo.tituloArticuloArticulo }}</a></div>
+        <div *ngIf="articulo.origen === 'XML'" class="titulo"><a class="titulo" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{ articulo.tituloArticulo }}</a></div>
         <p>{{ articulo.autores}}</p>
         <p>{{ articulo.nombreRevista }}, {{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }}) </p>
         <p>Fuente: {{ articulo.fuente}} </p>
@@ -18,7 +18,7 @@
 
                 <a style="margin-left: 75%;" href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} | safeUrl" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
                     <img target="_blank" src="assets/img/tar-face.png" alt=""></a>
-                <a href="https://twitter.com/intent/tweet?original_referer=http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} &amp;text={{  articulo.titulo }} http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} vía @Redalyc" class="twitter"
+                <a href="https://twitter.com/intent/tweet?original_referer=http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} &amp;text={{ articulo.tituloArticulo }} http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} vía @Redalyc" class="twitter"
                     target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"><img src="assets/img/tar-twit.png" alt=""></a>
 
             </div>
@@ -31,7 +31,7 @@
                 <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/{{articulo.cveArticulo}}.pdf"  target="_blank">PDF</a></button>
                 <a style="margin-left: 41%;" href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
                     <img target="_blank" src="assets/img/tar-face.png" alt=""></a>
-                <a href="https://twitter.com/intent/tweet?original_referer=http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} &amp;text={{  articulo.titulo }} http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} vía @Redalyc" class="twitter"
+                <a href="https://twitter.com/intent/tweet?original_referer=http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} &amp;text={{ articulo.tituloArticulo }} http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} vía @Redalyc" class="twitter"
                     target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"><img src="assets/img/tar-twit.png" alt=""></a>
             </div>
         </div>
