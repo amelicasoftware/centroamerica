@@ -1,7 +1,7 @@
 <div class="flex-containercont">
 
     <div class="articulo" *ngFor="let articulo of articulos">
-        <div *ngIf="articulo.origen === 'PDF'" class="titulo"><a class="titulo" href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{ articulo.tituloArticuloArticulo }}</a></div>
+        <div *ngIf="articulo.origen === 'PDF'" class="titulo"><a class="titulo" href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{ articulo.tituloArticulo }}</a></div>
         <div *ngIf="articulo.origen === 'XML'" class="titulo"><a class="titulo" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">{{ articulo.tituloArticulo }}</a></div>
         <p>{{ articulo.autores}}</p>
         <p>{{ articulo.nombreRevista }}, {{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }}) </p>
@@ -14,6 +14,7 @@
         <div >
             <div *ngIf="articulo.origen === 'PDF'" class="flex">
                 <p class="texto-completo">Texto Completo:{{articulo.nombreArea}}{{articulo.nombreArea}} </p>
+                <button class="button1"><a class="tipoFormato"  href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}"  target="_blank">Visor</a></button>
                 <button class="button1"><a class="tipoFormato"  href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}"  target="_blank">PDF</a></button>
 
                 <a style="margin-left: 75%;" href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}} | safeUrl" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
@@ -25,8 +26,9 @@
 
             <div *ngIf="articulo.origen === 'XML'" class="flex">
                 <p class="texto-completo">Texto Completo: </p>
+                <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">Visor</a> </button>
                 <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/html/index.html" target="_blank">HTML-R</a> </button>
-                <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/{{articulo.cveArticulo}}.epub" target="_blank">ePUB-R</a></button>
+                <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/{{articulo.cveArticulo}}.epub" target="_blank">ePUB</a></button>
                 <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/movil/index.html" target="_blank">MÓVIL-R</a></button>
                 <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/{{articulo.cveArticulo}}.pdf"  target="_blank">PDF</a></button>
                 <a style="margin-left: 41%;" href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
