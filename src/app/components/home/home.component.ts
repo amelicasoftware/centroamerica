@@ -45,10 +45,10 @@ export class HomeComponent {
 
   ngOnInit(){
 
-    get(`${this.url2}assets/js/home.js`, () => {
-    });
-    get(`${this.url2}assets/js/red.js`, () => {
-    });
+    // get(`${this.url2}assets/js/home.js`, () => {
+    // });
+    // get(`${this.url2}assets/js/red.js`, () => {
+    // });
 
     this.service.getNumeros().subscribe( (numeros: any) => {
       this.numerosHome = numeros;
@@ -63,40 +63,40 @@ export class HomeComponent {
     });
   }
 
-  ngAfterViewInit() {
-    this.zone.runOutsideAngular(() => {
-      let chart2 = am4core.create("wordCloud", am4plugins_wordCloud.WordCloud);
-      chart2.fontFamily = "Courier New";
-      let series = chart2.series.push(new am4plugins_wordCloud.WordCloudSeries());
-      series.randomness = 0.1;
-      series.rotationThreshold = 0.5;
-      series.dataSource.url = 'assets/js/json/palabrasAncestral.json';
+  // ngAfterViewInit() {
+  //   this.zone.runOutsideAngular(() => {
+  //     let chart2 = am4core.create("wordCloud", am4plugins_wordCloud.WordCloud);
+  //     chart2.fontFamily = "Courier New";
+  //     let series = chart2.series.push(new am4plugins_wordCloud.WordCloudSeries());
+  //     series.randomness = 0.1;
+  //     series.rotationThreshold = 0.5;
+  //     series.dataSource.url = 'assets/js/json/palabrasAncestral.json';
 
-      series.dataFields.word = "word";
-      series.dataFields.value = "weight";
+  //     series.dataFields.word = "word";
+  //     series.dataFields.value = "weight";
 
-      series.heatRules.push({
-        "target": series.labels.template,
-        "property": "fill",
-        "min": am4core.color("#4d4d4d"),
-        "max": am4core.color("#4d4d4d"),
-        "dataField": "value"
-      });
+  //     series.heatRules.push({
+  //       "target": series.labels.template,
+  //       "property": "fill",
+  //       "min": am4core.color("#4d4d4d"),
+  //       "max": am4core.color("#4d4d4d"),
+  //       "dataField": "value"
+  //     });
 
-      series.labels.template.url = `${this.url2}#/busqueda-pal-clav/{word}`;
-      series.labels.template.urlTarget = "_self";
-      console.log("############"+`${this.url}{word}`);
+  //     series.labels.template.url = `${this.url2}#/busqueda-pal-clav/{word}`;
+  //     series.labels.template.urlTarget = "_self";
+  //     console.log("############"+`${this.url}{word}`);
 
-      let subtitle2 = chart2.titles.create();
-      subtitle2.text = "";
+  //     let subtitle2 = chart2.titles.create();
+  //     subtitle2.text = "";
 
-      let title2 = chart2.titles.create();
-      title2.text = "";
-      title2.fontSize = 20;
-      title2.fontWeight = "800";
+  //     let title2 = chart2.titles.create();
+  //     title2.text = "";
+  //     title2.fontSize = 20;
+  //     title2.fontWeight = "800";
 
-    });
-  }
+  //   });
+  // }
 
   ngOnDestroy() {
     this.zone.runOutsideAngular(() => {
