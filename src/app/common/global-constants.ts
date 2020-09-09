@@ -6,6 +6,9 @@ export class GlobalConstants {
     //produccion
     public static serviciosURL: string = 'http://portal.amelica.org/BackEndAmelic/centroamerica/';
     // public static url: string = 'http://regions.amelica.org/centroamerica/';
+    //produccion
+    //  public static serviciosURL: string = 'http://portal.amelica.org/BackEndAmelic/centroamerica/';
+    // public static url: string = 'http://regions.amelica.org/centroamerica/';
     // public static url: string = 'http://semantic.redalyc.org/conocimientoancestral/';
     public static siteTitle: string = 'Centroamérica';
 }

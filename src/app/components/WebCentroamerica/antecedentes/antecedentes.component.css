@@ -69,6 +69,59 @@
     margin: 10px;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    margin: auto;
+    overflow: hidden;
+    position: fixed;
+}
+
+nav {
+    float: left;
+    /* Desplazamos el nav hacia la izquierda */
+}
+
+nav ul {
+    list-style: none;
+    overflow: hidden;
+    /* Limpiamos errores de float */
+}
+
+nav ul li {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+nav ul li a {
+    font-family: Barlow-Regular;
+    display: block;
+    /* Convertimos los elementos a en elementos bloque para manipular el padding */
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li:hover {
+    background: #fbbf2c;
+}
+
+.contenido {
+    padding-top: 80px;
+}
+
+.MsoNormal {
+    padding: 0px 10px 0px 10px;
+}
+
 
 /* .box-text > div{
     font-family: Barlow-Regular;
