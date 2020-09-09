@@ -14,7 +14,8 @@ import { BusquedaDisciplinaComponent } from './components/busqueda-disciplina/bu
 import { BusquedaDisciplinaRevComponent } from './components/busqueda-disciplina-rev/busqueda-disciplina-rev.component';
 import { BusqDisciplinarevTabComponent} from './components/busqueda-disciplina-rev/busq-disciplinarev-tab/busq-disciplinarev-tab.component';
 import { BusquedaDisciplinaTabComponent } from './components/busqueda-disciplina/busqueda-disciplina-tab/busqueda-disciplina-tab.component';
-
+import { AntecedentesComponent } from '../app/components/WebCentroamerica/antecedentes/antecedentes.component'
+    import { from } from 'core-js/fn/array';
 
 
 export const ROUTES: Routes = [
@@ -42,6 +43,7 @@ export const ROUTES: Routes = [
     { path: 'busqueda-disciplina-revtab/:area', component: BusqDisciplinarevTabComponent},
     { path: 'busqueda-disciplina-tab/', component: BusquedaDisciplinaTabComponent },
     { path: 'busqueda-disciplina-tab/:area', component: BusquedaDisciplinaTabComponent },
+    { path: 'antecedentes', component: AntecedentesComponent },
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

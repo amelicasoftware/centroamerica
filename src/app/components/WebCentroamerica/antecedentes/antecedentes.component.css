@@ -1,0 +1,78 @@
+@font-face {
+    font-family: Barlow-Bold;
+    src: url('../../../../assets/fonts/Barlow-Bold.ttf');
+    /* src: url('fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular.woff') format('woff'),
+         url('fonts/OpenSans-Regular.ttf') format('truetype');*/
+}
+
+@font-face {
+    font-family: Barlow-Regular;
+    src: url('../../../../assets/fonts/Barlow-Regular.ttf');
+}
+
+@font-face {
+    font-family: Barlow-Light;
+    src: url('../../../../assets/fonts/Barlow-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../../../../assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../../../../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('../../../../assets/fonts/Roboto-Black.ttf');
+}
+
+.titulo {
+    font-family: Barlow-Bold;
+    width: 100%;
+    text-align: center;
+    margin: 25px;
+    font-size: 20pt;
+}
+
+.subtitulo {
+    font-family: Barlow-Regular;
+    width: 100%;
+    text-align: center;
+    margin: 25px;
+    font-size: 20pt;
+}
+
+.box-text {
+    font-family: Barlow-Regular;
+    text-align: justify;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 25px
+}
+
+.img-box {
+    display: block;
+    margin: auto;
+}
+
+.div-img {
+    display: flex;
+}
+
+.img-boxSide {
+    display: block;
+    margin: 10px;
+}
+
+
+/* .box-text > div{
+    font-family: Barlow-Regular;
+    width: 50%;
+    text-align: justify;
+   
+} */

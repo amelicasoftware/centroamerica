@@ -58,6 +58,8 @@ import { FiltdiscRevComponent } from './components/filtros/filtdisc-rev/filtdisc
 import { GlobitosDiscRevComponent } from './components/globitos/globitos-disc-rev/globitos-disc-rev.component';
 import { BusqDisciplinarevTabComponent } from './components/busqueda-disciplina-rev/busq-disciplinarev-tab/busq-disciplinarev-tab.component';
 import { BusquedaDisciplinaTabComponent } from './components/busqueda-disciplina/busqueda-disciplina-tab/busqueda-disciplina-tab.component';
+import { AntecedentesComponent } from './components/WebCentroamerica/antecedentes/antecedentes.component';
+import { ObjetivosComponent } from './components/WebCentroamerica/objetivos/objetivos.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +115,9 @@ import { BusquedaDisciplinaTabComponent } from './components/busqueda-disciplina
     FiltdiscRevComponent,
     GlobitosDiscRevComponent,
     BusqDisciplinarevTabComponent,
-    BusquedaDisciplinaTabComponent
+    BusquedaDisciplinaTabComponent,
+    AntecedentesComponent,
+    ObjetivosComponent
   ],
   imports: [
     BrowserModule,
