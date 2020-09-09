@@ -172,6 +172,10 @@
     font-family: 'Barlow-Regular';
 }
 
+.item11 img {
+    margin: 10px;
+}
+
 .item2 {
     grid-area: menu;
     border-right: 1px solid #f1f1f1;
@@ -506,3 +510,4 @@ input[type=text]:focus {
     margin-left: 46%;
     margin-bottom: 15px;
 }
+

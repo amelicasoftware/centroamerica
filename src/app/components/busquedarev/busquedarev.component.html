@@ -106,7 +106,7 @@
 
     <div class="item3">
 
-        <div class="filtros" ></div>
+        <!-- <div class="filtros" ></div>
         <div *ngIf=" pagAct != pagFinal " style="width: 75%;">
             <p *ngIf="total.palabra != 'allRev'"
                 style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;">Resultados
@@ -125,6 +125,15 @@
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
                 {{totalResultados}} de {{totalResultados}} revistas </p>
+        </div> -->
+
+        <div class="resultados-paises" style="display: flex;">
+            <p class="texto-formato tamaño-resul-pal"> Artículos publicados en revistas de: {{total.palabra}}</p>
+            <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> Resultados de la Búsqueda: {{ total.total}} </p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin: 10px; padding-right: 5%;">
+            <app-paginador-articulos></app-paginador-articulos>
         </div>
   
         <app-globitos-revista></app-globitos-revista>
@@ -133,9 +142,9 @@
 
 
         <div id="contenedor-fichas" class="contenedor-fichas " *ngIf="totalResultados >= 1">
-            <div class="shadow" style="padding-top: 10px; border-color: grey;
-                     border-style: solid; border: 1px;  box-shadow: 0px 1px 2px 1px #bfbfbf;" *ngFor="let revistas of revistas" class="card">
-                <div style="float: right; margin-right: 2%;">
+            <div class="shadow" style="padding-top: 10px; border-color: grey; border-style: solid; border: 1px;  box-shadow: 0px 1px 2px 1px #bfbfbf;" *ngFor="let revistas of revistas" class="card">
+                <a href="http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}" target="_blank"> 
+                     <div style="float: right; margin-right: 2%;">
                     <a href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}"
                         class="facebook" target="_blank"
                         OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
@@ -152,8 +161,12 @@
                     <img style="height: 60px; width: 60%;"
                         src="http://portal.amelica.org/ameli/static/media/img/revista/rva{{revistas.cveRevista}}.png">
                 </div>
+                <br>
                 <div class="cuerpo-card" style="height: 70px; font-size: 12px; padding: 0px 10px; ">
+                    <a target="_blank" href="http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}">
                     <div style="font-weight: bold;"> {{revistas.nombreRevista}}</div>
+                </a>
+                    <br>
                     <div *ngIf=" revistas.issn && revistas.issnelec "> Issn: {{revistas.issn}} | e-Issn:
                         {{revistas.issnelec}}</div>
                     <div *ngIf=" revistas.issn && !revistas.issnelec"> Issn: {{revistas.issn}} </div>
@@ -165,6 +178,7 @@
                     style="width: 100%; height: 35px; text-align: right; border-radius: 0px 0px 10px 10px; ; background-color: white; 
                 position: absolute; bottom: 0; border-color: gray;  border-style: solid; border-width: 1px 0px 0px 0px;">
                 </div>
+            </a>
             </div>
         </div>
 

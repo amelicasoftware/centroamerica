@@ -1,5 +1,5 @@
-<header id="" class="header">
-    <div style="color: #fff !important; display: flex; ">
+<header id="" class="header" style=" position: fixed;">
+    <div style="color: #fff !important; display: flex;">
         <div id="logo-CA" style="width: 50%;">
             <a href="#"><img src="assets/img/AmeliCA.png" alt=""></a>
             <a href="http://amelica.org/"><img src="assets/img/ameliCA.png" alt=""></a>
@@ -7,13 +7,15 @@
         </div>
         <div id="menu">
             <div id="contenedor-menu">
-                <a href="http://amelica.org/index.php/que-es-ameli/" class="option-menu">Acerca de AmeliCA Centroamerérica</a>
-                <a href="http://148.215.2.20:8080/CAncestral-0.0.1-SNAPSHOT/AcercaCA" class="option-menu">Revistas por País</a>
-                <a href="http://148.215.2.20:8080/CAncestral-0.0.1-SNAPSHOT/AcercaCA" class="option-menu">Revistas por Área</a>
+                <a href="http://amelica.org/index.php/que-es-ameli/" class="option-menu">Acerca de AmeliCA Centroamérica</a>
+                <!-- <a [routerLink]="['/acerca-de']" class="option-menu">Proyecto Centroamérica</a> -->
+                <a class="option-menu">Proyecto Centroamérica</a>
+                <a href="#mapa" class="option-menu">Revistas por País</a>
+                <a href="#area" class="option-menu">Revistas por Área</a>
             </div>
             <div id="logos" style="width: 25%;">
-                <a href="#"><img src="assets/img/facebook.png" alt=""></a>
-                <a href="#"><img src="assets/img/twitter.png" alt=""></a>
+                <a href="https://www.facebook.com/ameli.conocimientoabierto/"><img src="assets/img/facebook.png" alt=""></a>
+                <a href="https://twitter.com/Ameli_CA"><img src="assets/img/twitter.png" alt=""></a>
                 <a href="#"><img src="assets/img/ic-home.png" alt=""> </a>
             </div>
 
@@ -21,7 +23,7 @@
 
     </div>
 </header>
-<section id="banner">
+<section id="banner" style="padding-top: 50px;">
     <div id="contenedor-banner">
         <div><img src="assets/img/libro-colecciones.png"></div>
         <div class="w100 m20" id="titulo">AmeliCA Centroamérica</div>
@@ -47,15 +49,15 @@
             <div class="tarjeta-numero">
                 <div>
                     <p class="numero">{{numArticulos}}</p>
-                    <p class="texto-numero">Articulos</p>
+                    <p class="texto-numero">Artículos</p>
                 </div>
             </div>
-            <div class="tarjeta-numero">
+            <!-- <div class="tarjeta-numero">
                 <div>
                     <p class="numero">25</p>
                     <p class="texto-numero">Capacitaciones XML</p>
                 </div>
-            </div>
+            </div> -->
             <div class="tarjeta-numero">
                 <div>
                     <p class="numero">{{numPaises}}</p>
@@ -67,25 +69,25 @@
 </section>
 <section id="mapa">
     <div class="titulo-area color-white">
-        Colección de Revistas por País
+        Colección de revistas por país
     </div>
-    <div class="subtitulo color-white">
+    <!-- <div class="subtitulo color-white">
         Revistas por País
-    </div>
+    </div> -->
     <div id="contenedor-mapa">
         <app-mapa></app-mapa>
     </div>
 </section>
 <section id="area">
     <div class="titulo-area">
-        Colección de Revistas por Área
+        Colección de revistas por área
     </div>
-    <div class="subtitulo">
-        Revistas por Área
-    </div>
+    <!-- <div class="subtitulo"> -->
+        <!-- Revistas por Área
+    </div> -->
     <div id="colecciones">
         <div *ngFor="let area of areas" class="imagen-colecciones" [ngClass]="{'imagen-ciencias-sociales': area.clave=='1', 'ciencias-exactas': area.clave=='2', 'Multidisciplinarias': area.clave=='3', 'imagen-humanidades': area.clave=='4'}">
-            <a #area [routerLink]="['/busqueda-disciplina', area.clave]">
+            <a #area [routerLink]="['/busqueda-disciplina-rev', area.clave]">
                 <p class="text-img-center">{{ area.nombre }} +</p>
             </a>
 
@@ -93,14 +95,16 @@
     </div>
 </section>
 
-<footer id="footer">
+
+<app-footer></app-footer>
+<!-- <footer id="footer">
     <div id="contenedor-instituciones">
         <div class="contenedor-institucion">
             <div class="img-institucion"><img src="assets/img/uaem.png"></div>
             <div class="datos-institucion">
                 <div class="w100 negrita-opacity">Universidad Autonoma del Estado de México</div>
                 <div class="w100"><a href="https://www.uaemex.mx/">https://www.uaemex.mx/</a></div>
-                <div class="w100 lugar">Instituto Literario # 100 C.P. 50000 Col. Centro</div>
+                <div class="w100 lugar">Instituto Literario # 100 C.P. 50000 Col. Centro, Toluca, México.</div>
             </div>
         </div>
         <div class="contenedor-institucion">
@@ -108,8 +112,8 @@
             <div class="datos-institucion">
                 <div class="w100 negrita-opacity">Universidad de Panamá</div>
                 <div class="w100"><a href="https://www.up.ac.pa/">https://www.up.ac.pa/</a></div>
-                <div class="w100 lugar">Provincia de Panamá - Urbanización del Cangrejo - Vía Simón Bolivar(Transístmica) con la intersección de la vía Manuel Espinoza Batista y José de Fábrega.</div>
+                <div class="w100 lugar">Provincia de Panamá - Urbanización del Cangrejo - Vía Simón Bolivar(Transístmica) con la intersección de la vía Manuel Espinoza Batista y José de Fábrega, Panama.</div>
             </div>
         </div>
     </div>
-</footer>
+</footer> -->

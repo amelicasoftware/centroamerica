@@ -17,8 +17,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let articulo of articulos">
-                <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="titulo-art" href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{ articulo.titulo }}</a></td>
-                <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="titulo-art" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/html/index.html" target="_blank">{{ articulo.titulo }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'PDF'"><a class="titulo-art" href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank">{{articulo.tituloArticulo }}</a></td>
+                <td colspan="3" *ngIf="articulo.origen === 'XML'"><a class="titulo-art" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/html/index.html" target="_blank">{{articulo.tituloArticulo }}</a></td>
                 <td colspan="2">{{ articulo.autores }}</td>
                 <td colspan="2">{{ articulo.nombreRevista }}</td>
                 <td>{{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }})</td>
@@ -28,13 +28,13 @@
                             <a class="resumen" href="http://portal.amelica.org/articulo.oa?id={{articulo.cveArticulo}}" target="_blank"><b>PDF</b></a>
                         </div>
                         <div *ngIf="articulo.origen === 'XML'">
-                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/html/index.html" target="_blank"><b>HTML-R</b></a>
+                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/html/index.html" target="_blank"><b>HTML</b></a>
                         </div>
                         <div *ngIf="articulo.origen === 'XML'">
-                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/{{articulo.cveArticulo}}.epub" target="_blank"><b>ePUB-R</b></a>
+                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/{{articulo.cveArticulo}}.epub" target="_blank"><b>ePUB</b></a>
                         </div>
                         <div *ngIf="articulo.origen === 'XML'">
-                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/movil/index.html" target="_blank"><b>MÓVIL-R</b></a>
+                            <a class="resumen" href="http://portal.amelica.org/ameli/jatsRepo/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/movil/index.html" target="_blank"><b>MÓVIL </b></a>
                         </div>
                     </div>
                 </td>

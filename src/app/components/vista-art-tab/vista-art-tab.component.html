@@ -33,9 +33,8 @@
             <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;"
                 [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a
                 {{totalResultados}} de {{totalResultados}} artículos </p>
-        </div>
+        </div> -->
 
-    </div> -->
 </div>
 <div *ngIf="!loading" style="width: 12%; margin-left: 50%; margin-top: 10%;">
 
@@ -72,8 +71,8 @@
         <div class="" [routerLink]="['/busquedarev',total.palabra]" style="text-align:center;"><img src="assets/img/revista.png" style="margin: 10px;">Revistas</div>
         <div class="seleccionado alinear" ><img src="assets/img/articulos-act.png" style="margin: 10px;">Artículos de revista</div>
         <div class="alimodo">Modo de visualizar resultados </div>
-        <div class="cursor" [routerLink]="['/vista-art-tab',total.palabra]"><img src="assets/img/lista.png">Tabla</div>
-        <div class="seleccionado"><img src="assets/img/tarjetas-act.png">Lista</div>
+        <div class="seleccionado" ><img src="assets/img/lista-act.png">Tabla</div>
+        <div class="cursor" [routerLink]="['/busquedaGeneral',total.palabra]"><img src="assets/img/tarjetas.png">Lista</div>
     </div>
 </div>
 
@@ -106,8 +105,19 @@
 
     <!-- Termina Filtros menu   -->
     <div class="item3">
+        <div>
+            <div *ngIf=" pagAct != pagFinal" class="texto-resultados" style="display: flex; justify-content: space-between; width: 90%;">
+                <div class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</div>
+                <div class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </div>
+            </div>
+    
+            <div *ngIf="pagAct == pagFinal" class="texto-resultados" style="display: flex; justify-content: space-between; width: 90%;">
+                <div class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</div>
+                <div class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </div>
+            </div>
+        </div>
 
-        <div *ngIf=" pagAct != pagFinal" class="texto-resultados">
+        <!-- <div *ngIf=" pagAct != pagFinal" class="texto-resultados">
             <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</p>
             <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
         </div>
@@ -115,7 +125,7 @@
         <div *ngIf="pagAct == pagFinal" class="texto-resultados">
             <p class="texto-formato tamaño-resul-pal">Resultados para: {{total.palabra}} en artículos de revista</p>
             <p class="texto-formato tamaño-resul-busqueda" [attr.colspan]="total.total"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
-        </div>
+        </div> -->
 
         <div style="display: flex; justify-content: flex-end; margin: 10px; padding-right: 5%;">
             <app-paginador-articulos></app-paginador-articulos>
@@ -127,7 +137,7 @@
             no hay resultados.
         </div>
 
-        <app-vista-tabla-articulos></app-vista-tabla-articulos>
+        <app-vista-tabla-articulos [articulos]="articulos"></app-vista-tabla-articulos>
 
 
 

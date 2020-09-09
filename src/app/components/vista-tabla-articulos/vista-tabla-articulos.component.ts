@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Articulo } from '../../models/articulo';
 import { Usuario } from '../../models/usuario';
 import { ServiosBusquedaService } from '../../services/servios-busqueda.service';
@@ -17,7 +17,8 @@ import { number } from '@amcharts/amcharts4/core';
 })
 export class VistaTablaArticulosComponent implements OnInit {
 
-  articulos: Array<Articulo> = new Array<Articulo>();
+  @Input() articulos: Array<Articulo> = new Array<Articulo>();
+  //articulos: Array<Articulo> = new Array<Articulo>();
   total: Total = new Total();
   imagenR = 'assets/img/des.png';
   imagenN = 'assets/img/des.png';
@@ -31,19 +32,18 @@ export class VistaTablaArticulosComponent implements OnInit {
               private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.articulosService.setpalabra(this._route.snapshot.paramMap.get('palabra'))
-    console.log("PARAMETRO DEBE SER TOTAL.PALABRA", this.total.palabra)
-    this.articulosService.setNumA(this._route.snapshot.paramMap.get('palabra'));
-    this.filtrosArticulos.actualizarPalabra(this.articulosService.getNumA());
-    this.articulosService.leerjson().subscribe((articulosApi: any) => {
-      console.log(articulosApi.articulos.total);
-      this.articulos = articulosApi.articulos.articulos;
-      // this.total.total = revistasDesdeApi.revistas.total;
-      this.filtrosArticulos.actualizarArticulos(articulosApi.articulos.articulos);
-      this.filtrosArticulos.actualizarFiltros(articulosApi.filtros);
-      this.paginadorService.actualizarTotal(articulosApi.articulos.total, 'articulos');
-      this.totalResultados = this.paginadorService.total;
-    });
+    let palabra = this.articulosService.getpalabra();
+    // this.total.palabra = this.filtrosRevistasService.palabra;
+    console.log('aqui leo la palabra2', palabra );
+    // this.articulosService.leerjson().subscribe((articulosApi: any) => {
+    //   console.log(articulosApi.articulos.total);
+    //   this.articulos = articulosApi.articulos.articulos;
+    //   // this.total.total = revistasDesdeApi.revistas.total;
+    //   this.filtrosArticulos.actualizarArticulos(articulosApi.articulos.articulos);
+    //   this.filtrosArticulos.actualizarFiltros(articulosApi.filtros);
+    //   this.paginadorService.actualizarTotal(articulosApi.articulos.total, 'articulos');
+    //   this.totalResultados = this.paginadorService.total;
+    // });
 
     this.paginadorService.cambioEstado.subscribe(estado => {
       console.log('ESTADO DEL LOADING *********************', estado);
