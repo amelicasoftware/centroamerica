@@ -1,5 +1,6 @@
 <div class="contenedor-fichas">
     <div *ngFor="let revistas of revistas" class="card">
+        <a href="http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}" target="_blank"> 
          <div class="titulo-card" style=" font-weight: bold; font-size: 12px; padding: 10px;">
             <div style="float: right; margin-right: 2%;">
                 <a href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}"
@@ -32,5 +33,6 @@
             <img src="http://portal.amelica.org/resources/img/imgPortal/fbTarjetRev.png">
             <img src="http://portal.amelica.org/resources/img/imgPortal/twTarjetRev.png" alt="">
         </div>
+    </a>
     </div>
 </div>
