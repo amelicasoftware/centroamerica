@@ -58,6 +58,9 @@
     font-size: 12px;
     padding: 0px 10px;
 }
+.cuerpo-card>a{
+    text-decoration: none;
+}
 
 .cuerpo-card>div {
     font-weight: bold;
