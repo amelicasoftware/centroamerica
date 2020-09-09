@@ -122,10 +122,10 @@ nav ul li:hover {
     padding: 0px 10px 0px 10px;
 }
 
+.par {
+    background-color: #E4E3DA;
+}
 
-/* .box-text > div{
-    font-family: Barlow-Regular;
-    width: 50%;
-    text-align: justify;
-   
-} */
+.none {
+    background-color: white;
+}
