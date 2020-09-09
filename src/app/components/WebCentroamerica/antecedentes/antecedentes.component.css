@@ -82,6 +82,7 @@ p {
     margin: auto;
     overflow: hidden;
     position: fixed;
+    cursor: pointer;
 }
 
 nav {

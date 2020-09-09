@@ -2,20 +2,20 @@
 <section class="wrapper">
     <nav>
         <ul>
-            <li><a href="#antecedentes">Antecedentes</a></li>
-            <li><a href="#objetivos">Objetivos</a></li>
-            <li><a href="#organigrama">Organigrama</a></li>
-            <li><a href="#desarrollo">Desarrollo</a></li>
-            <li><a href="#lista">Lista de Revistas</a></li>
-            <li><a href="#personal">Personal de Apoyo</a></li>
-            <li><a href="#hacia">A los Editores</a></li>
-            <li><a href="#anexos">Anexos</a></li>
+            <li><a (click)="scroll(antecedentes)">Antecedentes</a></li>
+            <li><a (click)="scroll(objetivos)">Objetivos</a></li>
+            <li><a (click)="scroll(organigrama)">Organigrama</a></li>
+            <li><a (click)="scroll(desarrollo)">Desarrollo</a></li>
+            <li><a (click)="scroll(lista)">Lista de Revistas</a></li>
+            <li><a (click)="scroll(personal)">Personal de Apoyo</a></li>
+            <li><a (click)="scroll(hacia)">A los Editores</a></li>
+            <li><a (click)="scroll(anexos)">Anexos</a></li>
         </ul>
     </nav>
 </section>
 
-<section class="none" id="antecedentes">
-    <div class="titulo">
+<section #antecedentes id="antecedentes">
+    <div class="titulo" style="    margin-top: 0px;">
         Antecedentes
     </div>
 
@@ -40,7 +40,7 @@
 
 </section>
 
-<section class="par" id="objetivos">
+<section #objetivos id="objetivos">
 
     <div class="titulo">
         Objetivos
@@ -107,7 +107,7 @@
 </section>
 
 
-<section class="none" id="organigrama" name="organigrama">
+<section #organigrama id="organigrama" name="organigrama">
 
     <div class="titulo">
         Organigrama
@@ -144,7 +144,7 @@
 </section>
 
 
-<section class="par" id="desarrollo">
+<section #desarrollo id="desarrollo">
     <div class="titulo">
         Desarrollo
     </div>
@@ -165,8 +165,8 @@
     </div>
 </section>
 
-<section class="none" id=" lista ">
-    <div class="titulo ">
+<section #lista id="lista">
+    <div class="titulo">
         Lista de Revistas al 10 de septiembre de 2020 (38 revistas):
     </div>
 
@@ -671,8 +671,8 @@
 </section>
 
 
-<section class="par" id="personal ">
-    <div class="titulo ">
+<section #personal id="personal">
+    <div class="titulo">
         Personal de apoyo al proceso de marcación:
     </div>
     <div class="box-text ">
@@ -1073,7 +1073,7 @@
 </section>
 
 
-<section class="none" id="hacia ">
+<section #hacia id=" hacia ">
     <div class="titulo ">
         A los editores de Centroamérica y el Caribe:
     </div>
@@ -1084,7 +1084,7 @@
     </div>
 </section>
 
-<section class="par" id="anexos ">
+<section #anexos id="anexos ">
 
     <div class="titulo ">
         Anexos
