@@ -59,7 +59,6 @@
 .img-box {
     display: block;
     margin: auto;
-    height: 192px;
 }
 
 .div-img {
@@ -154,6 +153,9 @@ nav ul li:hover {
     font-size: 12pt;
     font-family: 'Barlow-Regular';
     text-align: center;
+}
+.img-miembro{
+    height: 192px;
 }
 .contenedor-miembro{
     width: 50%;
