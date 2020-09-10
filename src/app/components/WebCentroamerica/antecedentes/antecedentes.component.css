@@ -52,7 +52,8 @@
     text-align: justify;
     padding-left: 20%;
     padding-right: 20%;
-    margin: 25px
+    margin: 25px;
+    font-size: 12pt;
 }
 
 .img-box {
