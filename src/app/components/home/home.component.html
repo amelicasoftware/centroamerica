@@ -9,7 +9,7 @@
             <div id="contenedor-menu">
                 <a href="http://amelica.org/index.php/que-es-ameli/" class="option-menu">Acerca de AmeliCA</a>
                 <!-- <a [routerLink]="['/acerca-de']" class="option-menu">Proyecto Centroamérica</a> -->
-                <a class="option-menu">Proyecto Centroamérica</a>
+                <a [routerLink]="['/antecedentes']" class="option-menu">Proyecto Centroamérica</a>
                 <a href="#mapa" class="option-menu">Revistas por País</a>
                 <a href="#area" class="option-menu">Revistas por Área</a>
             </div>
@@ -27,7 +27,7 @@
     <div id="contenedor-banner">
         <div><img src="assets/img/c.png"></div>
         <div class="w100 m20" id="titulo">AmeliCA Centroamérica</div>
-        <div class="w100 m20" id="subttulo">Coleccón Digital de Revistas Académicas de Centroamérica</div>
+        <div class="w100 m20" id="subttulo">Colección Digital de Revistas Académicas AmeliCA Centroamérica</div>
         <div id="contenedor-buscador">
             <div id="buscador">
                 <input #palabra (keyup.enter)="buscarTexto(palabra.value)" id="input-buscar" type="text" name="input-articulo" value="" placeholder="Buscar" />

@@ -99,50 +99,55 @@
                 <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;"> Resultados de area: {{revistas[0].nombreArea}} </p>
 
                 <br>
-                <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{posicion() * 10}} de {{totalResultados}} artículos </p>
+                <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> Resultados de la Búsqueda: {{ totalResultados}} </p>
             </div>
 
             <div *ngIf="pagAct == pagFinal" style="width: 75%;" style="align-self: center; font-family: Barlow-Regular; display: flex; align-items: center;">
                 <p style="text-align: start; margin-left: 10px; font-family: Barlow-Regular; font-size: 10pt;"> Resultados de area: {{revistas[0].nombreArea}} </p>
-                <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> {{posicion() * 10 - 9}} a {{totalResultados}} de {{totalResultados}} artículos </p>
+                <p style="text-align: start; margin-left: 60%; font-family: Barlow-Regular; font-size: 10pt;" [attr.colspan]="total.total" class="font-family: Barlow-Regular;"> Resultados de la Búsqueda: {{ totalResultados}} </p>
             </div>
 
-            <app-paginador-disc-rev style="padding-left: 41%;"></app-paginador-disc-rev>
+            <div style="display: flex; justify-content: flex-end; margin: 10px; padding-right: 5%;">
+                <app-paginador-disc-rev></app-paginador-disc-rev>
+            </div>
+
 
             <app-globitos-disc-rev></app-globitos-disc-rev>
 
 
 
-                
+
             <div id="contenedor-fichas" class="contenedor-fichas " *ngIf="totalResultados >= 1">
                 <div class="shadow" style="padding-top: 10px; border-color: grey; border-style: solid; border: 1px;  box-shadow: 0px 1px 2px 1px #bfbfbf;" *ngFor="let revistas of revistas" class="card">
                     <a href="http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}" target="_blank">
-                    <div style="float: right; margin-right: 2%;">
-                        <a href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/ameli/jatsRepo/79/79623008/index.html" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
-                            <img target="_blank" style="margin: 10px;" class="img-footer" src="assets/img/facebook.png" alt=""></a>
-                        <a href="https://twitter.com/intent/tweet?original_referer=http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}} &amp;text={{revistas.nombreRevista}} http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}} vía @Ameli_CA" class="twitter"
-                            target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"><img style="margin: 10px;" target="_blank" class="img-footer" src="assets/img/twitter.png" alt=""></a>
-                    </div>
-
-                    <div class="titulo-card" style=" font-weight: bold; font-size: 12px; padding: 10px;">
-                        <img style="height: 60px; width: 60%;" src="http://portal.amelica.org/ameli/static/media/img/revista/rva{{revistas.cveRevista}}.png">
-                    </div>
-                    <div class="cuerpo-card" style="height: 70px; font-size: 12px; padding: 0px 10px; ">
-                        <a target="_blank" href="http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}">  <div style="font-weight: bold;"> {{revistas.nombreRevista}}</div> </a>
-                        <div *ngIf=" revistas.issn && revistas.issnelec "> Issn: {{revistas.issn}} | e-Issn: {{revistas.issnelec}}
+                        <div style="float: right; margin-right: 2%;">
+                            <a href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/ameli/jatsRepo/79/79623008/index.html" class="facebook" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
+                                <img target="_blank" style="margin: 10px;" class="img-footer" src="assets/img/facebook.png" alt=""></a>
+                            <a href="https://twitter.com/intent/tweet?original_referer=http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}} &amp;text={{revistas.nombreRevista}} http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}} vía @Ameli_CA" class="twitter"
+                                target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"><img style="margin: 10px;" target="_blank" class="img-footer" src="assets/img/twitter.png" alt=""></a>
                         </div>
-                        <div *ngIf=" revistas.issn && !revistas.issnelec"> Issn: {{revistas.issn}} </div>
-                        <div *ngIf=" !revistas.issn && revistas.issnelec "> e-Issn: {{revistas.issnelec}}</div>
-                        <div>{{revistas.nombreInstitucion}}</div>
-                        <div>{{revistas.nombrePais}}</div>
-                    </div>
-                    <div style="width: 100%; height: 35px; text-align: right; border-radius: 0px 0px 10px 10px; ; background-color: white; 
+
+                        <div class="titulo-card" style=" font-weight: bold; font-size: 12px; padding: 10px;">
+                            <img style="height: 60px; width: 60%;" src="http://portal.amelica.org/ameli/static/media/img/revista/rva{{revistas.cveRevista}}.png">
+                        </div>
+                        <div class="cuerpo-card" style="height: 70px; font-size: 12px; padding: 0px 10px; ">
+                            <a target="_blank" href="http://portal.amelica.org/revista.oa?id={{revistas.cveRevista}}">
+                                <div style="font-weight: bold;"> {{revistas.nombreRevista}}</div>
+                            </a>
+                            <div *ngIf=" revistas.issn && revistas.issnelec "> Issn: {{revistas.issn}} | e-Issn: {{revistas.issnelec}}
+                            </div>
+                            <div *ngIf=" revistas.issn && !revistas.issnelec"> Issn: {{revistas.issn}} </div>
+                            <div *ngIf=" !revistas.issn && revistas.issnelec "> e-Issn: {{revistas.issnelec}}</div>
+                            <div>{{revistas.nombreInstitucion}}</div>
+                            <div>{{revistas.nombrePais}}</div>
+                        </div>
+                        <div style="width: 100%; height: 35px; text-align: right; border-radius: 0px 0px 10px 10px; ; background-color: white; 
                 position: absolute; bottom: 0; border-color: gray;  border-style: solid; border-width: 1px 0px 0px 0px;">
-                    </div>
-                </a>
+                        </div>
+                    </a>
                 </div>
             </div>
-        
+
 
 
 

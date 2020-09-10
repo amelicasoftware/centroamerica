@@ -2,17 +2,20 @@
 <section class="wrapper">
     <nav>
         <ul>
-            <li><a href="#">Antecedentes</a></li>
-            <li><a href="#">Objetivos</a></li>
-            <li><a href="#">Organigrama</a></li>
-            <li><a href="#">Desarrollo</a></li>
-            <li><a href="#">Lista de Revistas</a></li>
+            <li><a (click)="scroll(antecedentes)">Antecedentes</a></li>
+            <li><a (click)="scroll(objetivos)">Objetivos</a></li>
+            <li><a (click)="scroll(organigrama)">Organigrama</a></li>
+            <li><a (click)="scroll(desarrollo)">Desarrollo</a></li>
+            <li><a (click)="scroll(lista)">Lista de Revistas</a></li>
+            <li><a (click)="scroll(personal)">Personal de Apoyo</a></li>
+            <li><a (click)="scroll(hacia)">A los Editores</a></li>
+            <li><a (click)="scroll(anexos)">Anexos</a></li>
         </ul>
     </nav>
 </section>
 
-<section>
-    <div class="titulo">
+<section #antecedentes id="antecedentes">
+    <div class="titulo" style="    margin-top: 0px;">
         Antecedentes
     </div>
 
@@ -37,7 +40,7 @@
 
 </section>
 
-<section>
+<section #objetivos id="objetivos">
 
     <div class="titulo">
         Objetivos
@@ -104,7 +107,7 @@
 </section>
 
 
-<section>
+<section #organigrama id="organigrama" name="organigrama">
 
     <div class="titulo">
         Organigrama
@@ -141,7 +144,7 @@
 </section>
 
 
-<section>
+<section #desarrollo id="desarrollo">
     <div class="titulo">
         Desarrollo
     </div>
@@ -162,349 +165,349 @@
     </div>
 </section>
 
-<section>
+<section #lista id="lista">
     <div class="titulo">
         Lista de Revistas al 10 de septiembre de 2020 (38 revistas):
     </div>
 
-    <div class="box-text">
+    <div class="box-text ">
         <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=594 style='width:445.4pt;border-collapse:collapse;border:none; width: 100%;'>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Científica</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border:solid windowtext 1.0pt;
   border-left:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Guatemala</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Economía y Sociedad</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Costa Rica</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista de Filología y Lingüística de la Universidad de Costa
   Rica</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Costa Rica</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Avances</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Cuba</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista de Ciencias Forenses de Honduras</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Honduras</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Conjeturas Sociológicas</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>El Salvador</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Ciencia y Tecnología</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Honduras</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Paradigma. Revista de Investigación Educativa</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Honduras</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Universidad Médica Pinareña</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Cuba</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Guacamaya</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Orbis Cognita</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Colón Ciencias, Tecnología y Negocios</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista FAECO sapiens</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Investigaciones Agropecuarias</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Saberes APUDEP</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Tecnociencia</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Visión Antataura</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Acción y Reflexión Educativa</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Cátedra: Revista Especializada en Estudios Culturales y
   Humanísticos</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Centros: Revista Científica Universitaria</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Científica de Ciencia y Tecnología El Higo</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Nicaragua</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista de Innovación Social y Desarrollo</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Cuba</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Tecnología en marcha</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Costa Rica</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Tec Empresarial</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Costa Rica</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista de Museología Kóot</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>El Salvador</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista de Historia</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Costa Rica</span></p>
                 </td>
             </tr>
@@ -517,27 +520,27 @@
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Costa Rica</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Electrónica de Conocimientos, Saberes y Prácticas</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Nicaragua</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>La Calera</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
@@ -549,117 +552,117 @@
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Prisma Tecnológico</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>CATHEDRA</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>DIALOGUS</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>SALUTA</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>ORATORES</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista colegiada de ciencia</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Societas. Revista de Ciencias Sociales y Humanísticas</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Scientia. Revista de Investigación de la Universidad de Panamá</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
             <tr style='height:16.0pt'>
                 <td width=497 nowrap valign=top style='width:372.85pt;border:solid windowtext 1.0pt;
   border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Revista Científica Semilla del Este</span></p>
                 </td>
                 <td width=97 nowrap valign=top style='width:72.55pt;border-top:none;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:16.0pt'>
-                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial",sans-serif;
+                    <p class=MsoNormal style='text-align:justify'><span style='font-family:"Arial ",sans-serif;
   color:black'>Panamá</span></p>
                 </td>
             </tr>
@@ -668,25 +671,22 @@
 </section>
 
 
-<section>
+<section #personal id="personal">
     <div class="titulo">
         Personal de apoyo al proceso de marcación:
     </div>
-    <div class="box-text">
-        <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none; width: 100%;">
+    <div class="box-text ">
+        <table class="MsoTableGrid " border="1 " cellspacing="0 " cellpadding="0 " style="border-collapse:collapse;border:none; width: 100%; ">
             <tbody>
                 <tr>
-                    <td width="197" valign="top" style="width:147.6pt;border:solid windowtext 1.0pt;
-             padding:0cm 5.4pt 0cm 5.4pt">
-                        <p class="MsoNormal">&nbsp;</p>
+                    <td width="197 " valign="top " style="width:147.6pt;border:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt ">
+                        <p class="MsoNormal ">&nbsp;</p>
                     </td>
-                    <td width="196" valign="top" style="width:146.85pt;border:solid windowtext 1.0pt;
-             border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
-                        <p class="MsoNormal">Nombre completo</p>
+                    <td width="196 " valign="top " style="width:146.85pt;border:solid windowtext 1.0pt; border-left:none;padding:0cm 5.4pt 0cm 5.4pt ">
+                        <p class="MsoNormal ">Nombre completo</p>
                     </td>
-                    <td width="196" valign="top" style="width:146.95pt;border:solid windowtext 1.0pt;
-             border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
-                        <p class="MsoNormal">Editores (Comité editorial) de Revistas de la Universidad de Panamá</p>
+                    <td width="196 " valign="top " style="width:146.95pt;border:solid windowtext 1.0pt; border-left:none;padding:0cm 5.4pt 0cm 5.4pt ">
+                        <p class="MsoNormal ">Editores (Comité editorial) de Revistas de la Universidad de Panamá</p>
                     </td>
                 </tr>
                 <tr style="height:159.0pt">
@@ -1182,22 +1182,36 @@
     </div>
 </section>
 
-<section>
 
-
-</section>
-
-<section>
-    <div class="titulo">
+<section #hacia id=" hacia ">
+    <div class="titulo ">
         A los editores de Centroamérica y el Caribe:
     </div>
 
-    <div class="box-text">
+    <div class="box-text ">
         Si eres editor de una revista centroamericana y deseas incorporarla a esta experiencia, comunícate al correo: amelica.conocimientoabierto@gmail.com.
         <br>
     </div>
 </section>
 
+<section #anexos id="anexos ">
+
+    <div class="titulo ">
+        Anexos
+    </div>
+
+    <div class="div-img ">
+        <img class="img-box " style="width: 35%; padding-bottom: 100px; " src="assets/img/cap1.jpg " alt=" "><img class="img-box " style="width: 35%; padding-bottom: 100px; " src="assets/img/cap2.jpg " alt=" ">
+    </div>
+
+    <div class="div-img ">
+        <img class="img-box " style="width: 35%; padding-bottom: 100px; " src="assets/img/cap3.jpg " alt=" ">
+    </div>
+
+
+
+
+</section>
 
 
 

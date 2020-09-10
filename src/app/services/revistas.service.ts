@@ -207,8 +207,8 @@ return this.http.get(`${this.url}revistas/area?a="${palabra}"&f=${cadenaDiscipli
 
  
    getBusquedaRevistasPaginadorDisc(area: string, pagina: number) {
-     console.log("consultando servicio de paginadoo################################",`${this.url}revistas/area?a="${area}"&page=${pagina}&${this.filtrosService.cadenafiltros}`);
-     return this.http.get(`${this.url}revistas/area?a="${this.filtrosService.palabra}"&page=${pagina}&${this.filtrosService.cadenafiltros}&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}`);
+     console.log("consultando servicio de paginadoo################################",`${this.url}revistas/area?a="${area}"&page=${pagina}&${this.filtrosService.cadenafiltros}&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}`);
+     return this.http.get(`${this.url}revistas/area?a="${area}"&page=${pagina}&${this.filtrosService.cadenafiltros}&r=${this.paginadorService.reversa}&palOrd=${this.paginadorService.campo}`);
    }
  
    getPaisesDisc(){
