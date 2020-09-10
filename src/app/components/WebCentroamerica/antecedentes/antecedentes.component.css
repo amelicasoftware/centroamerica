@@ -59,6 +59,7 @@
 .img-box {
     display: block;
     margin: auto;
+    height: 192px;
 }
 
 .div-img {
@@ -131,3 +132,49 @@ nav ul li:hover {
 .none {
     background-color: white;
 }
+#contenedor-instituciones{
+    display: flex; 
+    width: 70%; 
+    margin: auto;
+}
+.contenedor-institucion{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+.titulo-institucion{
+    width: 100%!important;
+    font-size: 16pt;
+    font-family: 'Barlow-Regular';
+    text-align: center;
+    margin: 20px 0px;
+    font-weight: bold;
+}
+.texto-miembro{
+    font-size: 12pt;
+    font-family: 'Barlow-Regular';
+    text-align: center;
+}
+.contenedor-miembro{
+    width: 50%;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .contenedor-miembro{
+        width: 80%;
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .contenedor-miembro{
+        width: 80%;
+    }
+  } 
+  
+  @media only screen and (min-width: 992px) {
+    .contenedor-miembro{
+        width: 50%;
+    }
+  } 
