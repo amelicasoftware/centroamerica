@@ -47,7 +47,7 @@
 
             <div class="articulo" *ngFor="let articulo of articulos">
                 <div *ngIf="articulo.origen === 'PDF'"><a class="titulo" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank">{{ articulo.tituloArticuloArt | tituloArticulo }}</a></div>
-                <div *ngIf="articulo.origen === 'XML'"><a class="titulo" href="http://portal.amelica.org/ameli/journal/{{articulo.claveRevista}}/{{articulo.claveArt}}/index.html" target="_blank">{{ articulo.tituloArticuloArt | tituloArticulo }}</a></div>
+                <div *ngIf="articulo.origen === 'XML'"><a class="titulo" href="http://portal.amelica.org/ameli/journal/{{articulo.claveRevista}}/{{articulo.claveArt}}/" target="_blank">{{ articulo.tituloArticuloArt | tituloArticulo }}</a></div>
                 <p>{{ articulo.autores | autoresArticulo}}</p>
                 <p>{{ articulo.nombreRevista }}, {{ articulo.anio }}, {{ articulo.volumen }} ({{ articulo.numero }}) </p>
                 <p>Fuente: {{ articulo.fuente}} </p>
@@ -77,10 +77,10 @@
 
                     <div *ngIf="articulo.origen === 'XML'" class="flex">
                         <p class="texto-completo">Texto Completo: </p>
-                        <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/journal/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/index.html" target="_blank">VISOR</a> </button>
-                        <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/journal/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/index.html" target="_blank">HTML</a> </button>
+                        <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/journal/{{articulo.cveRevista}}/{{articulo.cveArticulo}}/" target="_blank">VISOR</a> </button>
+                        <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/journal/{{articulo.claveRevista}}/{{articulo.claveArt}}/html/" target="_blank">HTML</a> </button>
                         <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/journal/{{articulo.claveRevista}}/{{articulo.claveArt}}/{{articulo.claveArt}}.epub" target="_blank">ePUB</a></button>
-                        <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/journal/{{articulo.claveRevista}}/{{articulo.claveArt}}/movil/index.html" target="_blank">MÓVIL </a></button>
+                        <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/ameli/journal/{{articulo.claveRevista}}/{{articulo.claveArt}}/movil/" target="_blank">MÓVIL </a></button>
                         <button class="button1"><a class="tipoFormato" href="http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}"  target="_blank">PDF</a></button>
 
                         <a class="facebook redes-xml" href="http://www.facebook.com/sharer.php?u=http://portal.amelica.org/articulo.oa?id={{articulo.claveArt}}" target="_blank" OnClick="window.open(this.href,'targetWindow','toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;">
